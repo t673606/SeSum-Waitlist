@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Supabase Query</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <h1>Supabase Test</h1>
+  <div id="result">Loading...</div>
+  <div id="logs"></div>
+
+  <script>
+    const SUPABASE_URL = 'https://glpowwptzbokwtkbsnko.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscG93d3B0emJva3d0a2JzbmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMDY1MDUsImV4cCI6MjA3ODc4MjUwNX0.NCuL94b5hbGybvYHhGhk3ePpYfNK3KwaONRmDAr0MvM';
+
+    function log(message) {
+      const logsDiv = document.getElementById('logs');
+      logsDiv.innerHTML += '<div>' + message + '</div>';
+      console.log(message);
+    }
+
+    async function testQuery() {
+      const resultDiv = document.getElementById('result');
+      
+      try {
+        log('Creating Supabase client...');
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        log('Testing query with count=exact and head=true...');
+        const { count, error, data } = await supabaseClient
+          .from('waitlist')
+          .select('id', { count: 'exact', head: true });
+        
+        log('Response: count=' + count + ', error=' + JSON.stringify(error) + ', data=' + JSON.stringify(data));
+        
+        if (error) {
+          resultDiv.innerHTML = '<p style="color: red;">Error: ' + JSON.stringify(error) + '</p>';
+        } else {
+          resultDiv.innerHTML = '<p style="color: green;">Count: ' + count + '</p>';
+        }
+
+        // Test 2: Without head
+        log('Testing query with count=exact without head...');
+        const { count: count2, error: error2, data: data2 } = await supabaseClient
+          .from('waitlist')
+          .select('id', { count: 'exact' })
+          .limit(0);
+        
+        log('Response 2: count=' + count2 + ', error=' + JSON.stringify(error2) + ', data=' + JSON.stringify(data2));
+
+        // Test 3: Direct fetch
+        log('Testing direct fetch...');
+        const response = await fetch(
+          `${SUPABASE_URL}/rest/v1/waitlist?select=id&limit=1`,
+          {
+            headers: {
+              'apikey': SUPABASE_ANON_KEY,
+              'Prefer': 'count=exact'
+            }
+          }
+        );
+        const contentRange = response.headers.get('content-range');
+        log('Content-Range header: ' + contentRange);
+        const json = await response.json();
+        log('Response JSON: ' + JSON.stringify(json));
+
+        // Test 4: Select all and count manually
+        log('Testing select all...');
+        const { data: allData, error: allError, count: allCount } = await supabaseClient
+          .from('waitlist')
+          .select('id');
+        
+        log('All data: count=' + allCount + ', length=' + (allData ? allData.length : 'null') + ', error=' + JSON.stringify(allError));
+
+      } catch (e) {
+        log('Exception: ' + e.message);
+        resultDiv.innerHTML = '<p style="color: red;">Exception: ' + e.message + '</p>';
+      }
+    }
+
+    // Wait for Supabase to load
+    if (typeof supabase !== 'undefined') {
+      testQuery();
+    } else {
+      setTimeout(() => {
+        if (typeof supabase !== 'undefined') {
+          testQuery();
+        } else {
+          document.getElementById('result').innerHTML = '<p style="color: red;">Supabase library not loaded</p>';
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

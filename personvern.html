@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SeSum - Personvernerklæring</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta name="description" content="Personvernerklæring for SeSum." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,500&display=swap" rel="stylesheet" />
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fafafa;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .text-sesum { color: #2d6a4f; }
+    .bg-sesum { background-color: #2d6a4f; }
+    .bg-sesum:hover { background-color: #1b4332; }
+    .border-sesum { border-color: #2d6a4f; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+
+    .gradient-blur {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden">
+  <!-- Gradient blurs -->
+  <div class="gradient-blur bg-emerald-200 top-0 right-0 -translate-y-1/2 translate-x-1/3 fixed"></div>
+  <div class="gradient-blur bg-teal-100 bottom-1/4 left-0 -translate-x-1/2 fixed"></div>
+
+  <!-- Nav -->
+  <nav class="px-5 py-5 flex items-center justify-between relative z-10">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="Untitled.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" />
+      <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
+    </a>
+    <a href="index.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Til forsiden</a>
+  </nav>
+
+  <main class="px-5 pt-2 pb-12 relative z-10">
+    <div class="max-w-md mx-auto">
+      <div class="text-center mb-6">
+        <h1 class="text-2xl sm:text-3xl leading-tight font-bold text-slate-900 mb-2 animate-fade-up">Personvernerklæring - SeSum</h1>
+        <p class="text-xs text-slate-500 animate-fade-up delay-100">Sist oppdatert: 25. januar 2026</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-100 p-5 space-y-4 text-sm text-slate-700 leading-relaxed animate-fade-up delay-200">
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">1. Behandlingsansvarlig</h2>
+          <p>SeSum (org.nr kommer), Norge. Kontakt: hei@sesum.no.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">2. Hvilke opplysninger vi kan samle inn</h2>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Konto- og profildata (navn, e-post, brukernavn, bilde).</li>
+            <li>Innhold du legger inn (tekst, tilbakemeldinger, data fra bruk).</li>
+            <li>Bruks- og teknisk data (enhet, IP, nettleser, appaktivitet).</li>
+            <li>Lokasjon der du tillater det.</li>
+            <li>Betalings- og transaksjonsdata når betalte funksjoner lanseres.</li>
+            <li>Data vi mottar fra partnere eller offentlige kilder.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">3. Hvorfor vi behandler data</h2>
+          <p>For å levere, forbedre og utvikle SeSum, analysere bruk, tilpasse innhold, kommunisere med deg, drive markedsføring, sikre drift og oppfylle lovkrav.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">4. Deling, samarbeid og salg av data</h2>
+          <p>Vi kan dele, lisensiere eller selge personopplysninger til leverandører, samarbeidspartnere og tredjeparter for drift, analyse, markedsføring, forskning eller andre kommersielle formål. Vi kan også dele aggregerte eller anonymiserte data. Ved fusjon, salg eller omorganisering kan data overføres som del av virksomheten.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">5. Lagring og internasjonal overføring</h2>
+          <p>Data kan behandles i og utenfor Norge/EØS. Vi lagrer data så lenge det er nødvendig for formålene over, eller så lenge loven krever det.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">6. Dine rettigheter</h2>
+          <p>Du kan be om innsyn, retting, sletting, begrensning eller protestere mot behandling. Kontakt oss på hei@sesum.no.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">7. Informasjonskapsler</h2>
+          <p>Vi kan bruke informasjonskapsler og lignende teknologi for funksjonalitet, analyse og markedsføring.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">8. Endringer</h2>
+          <p>Vi kan oppdatere denne erklæringen ved behov. Endringer trer i kraft når de publiseres.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">9. Kontakt</h2>
+          <p>All post: hei@sesum.no<br />Support: support@sesum.no</p>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center text-xs text-slate-500 animate-fade-up delay-300">
+        <a href="bruksvilkar.html" class="text-sesum font-semibold">Les bruksvilkår</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="px-5 pb-8 relative z-10">
+    <div class="max-w-md mx-auto text-center">
+      <p class="text-[10px] text-slate-400">© 2026 SeSum. Laget i Norge.</p>
+    </div>
+  </footer>
+</body>
+</html>

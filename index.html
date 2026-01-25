@@ -91,7 +91,7 @@
     <div class="flex justify-center mb-4 animate-fade-up">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/60 shadow-sm">
         <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-        <span id="spots-left" class="text-[11px] font-medium text-slate-600">Laster...</span>
+        <span id="spots-left" class="text-[11px] font-medium text-slate-600">Lukket beta åpner snart</span>
       </div>
     </div>
 
@@ -171,7 +171,7 @@
             <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 0 1 0 4H8"></path>
                 <path d="M12 18V6"></path>
               </svg>
             </div>
@@ -361,6 +361,7 @@
           </summary>
           <div class="px-4 pt-2 pb-4 text-xs text-slate-600">
             Vi slipper inn testere fortløpende. De første får tilgang veldig snart, resten i puljer.
+          </div>
         </details>
         
         <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
@@ -432,7 +433,7 @@
           // Fallback if Supabase fails to load
           console.error('Supabase library failed to load after multiple attempts');
           const spotsElement = document.getElementById('spots-left');
-          if (spotsElement) spotsElement.innerText = 'Begrenset beta';
+          if (spotsElement) spotsElement.innerText = 'Lukket beta åpner snart';
         }
       }
     }
@@ -491,55 +492,8 @@
         return;
       }
 
-      // Use direct fetch which is more reliable for getting count
-      try {
-        const response = await fetch(
-          `${SUPABASE_URL}/rest/v1/waitlist?select=id&limit=1`,
-          {
-            headers: {
-              'apikey': SUPABASE_ANON_KEY,
-              'Prefer': 'count=exact'
-            }
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const contentRange = response.headers.get('content-range');
-        console.log('Content-Range header:', contentRange);
-        
-        if (contentRange) {
-          // Content-Range format: "*/count" or "0-0/count"
-          const match = contentRange.match(/\/(\d+)$/);
-          if (match) {
-            const count = parseInt(match[1], 10);
-            const spotsLeft = Math.max(0, 500 - count);
-            spotsElement.innerText = `${spotsLeft} plasser igjen. Lukket beta åpner snart`;
-            return;
-          }
-        }
-
-        // Fallback: try Supabase client
-        if (supabaseClient) {
-          const { count, error } = await supabaseClient
-            .from('waitlist')
-            .select('id', { count: 'exact', head: true });
-
-          if (!error && count !== null && count !== undefined) {
-            const spotsLeft = Math.max(0, 500 - count);
-            spotsElement.innerText = `${spotsLeft} plasser igjen i beta`;
-            return;
-          }
-        }
-
-        // Final fallback
-        spotsElement.innerText = 'Begrenset beta';
-      } catch (e) {
-        console.error('Could not fetch waitlist count:', e);
-        spotsElement.innerText = 'Begrenset beta';
-      }
+      // We no longer show remaining spots — keep it simple.
+      spotsElement.innerText = 'Lukket beta åpner snart';
     }
   </script>
 

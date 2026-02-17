@@ -1,18 +1,174 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>SeSum – Finn billigste butikk for handlelisten din</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeSum – Sammenlign matvarepriser | Finn billigste butikk for handlelisten</title>
+  <link rel="canonical" href="https://www.sesum.no/" />
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <meta name="description" content="SeSum sammenligner totalprisen på handlelisten din på tvers av alle norske dagligvarekjeder. Finn alltid billigste butikk." />
-  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="SeSum sammenligner totalprisen på hele handlelisten din hos KIWI, REMA 1000, Coop, Meny og flere. Gratis app som viser hvilken butikk som er billigst." />
+  <meta name="theme-color" content="#2d6a4f" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sesum.no/" />
+  <meta property="og:title" content="SeSum – Sammenlign matvarepriser | Finn billigste butikk" />
+  <meta property="og:description" content="SeSum sammenligner totalprisen på handlelisten din hos KIWI, REMA 1000, Coop, Meny og flere. Gratis app som viser hvilken butikk som er billigst." />
+  <meta property="og:image" content="https://www.sesum.no/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:site_name" content="SeSum" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SeSum – Finn billigste butikk for handlelisten din" />
+  <meta name="twitter:description" content="Sammenlign totalprisen på dagligvarer hos alle norske butikkjeder. Gratis." />
+  <meta name="twitter:image" content="https://www.sesum.no/og-image.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.sesum.no/#organization",
+        "name": "SeSum",
+        "url": "https://www.sesum.no",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.sesum.no/sesum-logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hei@sesum.no",
+          "contactType": "customer service",
+          "availableLanguage": "Norwegian"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.sesum.no/#website",
+        "name": "SeSum",
+        "url": "https://www.sesum.no",
+        "description": "SeSum sammenligner totalprisen på handlelisten din på tvers av alle norske dagligvarekjeder.",
+        "publisher": { "@id": "https://www.sesum.no/#organization" },
+        "inLanguage": "nb-NO"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.sesum.no/#webpage",
+        "url": "https://www.sesum.no",
+        "name": "SeSum – Sammenlign matvarepriser | Finn billigste butikk for handlelisten",
+        "description": "SeSum sammenligner totalprisen på hele handlelisten din hos KIWI, REMA 1000, Coop, Meny og flere. Gratis app som viser hvilken butikk som er billigst.",
+        "isPartOf": { "@id": "https://www.sesum.no/#website" },
+        "about": { "@id": "https://www.sesum.no/#organization" },
+        "inLanguage": "nb-NO"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.sesum.no/#app",
+        "name": "SeSum",
+        "applicationCategory": "ShoppingApplication",
+        "operatingSystem": "iOS",
+        "description": "Sammenlign totalprisen på handlelisten din på tvers av norske dagligvarekjeder. Finn billigste butikk for KIWI, REMA 1000, Coop, SPAR, Meny og flere.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "NOK"
+        },
+        "creator": { "@id": "https://www.sesum.no/#organization" },
+        "inLanguage": "nb-NO"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.sesum.no/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hva er SeSum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SeSum er en gratis norsk app som sammenligner totalprisen på hele handlelisten din på tvers av dagligvarekjeder som KIWI, REMA 1000, Coop Extra, SPAR, Meny, Joker og Bunnpris. I stedet for å sammenligne enkeltprodukter, regner SeSum ut hva hele handlelisten koster hos hver kjede."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Er SeSum gratis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, SeSum er helt gratis å bruke. Vi har ingen planer om å ta betalt for grunnfunksjonene."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvordan sammenligner SeSum matvarepriser?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Du legger inn varene du skal handle, og SeSum beregner totalprisen hos hver butikkjede. Prisene kommer fra kvitteringer skannet av brukere og fra butikkenes egne reklameaviser, slik at du får ekte priser fra faktiske butikker."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvilke butikker støttes av SeSum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SeSum støtter de fleste norske dagligvarekjeder: KIWI, REMA 1000, Coop (Extra, Prix, Mega, Obs), SPAR, Meny, Joker, Bunnpris og flere."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvor ofte oppdateres prisene i SeSum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prisene oppdateres fortløpende basert på kvitteringer skannet av brukere. I tillegg henter vi inn ukentlige tilbud fra butikkenes reklameaviser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hvilken matbutikk er billigst i Norge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det varierer avhengig av hva du handler. Lavpriskjeder som KIWI, REMA 1000 og Coop Extra er ofte billigst på basisvarer, men den billigste butikken for din handleliste avhenger av kombinasjonen av varer. SeSum hjelper deg å finne svaret for akkurat det du skal handle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Når lanseres SeSum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SeSum er i lukket beta for iPhone. Vi slipper inn flere testere fortløpende og planlegger full lansering i App Store i 2026."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kommer det en Android-versjon av SeSum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vi lanserer først på iPhone. Android-versjon er planlagt, men vi har ikke en konkret dato ennå."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,500&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <link rel="dns-prefetch" href="https://glpowwptzbokwtkbsnko.supabase.co">
+  <link rel="dns-prefetch" href="https://eu.i.posthog.com">
 
   <!-- PostHog Analytics -->
   <script>
@@ -26,24 +182,24 @@
 
   <style>
     * { -webkit-tap-highlight-color: transparent; }
-    body { 
-      font-family: 'DM Sans', sans-serif; 
+    body {
+      font-family: 'DM Sans', sans-serif;
       background: #fafafa;
       -webkit-font-smoothing: antialiased;
     }
-    
+
     .text-sesum { color: #2d6a4f; }
     .bg-sesum { background-color: #2d6a4f; }
     .bg-sesum:hover { background-color: #1b4332; }
     .border-sesum { border-color: #2d6a4f; }
-    
-    
+
+
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
     .animate-float { animation: float 5s ease-in-out infinite; }
-    
+
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -54,7 +210,7 @@
     .delay-300 { animation-delay: 0.3s; opacity: 0; }
     .delay-400 { animation-delay: 0.4s; opacity: 0; }
     .delay-500 { animation-delay: 0.5s; opacity: 0; }
-    
+
     .gradient-blur {
       position: absolute;
       width: 300px;
@@ -64,9 +220,9 @@
       opacity: 0.4;
       pointer-events: none;
     }
-    
+
     input:focus { outline: none; }
-    
+
     .store-logo {
       width: 32px;
       height: 32px;
@@ -75,7 +231,7 @@
       background: #f8f8f8;
       padding: 4px;
     }
-    
+
     .app-image-container {
       -webkit-mask-image: radial-gradient(ellipse 85% 80% at center, black 50%, transparent 100%);
       mask-image: radial-gradient(ellipse 85% 80% at center, black 50%, transparent 100%);
@@ -91,7 +247,7 @@
   <!-- Nav -->
   <nav class="px-5 py-5 flex items-center justify-center relative z-10">
     <div class="flex items-center gap-2">
-      <img src="Untitled.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" />
+      <img src="sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
       <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
     </div>
   </nav>
@@ -101,7 +257,7 @@
     <div class="flex justify-center mb-4 animate-fade-up">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/60 shadow-sm">
         <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-        <span id="spots-left" class="text-[11px] font-medium text-slate-600">Lukket beta åpner snart</span>
+        <span id="spots-left" class="text-[11px] font-medium text-slate-600">Lukket beta – bli med og test</span>
       </div>
     </div>
 
@@ -112,7 +268,7 @@
         for handlelisten din
       </h1>
       <p class="text-sm sm:text-base text-slate-500 leading-relaxed animate-fade-up delay-200">
-        Legg inn varene. SeSum regner totalpris i alle kjeder – og viser hvor du sparer mest
+        SeSum sammenligner totalprisen på handlelisten din hos KIWI, REMA 1000, Coop og flere. Se hvilken butikk som er billigst for akkurat det du skal handle.
       </p>
     </div>
 
@@ -160,12 +316,18 @@
     <!-- App image -->
     <div class="flex justify-center mb-6 animate-fade-up delay-400 overflow-hidden">
       <div class="relative animate-float app-image-container">
-        <img 
-          src="nyeste mockup.png" 
-          alt="SeSum app – butikker sortert etter totalpris på handlelisten din" 
-          class="w-[85vw] sm:w-[70vw] md:w-[50vw] max-w-md h-auto"
-        />
-        
+        <picture>
+          <source srcset="sesum-app-sammenlign-matvarepriser.webp" type="image/webp">
+          <img
+            src="sesum-app-sammenlign-matvarepriser.png"
+            alt="SeSum app – butikker sortert etter totalpris på handlelisten din"
+            class="w-[85vw] sm:w-[70vw] md:w-[50vw] max-w-md h-auto"
+            width="754"
+            height="1500"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </div>
     </div>
   </main>
@@ -175,7 +337,7 @@
     <div class="max-w-md mx-auto">
       <div class="bg-white rounded-2xl border border-slate-100 p-5 mb-4">
         <h2 class="text-base font-bold text-slate-900 mb-4 text-center">Hva gjør SeSum?</h2>
-        
+
         <div class="space-y-4">
           <div class="flex gap-3">
             <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -190,7 +352,7 @@
               <p class="text-xs text-slate-500 mt-1">Ikke bare enkeltpriser. Vi regner ut hva hele handlelisten koster hos hver kjede.</p>
             </div>
           </div>
-          
+
           <div class="flex gap-3">
             <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -204,7 +366,7 @@
               <p class="text-xs text-slate-500 mt-1">KIWI, REMA 1000, Coop, SPAR, Meny, Joker og flere. Oppdaterte priser daglig.</p>
             </div>
           </div>
-          
+
           <div class="flex gap-3">
             <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -229,7 +391,7 @@
   <section class="px-5 pb-12 relative z-10">
     <div class="max-w-md mx-auto">
       <h2 class="text-lg font-bold text-slate-900 mb-5 text-center">Slik funker det</h2>
-      
+
       <div class="space-y-3">
         <div class="flex items-center gap-4 bg-white rounded-2xl p-4 border border-slate-100">
           <div class="w-8 h-8 bg-sesum/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -239,16 +401,16 @@
             <p class="text-sm text-slate-700"><span class="font-semibold">Legg inn varene</span> du skal handle</p>
           </div>
         </div>
-        
+
         <div class="flex items-center gap-4 bg-white rounded-2xl p-4 border border-slate-100">
           <div class="w-8 h-8 bg-sesum/10 rounded-full flex items-center justify-center flex-shrink-0">
             <span class="text-sm font-bold text-sesum">2</span>
           </div>
           <div>
-            <p class="text-sm text-slate-700"><span class="font-semibold">Se totalprisen</span> hos alle kjeder – sortert</p>
+            <p class="text-sm text-slate-700"><span class="font-semibold">Se totalprisen</span> hos alle kjeder, sortert fra billigst</p>
           </div>
         </div>
-        
+
         <div class="flex items-center gap-4 bg-white rounded-2xl p-4 border border-slate-100">
           <div class="w-8 h-8 bg-sesum/10 rounded-full flex items-center justify-center flex-shrink-0">
             <span class="text-sm font-bold text-sesum">3</span>
@@ -265,7 +427,7 @@
   <section class="px-5 pb-12 relative z-10">
     <div class="max-w-md mx-auto">
       <div class="bg-white rounded-2xl border border-slate-100 p-5">
-        <p class="text-xs text-slate-500 text-center mb-4">Sammenligner priser fra</p>
+        <h2 class="text-xs text-slate-500 text-center mb-4">Sammenligner priser fra norske dagligvarekjeder</h2>
         <div class="flex flex-wrap justify-center gap-3">
           <div class="px-3 py-2 bg-slate-50 rounded-lg text-xs font-medium text-slate-700">KIWI</div>
           <div class="px-3 py-2 bg-slate-50 rounded-lg text-xs font-medium text-slate-700">REMA 1000</div>
@@ -284,7 +446,7 @@
   <section class="px-5 pb-12 relative z-10">
     <div class="max-w-md mx-auto">
       <h2 class="text-lg font-bold text-slate-900 mb-5 text-center">Dette kan du teste i beta</h2>
-      
+
       <div class="grid grid-cols-2 gap-3">
         <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
           <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mx-auto mb-2">
@@ -296,7 +458,7 @@
           <p class="text-xs font-semibold text-slate-700">Søk opp varer</p>
           <p class="text-[10px] text-slate-400 mt-1">Se priser og tilbud på tusenvis av varer</p>
         </div>
-        
+
         <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
           <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-2">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -307,7 +469,7 @@
           <p class="text-xs font-semibold text-slate-700">Skann kvittering</p>
           <p class="text-[10px] text-slate-400 mt-1">Se hvor mye du kunne spart etterpå</p>
         </div>
-        
+
         <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
           <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-2">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -318,7 +480,7 @@
           <p class="text-xs font-semibold text-slate-700">Prisvarsel</p>
           <p class="text-[10px] text-slate-400 mt-1">Få beskjed når favorittene blir billigere</p>
         </div>
-        
+
         <div class="bg-white rounded-2xl p-4 border border-slate-100 text-center">
           <div class="w-10 h-10 bg-rose-50 rounded-xl flex items-center justify-center mx-auto mb-2">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -332,12 +494,36 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- Why compare prices - SEO content section -->
+  <section class="px-5 pb-12 relative z-10">
+    <div class="max-w-md mx-auto">
+      <h2 class="text-lg font-bold text-slate-900 mb-4 text-center">Hvorfor sammenligne matvarepriser?</h2>
+      <div class="bg-white rounded-2xl border border-slate-100 p-5 text-sm text-slate-600 leading-relaxed space-y-3">
+        <p>En gjennomsnittlig norsk familie bruker over 60 000 kroner på dagligvarer hvert år. Prisforskjellene mellom butikkjedene kan være overraskende store, spesielt når du ser på totalprisen for en hel handleliste.</p>
+        <p>De fleste prissammenlignings-tjenester viser priser på enkeltprodukter. Men det hjelper lite å vite at melken er 2 kroner billigere hos KIWI hvis brød, ost og kjøttdeig er dyrere der. SeSum beregner totalprisen på hele handlelisten din, slik at du kan velge den butikken som faktisk er billigst for akkurat det du skal handle.</p>
+        <p>Ved å bytte til den billigste butikken for din handleliste kan du spare flere tusen kroner i året, uten å endre hva du kjøper.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ - Expanded for AI/SEO -->
   <section class="px-5 pb-16 relative z-10">
     <div class="max-w-md mx-auto">
       <h2 class="text-lg font-bold text-slate-900 mb-5 text-center">Spørsmål og svar</h2>
-      
+
       <div class="space-y-3">
+        <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
+          <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
+            Hva er SeSum?
+            <svg class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-4 pt-2 pb-4 text-xs text-slate-600">
+            SeSum er en gratis norsk app som sammenligner totalprisen på hele handlelisten din på tvers av dagligvarekjeder som KIWI, REMA 1000, Coop Extra, SPAR, Meny, Joker og Bunnpris. I stedet for å sammenligne enkeltprodukter, regner SeSum ut hva hele handlelisten koster hos hver kjede.
+          </div>
+        </details>
+
         <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
           <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
             Er det gratis?
@@ -349,7 +535,19 @@
             Ja, SeSum er helt gratis å bruke. Vi har ingen planer om å ta betalt for grunnfunksjonene.
           </div>
         </details>
-        
+
+        <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
+          <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
+            Hvordan sammenligner SeSum priser?
+            <svg class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-4 pt-2 pb-4 text-xs text-slate-600">
+            Du legger inn varene du skal handle, og SeSum beregner totalprisen hos hver butikkjede. Prisene kommer fra kvitteringer skannet av brukere og fra butikkenes egne reklameaviser, slik at du får ekte priser fra faktiske butikker.
+          </div>
+        </details>
+
         <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
           <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
             Hvor ofte oppdateres prisene?
@@ -358,22 +556,22 @@
             </svg>
           </summary>
           <div class="px-4 pt-2 pb-4 text-xs text-slate-600">
-            Prisene kommer fra brukere som skanner kvitteringene sine – ekte priser fra faktiske butikker. Vi henter også inn tilbud fra butikkenes reklameaviser.
+            Prisene oppdateres fortløpende basert på kvitteringer skannet av brukere. I tillegg henter vi inn ukentlige tilbud fra butikkenes reklameaviser.
           </div>
         </details>
 
         <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
           <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
-             Når får jeg tilgang?
+            Hvilken matbutikk er billigst i Norge?
             <svg class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
           <div class="px-4 pt-2 pb-4 text-xs text-slate-600">
-            Vi slipper inn testere fortløpende. De første får tilgang veldig snart, resten i puljer.
+            Det varierer avhengig av hva du handler. Lavpriskjeder som KIWI, REMA 1000 og Coop Extra er ofte billigst på basisvarer, men den billigste butikken for din handleliste avhenger av kombinasjonen av varer. SeSum hjelper deg å finne svaret for akkurat det du skal handle.
           </div>
         </details>
-        
+
         <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
           <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
             Hvilke butikker støttes?
@@ -385,7 +583,19 @@
             Vi støtter de fleste norske dagligvarekjeder: KIWI, REMA 1000, Coop (Extra, Prix, Mega, Obs), SPAR, Meny, Joker, Bunnpris og flere. Vi jobber kontinuerlig med å legge til flere.
           </div>
         </details>
-        
+
+        <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
+          <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
+            Når lanseres SeSum?
+            <svg class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </summary>
+          <div class="px-4 pt-2 pb-4 text-xs text-slate-600">
+            SeSum er i lukket beta for iPhone. Vi slipper inn flere testere fortløpende og planlegger full lansering i App Store i 2026. Meld deg på ventelisten for å sikre tidlig tilgang.
+          </div>
+        </details>
+
         <details class="bg-white rounded-2xl border border-slate-100 overflow-hidden group">
           <summary class="p-4 cursor-pointer flex items-center justify-between text-sm font-medium text-slate-800 hover:bg-slate-50">
             Kommer det en Android-versjon?
@@ -405,7 +615,7 @@
   <section class="px-5 pb-20 relative z-10">
     <div class="max-w-sm mx-auto text-center">
       <p class="text-sm text-slate-600 mb-4">Klar til å spare penger på mat?</p>
-      <a href="#" onclick="document.getElementById('email-input').focus(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;" 
+      <a href="#" onclick="document.getElementById('email-input').focus(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
          class="inline-block bg-sesum text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all active:scale-[0.97]">
         Få tidlig tilgang
       </a>
@@ -414,9 +624,16 @@
 
   <!-- Footer -->
   <footer class="px-5 pb-8 relative z-10">
-    <div class="max-w-md mx-auto text-center">
+    <div class="max-w-md mx-auto text-center space-y-3">
+      <div class="flex justify-center gap-4 text-xs text-slate-500">
+        <a href="/priser.html" class="hover:text-slate-700">Priser</a>
+        <a href="/metode.html" class="hover:text-slate-700">Metode</a>
+        <a href="/presse.html" class="hover:text-slate-700">Presse</a>
+        <a href="/personvern.html" class="hover:text-slate-700">Personvern</a>
+        <a href="mailto:hei@sesum.no" class="hover:text-slate-700">Kontakt</a>
+      </div>
       <p class="text-[10px] text-slate-400">
-        © 2026 SeSum. Laget i Norge.
+        &copy; 2026 SeSum. Sammenlign dagligvarepriser i Norge. Laget i Norge.
       </p>
     </div>
   </footer>
@@ -427,9 +644,8 @@
 
     let supabaseClient;
     let initAttempts = 0;
-    const MAX_INIT_ATTEMPTS = 50; // Max 5 seconds (50 * 100ms)
+    const MAX_INIT_ATTEMPTS = 50;
 
-    // Wait for DOM and Supabase to be ready
     function initSupabase() {
       if (typeof supabase !== 'undefined') {
         supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -437,18 +653,15 @@
       } else {
         initAttempts++;
         if (initAttempts < MAX_INIT_ATTEMPTS) {
-          // Retry after a short delay if Supabase isn't loaded yet
           setTimeout(initSupabase, 100);
         } else {
-          // Fallback if Supabase fails to load
           console.error('Supabase library failed to load after multiple attempts');
           const spotsElement = document.getElementById('spots-left');
-          if (spotsElement) spotsElement.innerText = 'Lukket beta åpner snart';
+          if (spotsElement) spotsElement.innerText = 'Lukket beta – bli med og test';
         }
       }
     }
 
-    // Initialize when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initSupabase);
     } else {
@@ -493,7 +706,6 @@
       document.getElementById('waitlist-form').classList.add('hidden');
       document.getElementById('success-message').classList.remove('hidden');
 
-      // Track waitlist signup in PostHog
       if (window.posthog) {
         posthog.capture('waitlist_signup');
       }
@@ -503,24 +715,9 @@
 
     async function updateSpotsLeft() {
       const spotsElement = document.getElementById('spots-left');
-      if (!spotsElement) {
-        console.error('spots-left element not found');
-        return;
-      }
-
-      // We no longer show remaining spots — keep it simple.
-      spotsElement.innerText = 'Lukket beta åpner snart';
+      if (!spotsElement) return;
+      spotsElement.innerText = 'Lukket beta – bli med og test';
     }
   </script>
-
-  <style>
-    @keyframes bounce-slow {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    .animate-bounce-slow {
-      animation: bounce-slow 3s ease-in-out infinite;
-    }
-  </style>
 </body>
 </html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metode og datakilder – SeSum</title>
+  <link rel="canonical" href="https://www.sesum.no/metode.html" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="Slik samler SeSum inn og beregner matvarepriser. Les om datakilder, oppdateringsfrekvens og metode for prissammenligning av dagligvarer i Norge." />
+  <meta name="theme-color" content="#2d6a4f" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.sesum.no/metode.html" />
+  <meta property="og:title" content="Metode og datakilder – Slik sammenligner SeSum matvarepriser" />
+  <meta property="og:description" content="Slik samler SeSum inn og beregner matvarepriser. Les om datakilder, oppdateringsfrekvens og metode for prissammenligning." />
+  <meta property="og:site_name" content="SeSum" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Metode og datakilder – Slik sammenligner SeSum matvarepriser",
+    "description": "Slik samler SeSum inn og beregner matvarepriser fra norske dagligvarekjeder.",
+    "author": {
+      "@type": "Organization",
+      "name": "SeSum",
+      "url": "https://www.sesum.no"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SeSum",
+      "url": "https://www.sesum.no"
+    },
+    "datePublished": "2026-02-17",
+    "dateModified": "2026-02-17",
+    "mainEntityOfPage": "https://www.sesum.no/metode.html",
+    "inLanguage": "nb-NO"
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,500&display=swap" rel="stylesheet" />
+
+  <!-- PostHog Analytics -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(/\/$/,"")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u._i.push([i,s,a]),o=0;o<n.length;o++)g(u,n[o])},n="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),e.init("phc_pLofO9zUaQZTqaXbr95KiLNAvZmj8ol0VkZH8bksJUo",{
+      api_host:"https://eu.i.posthog.com",
+      person_profiles: "always",
+      capture_pageview: true,
+      capture_pageleave: true
+    }))}(document,window.posthog||[]);
+  </script>
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fafafa;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .text-sesum { color: #2d6a4f; }
+    .bg-sesum { background-color: #2d6a4f; }
+    .bg-sesum:hover { background-color: #1b4332; }
+    .border-sesum { border-color: #2d6a4f; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+
+    .gradient-blur {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden">
+  <!-- Gradient blurs -->
+  <div class="gradient-blur bg-emerald-200 top-0 right-0 -translate-y-1/2 translate-x-1/3 fixed"></div>
+  <div class="gradient-blur bg-teal-100 bottom-1/4 left-0 -translate-x-1/2 fixed"></div>
+
+  <!-- Nav -->
+  <nav class="px-5 py-5 flex items-center justify-between relative z-10">
+    <a href="/" class="flex items-center gap-2">
+      <img src="sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
+      <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
+    </a>
+    <a href="/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Til forsiden</a>
+  </nav>
+
+  <main class="px-5 pt-2 pb-12 relative z-10">
+    <div class="max-w-md mx-auto">
+      <div class="text-center mb-6">
+        <h1 class="text-2xl sm:text-3xl leading-tight font-bold text-slate-900 mb-2 animate-fade-up">Metode og datakilder</h1>
+        <p class="text-xs text-slate-500 animate-fade-up delay-100">Slik sammenligner SeSum matvarepriser i Norge</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-100 p-5 space-y-5 text-sm text-slate-700 leading-relaxed animate-fade-up delay-200">
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Kort oppsummert</h2>
+          <p>SeSum sammenligner totalprisen på hele handlelisten din hos norske dagligvarekjeder. Prisdata kommer fra to kilder: kvitteringer skannet av brukere og tilbud hentet fra butikkenes reklameaviser. Prisene oppdateres fortløpende.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Datakilder</h2>
+          <p class="mb-2">Vi henter prisdata fra to hovedkilder:</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong>Kvitteringsskanning:</strong> Brukere skanner kvitteringene sine etter handling. Vi leser av produktnavn, mengde og pris. Dette gir oss ekte priser fra faktiske butikker i hele Norge.</li>
+            <li><strong>Reklameaviser og ukestilbud:</strong> Vi samler inn tilbudspriser fra butikkjedenes egne reklameaviser. Disse oppdateres ukentlig.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Butikkjeder vi dekker</h2>
+          <p>SeSum sammenligner priser fra KIWI, REMA 1000, Coop (Extra, Prix, Mega, Obs), SPAR, Meny, Joker, Bunnpris og flere. Vi jobber kontinuerlig med å legge til flere kjeder og forbedre dekningen.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Slik beregner vi totalpris</h2>
+          <p>Når du legger inn en handleliste, finner SeSum den nærmeste prismatchen for hvert produkt hos hver butikkjede. Totalprisen per kjede er summen av alle produktene på listen din. Kjedene sorteres fra billigst til dyrest, slik at du ser med en gang hvor du sparer mest.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Oppdateringsfrekvens</h2>
+          <p>Kvitteringspriser oppdateres fortløpende etter hvert som brukere skanner nye kvitteringer. Tilbudspriser fra reklameaviser oppdateres ukentlig. Prisene du ser i appen reflekterer de nyeste dataene vi har tilgjengelig.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Begrensninger</h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Prisene er veiledende. Den faktiske prisen i en spesifikk butikk kan avvike, for eksempel grunnet lokale tilbud eller kampanjer.</li>
+            <li>Dekningsgraden varierer. Noen produkter har mer prisdata enn andre, avhengig av hvor mange kvitteringer vi har mottatt.</li>
+            <li>Vi viser ikke priser per enkeltbutikk, kun per butikkjede.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-2">Tilbakemeldinger</h2>
+          <p>Ser du feil i prisdata eller har forslag til forbedringer? Send oss en e-post på <a href="mailto:hei@sesum.no" class="text-sesum font-medium">hei@sesum.no</a>.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center animate-fade-up delay-300">
+        <a href="/"
+           class="inline-block bg-sesum text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all active:scale-[0.97]">
+          Prøv SeSum gratis
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="px-5 pb-8 relative z-10">
+    <div class="max-w-md mx-auto text-center space-y-3">
+      <div class="flex justify-center gap-4 text-xs text-slate-500">
+        <a href="/" class="hover:text-slate-700">Forside</a>
+        <a href="/priser.html" class="hover:text-slate-700">Priser</a>
+        <a href="/personvern.html" class="hover:text-slate-700">Personvern</a>
+        <a href="/presse.html" class="hover:text-slate-700">Presse</a>
+      </div>
+      <p class="text-[10px] text-slate-400">&copy; 2026 SeSum. Sammenlign dagligvarepriser i Norge. Laget i Norge.</p>
+    </div>
+  </footer>
+</body>
+</html>

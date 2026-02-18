@@ -181,9 +181,9 @@
       border-radius: 50%;
     }
     h1 {
-      font-size: clamp(1.75rem, 5vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.15;
+      font-size: clamp(1.75rem, 5vw, 2.5rem) !important;
+      font-weight: 700 !important;
+      line-height: 1.15 !important;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
     }
@@ -216,13 +216,13 @@
     main { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem 5rem; }
 
     .section-header { margin: 2.5rem 0 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--green-light); }
-    .section-header h2 { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; }
+    .section-header h2 { font-size: 1.125rem !important; font-weight: 700 !important; letter-spacing: -0.01em; }
     .section-header p { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem; line-height: 1.5; }
 
     .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; }
     .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem; }
     .stat-card .big-num { font-family: 'DM Mono', monospace; font-size: 2rem; font-weight: 500; color: var(--green); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.35rem; }
-    .stat-card .stat-label { font-size: 0.75rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .stat-card .stat-label { font-size: 0.75rem !important; font-weight: 600 !important; color: var(--text); margin-bottom: 0.2rem; }
     .stat-card .stat-sub { font-size: 0.7rem; color: var(--text-muted); line-height: 1.4; }
     .stat-card.highlight { background: var(--green); border-color: var(--green); grid-column: span 2; }
     .stat-card.highlight .big-num { color: #fff; font-size: 2.5rem; }
@@ -283,14 +283,15 @@
 
     .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
     .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; }
-    .faq-item summary { padding: 1rem 1.25rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item summary { padding: 1rem 1.25rem; font-size: 0.85rem !important; font-weight: 600 !important; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
     .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary { list-style: none; }
     .faq-item summary::after { content: '+'; font-size: 1.1rem; color: var(--green); font-weight: 700; transition: transform 0.2s; }
     .faq-item[open] summary::after { content: '−'; }
     .faq-answer { padding: 0 1.25rem 1rem; font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
 
     .cta-section { margin-top: 2.5rem; padding: 2rem; background: var(--green); border-radius: 1.25rem; text-align: center; }
-    .cta-section h3 { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .cta-section h3 { color: #fff; font-size: 1.1rem !important; font-weight: 700 !important; margin-bottom: 0.5rem; }
     .cta-section p { color: rgba(255,255,255,0.75); font-size: 0.82rem; margin-bottom: 1.25rem; }
     .cta-btn { display: inline-block; background: #fff; color: var(--green); font-weight: 700; font-size: 0.875rem; padding: 0.85rem 1.75rem; border-radius: 0.75rem; }
 
@@ -444,7 +445,7 @@
 
     <!-- Sitatbar prishistorikk-sammendrag for AI-crawlere (kan ikke lese Chart.js canvas) -->
     <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:1rem;padding:1.25rem;margin-bottom:1.5rem;">
-      <h3 style="font-size:0.85rem;font-weight:700;margin-bottom:0.75rem;">Prisutvikling for utvalgte dagligvarer i Norge (feb 2025 – feb 2026)</h3>
+      <h3 style="font-size:0.85rem !important;font-weight:700 !important;margin-bottom:0.75rem;">Prisutvikling for utvalgte dagligvarer i Norge (feb 2025 – feb 2026)</h3>
       <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.7;">
         <p style="margin-bottom:0.5rem;"><strong>Egg 18 stk (First Price):</strong> Hos KIWI steg prisen fra 49,90 kr i mars 2025 til 60,40 kr i januar 2026 – en økning på ca. 21 %. Hos Meny ble prisen observert til 57,40 kr i februar 2025 og 54,90 kr i juni 2025.</p>
         <p style="margin-bottom:0.5rem;"><strong>Kjøttdeig 14 % 400 g (First Price):</strong> Prisen hos KIWI steg fra 56,40 kr i februar 2025 til 64,90 kr i oktober 2025 – en økning på ca. 15 %.</p>

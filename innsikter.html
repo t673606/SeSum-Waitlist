@@ -119,6 +119,7 @@
   }
   </script>
 
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -129,6 +130,7 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    .gradient-blur { position: absolute; width: 300px; height: 300px; border-radius: 50%; filter: blur(80px); opacity: 0.4; pointer-events: none; }
     body {
       font-family: 'DM Sans', sans-serif;
       background: #fafafa;
@@ -151,23 +153,7 @@
       --card-bg: #ffffff;
     }
 
-    nav {
-      padding: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      
-      background: rgba(250,250,250,0.95);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav-brand { display: flex; align-items: center; gap: 0.5rem; }
-    .nav-brand img { height: 2.25rem; width: auto; border-radius: 0.75rem; }
-    .nav-brand span { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: #0f172a; }
-    .nav-link { font-size: 0.75rem; font-weight: 600; color: #64748b; }
-    .nav-link:hover { color: #334155; }
+    /* nav and footer handled by Tailwind */
 
     .hero {
       padding: 3rem 1.25rem 2rem;
@@ -292,7 +278,7 @@
     .val-high { color: #c1440e; }
     .val-neu { color: var(--text); }
 
-    .method-note { background: #f3f6f4; border: 1px solid var(--border); border-radius: 0.75rem; padding: 1rem 1.25rem; margin-top: 2.5rem; }
+    .method-note { background: #f8fafc; border: 1px solid var(--border); border-radius: 0.75rem; padding: 1rem 1.25rem; margin-top: 2.5rem; }
     .method-note p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
 
     .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -308,9 +294,7 @@
     .cta-section p { color: rgba(255,255,255,0.75); font-size: 0.82rem; margin-bottom: 1.25rem; }
     .cta-btn { display: inline-block; background: #fff; color: var(--green); font-weight: 700; font-size: 0.875rem; padding: 0.85rem 1.75rem; border-radius: 0.75rem; }
 
-    footer { padding: 1.5rem 1.25rem 3rem; max-width: 44rem; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); }
-    footer a { font-size: 0.75rem; color: #64748b; }
-    footer a:hover { color: #334155; }
+
 
 
     .chain-toggle {
@@ -338,15 +322,19 @@
   </style>
 </head>
 
-<body>
-  <nav>
-    <a href="/" class="nav-brand">
-      <img src="sesum-logo.png" alt="SeSum logo" width="36" height="36" style="border-radius:0.75rem;" />
-      <span>SeSum</span>
+<body class="min-h-screen overflow-x-hidden">
+  <div class="gradient-blur bg-emerald-200 top-0 right-0 -translate-y-1/2 translate-x-1/3 fixed"></div>
+  <div class="gradient-blur bg-teal-100 bottom-1/4 left-0 -translate-x-1/2 fixed"></div>
+
+  <nav class="px-5 py-5 flex items-center justify-between relative z-10">
+    <a href="/" class="flex items-center gap-2">
+      <img src="sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
+      <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
     </a>
-    <a href="/" class="nav-link">Til forsiden</a>
+    <a href="/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Til forsiden</a>
   </nav>
 
+  <main class="relative z-10">
   <div class="hero fade">
     <div class="data-badge">Basert på ekte handledata</div>
     <h1>Dagligvarepriser i Norge:<br/>hva koster maten <em>egentlig</em>?</h1>
@@ -372,7 +360,7 @@
     <p class="updated" data-live="updated_at">Sist oppdatert: februar 2026 · Oppdateres løpende</p>
   </div>
 
-  <main class="fade-3">
+  <div class="fade-3">
 
     <div class="section-header">
       <h2>Hva kan du spare?</h2>
@@ -582,15 +570,23 @@
       <a href="/" class="cta-btn">Få tidlig tilgang til SeSum</a>
     </div>
 
+  </div>
+
   </main>
 
-  <footer>
-    <a href="/">Forside</a>
-    <a href="/priser.html">Priser</a>
-    <a href="/metode.html">Metode</a>
-    <a href="/presse.html">Presse</a>
-    <a href="/personvern.html">Personvern</a>
-    <a href="mailto:hei@sesum.no">Kontakt</a>
+  <footer class="px-5 pb-8 relative z-10">
+    <div class="max-w-md mx-auto text-center space-y-3">
+      <div class="flex justify-center flex-wrap gap-4 text-xs text-slate-500">
+        <a href="/" class="hover:text-slate-700">Forside</a>
+        <a href="/priser.html" class="hover:text-slate-700">Priser</a>
+        <a href="/innsikter.html" class="hover:text-slate-700">Innsikter</a>
+        <a href="/metode.html" class="hover:text-slate-700">Metode</a>
+        <a href="/presse.html" class="hover:text-slate-700">Presse</a>
+        <a href="/personvern.html" class="hover:text-slate-700">Personvern</a>
+        <a href="mailto:hei@sesum.no" class="hover:text-slate-700">Kontakt</a>
+      </div>
+      <p class="text-[10px] text-slate-400">&copy; 2026 SeSum. Sammenlign dagligvarepriser i Norge. Laget i Norge.</p>
+    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>

@@ -419,6 +419,17 @@
     .focus\:ring-2:focus { box-shadow: 0 0 0 3px rgb(209 250 229); }
     .focus\:ring-emerald-100:focus { box-shadow: 0 0 0 3px rgb(209 250 229); }
 
+    /* === Donate button utilities === */
+    .border-2 { border-width: 2px; border-style: solid; }
+    .border-t { border-top: 1px solid; }
+    .max-w-\[100px\] { max-width: 100px; }
+    .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+    .pt-5 { padding-top: 1.25rem; }
+    .gap-1\.5 { gap: 0.375rem; }
+    .hover\:bg-sesum:hover { background-color: #2d6a4f; }
+    .hover\:text-white:hover { color: #fff; }
+    .hover\:opacity-90:hover { opacity: 0.9; }
+
     /* === Space utilities === */
     .space-y-3 > * + * { margin-top: 0.75rem; }
     .space-y-4 > * + * { margin-top: 1rem; }
@@ -508,8 +519,38 @@
             </svg>
           </div>
           <h3 class="text-base font-bold text-slate-900 mb-1">Du er på listen!</h3>
-          <p class="text-xs text-slate-500 mb-4">Vi sender e-post når det er din tur.</p>
-          <a href="/innsikter.html" style="display:inline-flex;align-items:center;gap:0.4rem;background:#2d6a4f;color:#fff;font-size:0.75rem;font-weight:600;padding:0.6rem 1.1rem;border-radius:0.75rem;text-decoration:none;">
+          <p class="text-xs text-slate-500 mb-5">Vi sender e-post når det er din tur.</p>
+
+          <!-- Støtt utvikleren -->
+          <div class="border-t border-slate-100 pt-5 mb-5">
+            <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold text-slate-800 mb-1">Støtt utvikleren</p>
+            <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+              SeSum bygges av en student ved siden av studier og jobb. Appen er gratis, men har reelle driftskostnader. En liten donasjon hjelper med å holde tjenesten i live.
+            </p>
+            <div class="flex gap-3 justify-center mb-3">
+              <a href="https://betal.vipps.no/dzj5qj" target="_blank" rel="noopener"
+                 class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
+                25 kr
+              </a>
+              <a href="https://betal.vipps.no/9cj8h5" target="_blank" rel="noopener"
+                 class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
+                50 kr
+              </a>
+              <a href="https://betal.vipps.no/mkmjnu" target="_blank" rel="noopener"
+                 class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
+                100 kr
+              </a>
+            </div>
+            <p class="text-[10px] text-slate-400">Betaling via Vipps</p>
+          </div>
+
+          <!-- Innsikter-knapp -->
+          <a href="/innsikter.html" class="inline-flex items-center gap-1.5 bg-sesum text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all active:scale-[0.97] hover:opacity-90">
             Se hva vi har funnet så langt
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           </a>
@@ -826,6 +867,38 @@
             Vi lanserer først på iPhone. Android-versjon er planlagt, men vi har ikke en konkret dato ennå.
           </div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Støtt utvikleren -->
+  <section id="stott" class="px-5 pb-12 relative z-10">
+    <div class="max-w-md mx-auto">
+      <div class="bg-white rounded-2xl border border-slate-100 p-5 text-center">
+        <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mx-auto mb-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+        </div>
+        <h2 class="text-base font-bold text-slate-900 mb-1">Støtt utvikleren</h2>
+        <p class="text-xs text-slate-500 mb-4 leading-relaxed">
+          SeSum bygges av en student ved siden av studier og jobb. Appen er gratis, men har reelle driftskostnader. En liten donasjon hjelper med å holde tjenesten i live.
+        </p>
+        <div class="flex gap-3 justify-center mb-3">
+          <a href="https://betal.vipps.no/dzj5qj" target="_blank" rel="noopener"
+             class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
+            25 kr
+          </a>
+          <a href="https://betal.vipps.no/9cj8h5" target="_blank" rel="noopener"
+             class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
+            50 kr
+          </a>
+          <a href="https://betal.vipps.no/mkmjnu" target="_blank" rel="noopener"
+             class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
+            100 kr
+          </a>
+        </div>
+        <p class="text-[10px] text-slate-400">Betaling via Vipps</p>
       </div>
     </div>
   </section>

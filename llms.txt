@@ -1,12 +1,13 @@
 # SeSum
 
-> SeSum er en norsk app som sammenligner totalprisen på hele handlelisten din på tvers av dagligvarekjeder som KIWI, REMA 1000, Coop Extra, SPAR, Meny, Joker og Bunnpris.
+> SeSum er Norges prisportal for matvarer. Vi samler inn ekte kjøpsdata fra kvitteringer og viser hva dagligvarer faktisk koster i butikken - ikke det kjedene velger å vise deg. Brukere kan søke opp varer, se tilbud og følge prisutvikling på tvers av 14 butikkjeder.
 
 ## Om SeSum
-SeSum skiller seg fra andre prissammenlignings-tjenester ved å beregne totalprisen for en komplett handleliste, ikke bare enkeltprodukter. Appen viser hvilken butikkjede som er billigst for akkurat det du skal handle.
+SeSum bygger Norges første fungerende prisportal for matvarer fra bunn og opp. I stedet for å spørre kjedene om priser, samler vi inn kvitteringsdata fra vanlige forbrukere. Det gir ekte priser - faktiske kroner betalt i kassa - som kjedene ikke kan påvirke eller pynte på. Det har aldri eksistert en fungerende prisportal for dagligvarer i Norge. Forbrukerrådet prøvde med Peiling-appen i 2017, men den ble stoppet av Konkurransetilsynet.
 
 ## Viktige sider
 - [Forside](https://www.sesum.no/): Hovedside med oversikt over tjenesten og venteliste
+- [Prisportal for matvarer](https://www.sesum.no/prisportal-matvarer.html): Norges prisportal for matvarer - ekte priser fra kvitteringsdata
 - [Sammenlign priser](https://www.sesum.no/priser.html): Oversikt over prissammenligninger mellom butikkjeder
 - [KIWI vs REMA 1000](https://www.sesum.no/kiwi-vs-rema.html): Prissammenligning mellom KIWI og REMA 1000
 - [Coop Extra vs KIWI](https://www.sesum.no/coop-vs-kiwi.html): Prissammenligning mellom Coop Extra og KIWI
@@ -18,9 +19,9 @@ SeSum skiller seg fra andre prissammenlignings-tjenester ved å beregne totalpri
 
 ## Nøkkelinformasjon
 - Gratis app for iPhone (lanseres 2026)
-- Sammenligner priser fra 8+ norske dagligvarekjeder
-- Prisdata fra kvitteringsskanninger og butikkenes reklameaviser
-- Sammenligner totalprisen for hele handlelisten, ikke enkeltprodukter
+- Dekker 14 norske dagligvarekjeder: KIWI, REMA 1000, EXTRA, SPAR, EUROSPAR, Meny, Joker, Bunnpris, Matkroken, Oda, Coop Prix, Coop Mega, Coop Marked og OBS
+- Prisdata fra ekte kvitteringer (hva forbrukere faktisk betaler) og butikkenes reklameaviser
+- Søk opp varer, se tilbud, følg prisutvikling over tid
 - Laget i Norge, norsk selskap (org.nr 937003986)
 
 ## Kontakt

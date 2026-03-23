@@ -88,59 +88,166 @@
     <div class="max-w-md mx-auto">
       <div class="text-center mb-6">
         <h1 class="text-2xl sm:text-3xl leading-tight font-bold text-slate-900 mb-2 animate-fade-up">Personvernerklæring – SeSum</h1>
-        <p class="text-xs text-slate-500 animate-fade-up delay-100">Sist oppdatert: 25. januar 2026</p>
+        <p class="text-xs text-slate-500 animate-fade-up delay-100">Sist oppdatert: 23. mars 2026</p>
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-100 p-5 space-y-4 text-sm text-slate-700 leading-relaxed animate-fade-up delay-200">
+
         <div>
           <h2 class="text-sm font-semibold text-slate-900 mb-1">1. Behandlingsansvarlig</h2>
-          <p>SeSum (org.nr 937003986), Norge. Kontakt: hei@sesum.no.</p>
+          <p>SeSum (org.nr 937003986), Norge.<br />Kontakt: hei@sesum.no</p>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">2. Hvilke opplysninger vi kan samle inn</h2>
-          <ul class="list-disc pl-5 space-y-1">
-            <li>Konto- og profildata (navn, e-post, brukernavn, bilde).</li>
-            <li>Innhold du legger inn (tekst, tilbakemeldinger, data fra bruk).</li>
-            <li>Bruks- og teknisk data (enhet, IP, nettleser, appaktivitet).</li>
-            <li>Lokasjon der du tillater det.</li>
-            <li>Betalings- og transaksjonsdata når betalte funksjoner lanseres.</li>
-            <li>Data vi mottar fra partnere eller offentlige kilder.</li>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">2. Hva SeSum gjør</h2>
+          <p>SeSum er en app for prissammenligning av dagligvarer i Norge. Appen lar deg skanne kvitteringer, sammenligne priser på tvers av butikkjeder, planlegge ukentlige måltider, bygge handlelister, og holde oversikt over hva du har i skapet.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">3. Hvilke opplysninger vi samler inn</h2>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Konto og profil</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>E-postadresse og passord (eller innlogging via Apple)</li>
+            <li>Visningsnavn og profilemoji</li>
+            <li>Kjønn, aldersgruppe, husholdningsstørrelse og antall barn</li>
+            <li>Kostvaner og allergier (valgfritt)</li>
+          </ul>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Kvitteringer og kjøpshistorikk</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Kvitteringsbilder og OCR-utlest tekst</li>
+            <li>Produkter, priser, rabatter, butikk og tidspunkt</li>
+            <li>Strekkoder (EAN) der tilgjengelig</li>
+          </ul>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Butikktilkoblinger</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Når du kobler til Rema 1000, Trumf (NorgesGruppen) eller Coop, lagrer vi krypterte tilgangstokener for å hente kvitteringene dine automatisk</li>
+            <li>Vi lagrer ikke passordene dine til disse tjenestene</li>
+          </ul>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Handlelister og måltidsplaner</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Handlelister du oppretter, inkludert produkter og mengder</li>
+            <li>Måltidsplaner med oppskrifter og ingredienser</li>
+            <li>Matlagingspreferanser og kostprofil</li>
+          </ul>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Skapbeholdning</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Estimert beholdning basert på kjøpshistorikk og beregnet forbruksrate</li>
+          </ul>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Hushold</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Hvis du oppretter eller blir med i et hushold, deles kvitteringer og handlelister med andre medlemmer</li>
+          </ul>
+
+          <p class="font-medium text-slate-800 mt-2 mb-1">Teknisk informasjon</p>
+          <ul class="list-disc pl-5 space-y-0.5">
+            <li>Enhetsinformasjon (appversjon, plattform)</li>
+            <li>Push-varslingstokener (Apple APNS)</li>
+            <li>Bruksstatistikk via PostHog (kan skrus av i appen)</li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">3. Hvorfor vi behandler data</h2>
-          <p>For å levere, forbedre og utvikle SeSum, analysere bruk, tilpasse innhold, kommunisere med deg, drive markedsføring, sikre drift og oppfylle lovkrav.</p>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">4. Rettslig grunnlag</h2>
+          <p>Vi behandler personopplysninger med følgende grunnlag i personvernforordningen (GDPR):</p>
+          <ul class="list-disc pl-5 space-y-1 mt-1">
+            <li><strong>Avtale (art. 6(1)(b)):</strong> For å levere tjenesten — kvitteringsbehandling, prissammenligning, handlelister, måltidsplanlegging og skapsporing.</li>
+            <li><strong>Samtykke (art. 6(1)(a)):</strong> Push-varsler, butikktilkoblinger (Rema/Trumf/Coop), AI-basert måltidsplanlegging, og analysedata (PostHog). Du kan trekke samtykke tilbake når som helst.</li>
+            <li><strong>Berettiget interesse (art. 6(1)(f)):</strong> Forbedring av tjenesten, feilretting og svindelforebygging.</li>
+            <li><strong>Rettslig forpliktelse (art. 6(1)(c)):</strong> Regnskap og lovkrav dersom betalte funksjoner innføres.</li>
+          </ul>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">4. Deling, samarbeid og salg av data</h2>
-          <p>Vi kan dele, lisensiere eller selge personopplysninger til leverandører, samarbeidspartnere og tredjeparter for drift, analyse, markedsføring, forskning eller andre kommersielle formål. Vi kan også dele aggregerte eller anonymiserte data. Ved fusjon, salg eller omorganisering kan data overføres som del av virksomheten.</p>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">5. AI-behandling</h2>
+          <p>For måltidsplanlegging og handlelisteforslag bruker vi AI-tjenester (Anthropic Claude og OpenAI). Følgende data kan sendes:</p>
+          <ul class="list-disc pl-5 space-y-0.5 mt-1">
+            <li>Husholdningsstørrelse og kostpreferanser</li>
+            <li>Aggregerte kjøpsmønstre (populære produktkategorier)</li>
+            <li>Valgte oppskrifter og ingredienslister</li>
+          </ul>
+          <p class="mt-1">Vi sender aldri navn, e-post, kvitteringsbilder eller fullstendig kjøpshistorikk til AI-tjenestene. OpenAI brukes kun til produktsøk (embeddings) uten personidentifiserbar informasjon.</p>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">5. Lagring og internasjonal overføring</h2>
-          <p>Data kan behandles i og utenfor Norge/EØS. Vi lagrer data så lenge det er nødvendig for formålene over, eller så lenge loven krever det.</p>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">6. Deling og salg av data</h2>
+          <p><strong>Vi selger aldri dine personopplysninger.</strong></p>
+          <p class="mt-1">Vi kan dele anonymiserte og aggregerte innsikter — for eksempel prisutviklingstrender eller populære produktkategorier per region. Slike data kan aldri spores tilbake til enkeltpersoner.</p>
+          <p class="mt-1">Vi deler personopplysninger kun med databehandlere som er nødvendige for å levere tjenesten (se punkt 7), og ved fusjon, salg eller omorganisering av virksomheten.</p>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">6. Dine rettigheter</h2>
-          <p>Du kan be om innsyn, retting, sletting, begrensning eller protestere mot behandling. Kontakt oss på hei@sesum.no.</p>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">7. Databehandlere</h2>
+          <p>Vi bruker følgende tredjeparter til å drifte tjenesten:</p>
+          <div class="mt-1 space-y-1.5">
+            <p><strong>Supabase</strong> (EU/Frankfurt) — database, autentisering og lagring.</p>
+            <p><strong>Anthropic</strong> (USA) — AI-basert måltidsplanlegging og oppskriftsgenerering.</p>
+            <p><strong>OpenAI</strong> (USA) — produktsøk via embeddings (ingen persondata).</p>
+            <p><strong>PostHog</strong> (EU) — analysedata (kan skrus av i appen).</p>
+            <p><strong>Apple</strong> (USA) — push-varsler via APNS.</p>
+            <p><strong>Google Cloud Platform</strong> (EU) — skyinfrastruktur.</p>
+          </div>
+          <p class="mt-1.5">Kassalapp (Norge) brukes for produktdata og har ikke tilgang til personopplysninger.</p>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">7. Informasjonskapsler</h2>
-          <p>Vi kan bruke informasjonskapsler og lignende teknologi for funksjonalitet, analyse og markedsføring.</p>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">8. Overføring utenfor EØS</h2>
+          <p>Noen av våre databehandlere er i USA (Anthropic, Apple). Overføringer skjer i henhold til EU-US Data Privacy Framework (DPF) og/eller EUs standardkontraktsklausuler (SCC). Vi har databehandleravtaler med alle leverandører.</p>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">8. Endringer</h2>
-          <p>Vi kan oppdatere denne erklæringen ved behov. Endringer trer i kraft når de publiseres.</p>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">9. Lagring og sletting</h2>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Aktive kontoer:</strong> Data lagres så lenge kontoen er aktiv.</li>
+            <li><strong>Inaktive kontoer:</strong> Etter 22 måneder uten aktivitet sender vi et varsel. Etter 24 måneder slettes kontoen og alle personopplysninger.</li>
+            <li><strong>Kontosletting:</strong> Du kan slette kontoen din når som helst i appen. Alle personopplysninger fjernes. Anonymiserte aggregater som allerede er beregnet, beholdes da de ikke kan spores tilbake til deg.</li>
+            <li><strong>Butikktokener:</strong> Slettes når du kobler fra butikken eller sletter kontoen.</li>
+            <li><strong>Kjøpsmønstre:</strong> Historikk eldre enn 180 dager slettes automatisk.</li>
+          </ul>
         </div>
 
         <div>
-          <h2 class="text-sm font-semibold text-slate-900 mb-1">9. Kontakt</h2>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">10. Dine rettigheter</h2>
+          <p>Etter personvernforordningen (GDPR) har du rett til:</p>
+          <ul class="list-disc pl-5 space-y-0.5 mt-1">
+            <li><strong>Innsyn</strong> — se hvilke data vi har om deg</li>
+            <li><strong>Retting</strong> — korrigere feilaktige opplysninger</li>
+            <li><strong>Sletting</strong> — be om at data fjernes</li>
+            <li><strong>Dataportabilitet</strong> — få utlevert dine data i et maskinlesbart format</li>
+            <li><strong>Begrensning</strong> — begrense vår behandling</li>
+            <li><strong>Protest</strong> — protestere mot behandling basert på berettiget interesse</li>
+            <li><strong>Trekke samtykke</strong> — du kan når som helst trekke samtykke du har gitt</li>
+          </ul>
+          <p class="mt-1">Kontakt oss på hei@sesum.no for å utøve rettighetene dine.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">11. Klagerett</h2>
+          <p>Hvis du mener vi behandler personopplysningene dine i strid med regelverket, kan du klage til Datatilsynet: <a href="https://www.datatilsynet.no" class="text-sesum underline">datatilsynet.no</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">12. Informasjonskapsler</h2>
+          <p>Nettsiden sesum.no bruker informasjonskapsler fra PostHog for analyse av besøksdata. Appen bruker ikke informasjonskapsler.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">13. Aldersgrense</h2>
+          <p>SeSum er for brukere som er 13 år eller eldre, i henhold til personopplysningsloven § 5.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">14. Endringer</h2>
+          <p>Vi kan oppdatere denne erklæringen ved behov. Ved vesentlige endringer varsler vi deg via e-post eller i appen. Endringer trer i kraft når de publiseres.</p>
+        </div>
+
+        <div>
+          <h2 class="text-sm font-semibold text-slate-900 mb-1">15. Kontakt</h2>
           <p>All post: hei@sesum.no<br />Support: support@sesum.no</p>
         </div>
       </div>

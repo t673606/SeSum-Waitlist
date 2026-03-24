@@ -409,7 +409,7 @@
 
     <!-- Sitatbar tekst for AI-crawlere -->
     <div class="insight-box">
-      <p>En gjennomsnittlig norsk familie bruker over 60 000 kroner på dagligvarer årlig, ifølge SSBs forbruksundersøkelse. SeSum-data fra 264 kvitteringer med tilstrekkelig kjedeoverlapp viser at du i snitt kan spare <strong>49 kr per handletur</strong> ved å velge billigste butikk – det tilsvarer ca. <strong>2 526 kr spart per år</strong>. Gjennomsnittlig prisforskjell mellom butikken du handler i og den billigste er <strong>18,0 %</strong>.</p>
+      <p>En gjennomsnittlig norsk familie bruker over 60 000 kroner på dagligvarer årlig, ifølge SSBs forbruksundersøkelse. SeSum-data fra <span data-live="sample_size">264</span> kvitteringer med tilstrekkelig kjedeoverlapp viser at du i snitt kan spare <strong><span data-live="avg_savings_inline">49</span> kr per handletur</strong> ved å velge billigste butikk – det tilsvarer ca. <strong><span data-live="yearly_savings_inline">2 526</span> kr spart per år</strong>. Gjennomsnittlig prisforskjell mellom butikken du handler i og den billigste er <strong><span data-live="avg_diff_pct_inline">18,0</span> %</strong>.</p>
     </div>
 
     <div class="section-header">
@@ -567,7 +567,7 @@
       </details>
       <details class="faq-item">
         <summary>Hvor mye kan du spare ved å bytte dagligvarebutikk?</summary>
-        <div class="faq-answer">Basert på 264 kvitteringer med tilstrekkelig kjedeoverlapp, kan en gjennomsnittlig handleturt spare ca. 49 kr ved å velge billigste butikk. Over 52 ukentlige handleturer tilsvarer det ca. 2 526 kr spart per år – uten å endre hva du kjøper. SIFOs referansebudsjett for mat ligger på ca. 5 500 kr/mnd for en familie med to barn, så dette sparingspotensialet utgjør en merkbar forskjell.</div>
+        <div class="faq-answer">Basert på <span data-live="sample_size">264</span> kvitteringer med tilstrekkelig kjedeoverlapp, kan en gjennomsnittlig handleturt spare ca. <span data-live="avg_savings_inline">49</span> kr ved å velge billigste butikk. Over 52 ukentlige handleturer tilsvarer det ca. <span data-live="yearly_savings_inline">2 526</span> kr spart per år – uten å endre hva du kjøper. SIFOs referansebudsjett for mat ligger på ca. 5 500 kr/mnd for en familie med to barn, så dette sparingspotensialet utgjør en merkbar forskjell.</div>
       </details>
       <details class="faq-item">
         <summary>Hvilken butikk er billigst – KIWI, Meny eller SPAR?</summary>
@@ -575,7 +575,7 @@
       </details>
       <details class="faq-item">
         <summary>Hvor store er prisforskjellene mellom norske dagligvarebutikker?</summary>
-        <div class="faq-answer">Gjennomsnittlig prisforskjell mellom butikken du handler i og den billigste er 18,0 %, basert på SeSum-data fra 5 274 kvitteringer. For enkeltprodukter kan forskjellen være mye større – opptil 136 % for avocado og 117 % for Kvikk Lunsj, selv mellom butikker i samme kjede (NorgesGruppen). De største prisforskjellene finnes typisk på ferskvarer, merkevareprodukter og importvarer.</div>
+        <div class="faq-answer">Gjennomsnittlig prisforskjell mellom butikken du handler i og den billigste er <span data-live="avg_diff_pct_inline">18,0</span> %, basert på SeSum-data fra <span data-live="total_receipts_exact">5 274</span> kvitteringer. For enkeltprodukter kan forskjellen være mye større – opptil 136 % for avocado og 117 % for Kvikk Lunsj, selv mellom butikker i samme kjede (NorgesGruppen). De største prisforskjellene finnes typisk på ferskvarer, merkevareprodukter og importvarer.</div>
       </details>
       <details class="faq-item">
         <summary>Hvordan har matprisene utviklet seg i Norge i 2025–2026?</summary>
@@ -584,7 +584,7 @@
     </div>
 
     <div class="method-note">
-      <p><strong>Om datagrunnlaget:</strong> Tallene er basert på 5 274 kvitteringer fra 62 betatestere via Trumf-integrasjon. Prishistorikk krever 2+ ulike butikklokaler innen samme kjede som observerer prisen i samme uke – kun prisendringer registreres. 1 176 prisendringer er sporet for 622 produkter på tvers av KIWI (965), Meny (186), SPAR (21) og Joker (4). Sparingsestimater er basert på 264 kvitteringer med tilstrekkelig kjedeoverlapp. REMA 1000 og Coop er underrepresentert i nåværende betadatasett.</p>
+      <p><strong>Om datagrunnlaget:</strong> Tallene er basert på <span data-live="total_receipts_exact">5 274</span> kvitteringer fra <span data-live="total_users">62</span> betatestere via Trumf-integrasjon. Prishistorikk krever 2+ ulike butikklokaler innen samme kjede som observerer prisen i samme uke – kun prisendringer registreres. <span data-live="price_changes_method">1 176</span> prisendringer er sporet for <span data-live="products_tracked_method">622</span> produkter<span data-live="store_breakdown"> på tvers av KIWI (965), Meny (186), SPAR (21) og Joker (4)</span>. Sparingsestimater er basert på <span data-live="sample_size">264</span> kvitteringer med tilstrekkelig kjedeoverlapp. REMA 1000 og Coop er underrepresentert i nåværende betadatasett.</p>
     </div>
 
     <div class="cta-section">
@@ -636,9 +636,61 @@
       return months[d.getMonth()] + ' ' + d.getFullYear();
     }
 
+    // Update ALL elements with matching data-live attribute
     function update(key, value) {
-      var el = document.querySelector('[data-live="' + key + '"]');
-      if (el) el.textContent = value;
+      document.querySelectorAll('[data-live="' + key + '"]').forEach(function(el) {
+        el.textContent = value;
+      });
+    }
+
+    // Update meta tags and JSON-LD for SEO
+    function updateMeta(d) {
+      var r = fmt(d.overview.total_receipts);
+      var pc = fmt(d.overview.price_changes_tracked);
+
+      // Meta description
+      var desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute('content', 'Hva koster dagligvarer i Norge egentlig? SeSum har analysert ' + r + '+ kvitteringer og sporet ' + pc + ' prisendringer. Se prisutvikling, prisforskjeller og hva du kan spare.');
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', 'SeSum har analysert ' + r + '+ kvitteringer og sporet ' + pc + ' prisendringer. Se hva maten faktisk koster.');
+      var twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twDesc) twDesc.setAttribute('content', r + '+ kvitteringer analysert. Se hva dagligvarer faktisk koster i norske butikker.');
+
+      // Title and OG title
+      var titleStr = 'Prisutvikling dagligvarer Norge 2025\u20132026 | Ekte data fra ' + r + '+ kvitteringer | SeSum';
+      document.title = titleStr;
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', titleStr.replace(' | SeSum', ''));
+
+      // JSON-LD
+      var ldEl = document.querySelector('script[type="application/ld+json"]');
+      if (ldEl) {
+        try {
+          var ld = JSON.parse(ldEl.textContent);
+          var graph = ld['@graph'];
+          if (graph) {
+            // WebPage
+            graph[0].name = titleStr.replace(' | SeSum', '');
+            graph[0].description = 'SeSum har analysert ' + r + '+ kvitteringer og sporet ' + pc + ' prisendringer.';
+            graph[0].dateModified = new Date().toISOString().slice(0, 10);
+            // Dataset
+            var ds = graph[1];
+            ds.description = 'Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert p\u00e5 ' + fmt(d.overview.total_receipts) + ' kvitteringer skannet av ' + d.overview.total_users + ' betatestere via Trumf-integrasjon. Dekker ' + fmt(d.overview.products_with_history) + ' produkter med ' + pc + ' sporede prisendringer.';
+            ds.variableMeasured[1].value = String(d.overview.price_changes_tracked);
+            ds.variableMeasured[2].value = String(d.overview.products_with_history);
+            ds.variableMeasured[3].value = String(d.overview.total_receipts);
+            // FAQ answers with dynamic numbers
+            if (d.savings && graph[2] && graph[2].mainEntity) {
+              var faq = graph[2].mainEntity;
+              // FAQ 2: savings
+              if (faq[1]) faq[1].acceptedAnswer.text = 'Basert p\u00e5 ' + d.savings.sample_size + ' kvitteringer med tilstrekkelig kjedeoverlapp, kan en gjennomsnittlig norsk handleturt spare ca. ' + d.savings.avg_per_trip + ' kr ved \u00e5 velge billigste butikk. Over 52 ukentlige handleturer tilsvarer det ca. ' + fmt(d.savings.yearly_estimate) + ' kr spart per \u00e5r, uten \u00e5 endre hva du kj\u00f8per.';
+              // FAQ 4: price diff
+              if (faq[3]) faq[3].acceptedAnswer.text = 'Gjennomsnittlig prisforskjell mellom butikken du handler i og den billigste er ' + String(d.savings.avg_price_diff_pct).replace('.', ',') + ' %, basert p\u00e5 SeSum-data fra ' + fmt(d.overview.total_receipts) + ' kvitteringer. For enkeltprodukter kan forskjellen v\u00e6re mye st\u00f8rre \u2013 opptil 136 % for avocado og 117 % for Kvikk Lunsj.';
+            }
+          }
+          ldEl.textContent = JSON.stringify(ld);
+        } catch(e) {}
+      }
     }
 
     fetch(API, {
@@ -653,17 +705,36 @@
       update('price_changes', fmt(d.overview.price_changes_tracked));
       update('products_tracked', fmt(d.overview.products_with_history));
       update('chains_count', d.overview.chains_with_curves + ' kjeder');
-      update('updated_at', 'Sist oppdatert: ' + fmtDate(d.generated_at) + ' · Oppdateres løpende');
+      update('updated_at', 'Sist oppdatert: ' + fmtDate(d.generated_at) + ' \u00b7 Oppdateres l\u00f8pende');
 
-      // Savings stats
+      // Savings stats (cards)
       if (d.savings) {
         update('yearly_savings', fmt(d.savings.yearly_estimate) + ' kr');
         update('avg_savings', d.savings.avg_per_trip + ' kr');
         update('avg_diff_pct', String(d.savings.avg_price_diff_pct).replace('.', ',') + ' %');
+        // Inline savings (text paragraphs, FAQ answers, method note)
+        update('avg_savings_inline', d.savings.avg_per_trip);
+        update('yearly_savings_inline', fmt(d.savings.yearly_estimate));
+        update('avg_diff_pct_inline', String(d.savings.avg_price_diff_pct).replace('.', ','));
+        update('sample_size', d.savings.sample_size);
       }
 
-      // Data badge
+      // Data badge + exact count
       update('total_receipts_badge', fmt(d.overview.total_receipts) + '+');
+      update('total_receipts_exact', fmt(d.overview.total_receipts));
+      update('total_users', d.overview.total_users);
+      update('price_changes_method', fmt(d.overview.price_changes_tracked));
+      update('products_tracked_method', fmt(d.overview.products_with_history));
+
+      // Price changes by chain for method note (e.g. "på tvers av KIWI (3201), Meny (520)...")
+      if (d.price_changes_by_chain) {
+        var parts = d.price_changes_by_chain.map(function(s) {
+          return s.chain + ' (' + fmt(s.count) + ')';
+        });
+        if (parts.length > 0) {
+          update('store_breakdown', ' p\u00e5 tvers av ' + parts.join(', '));
+        }
+      }
 
       // Top products
       if (d.top_products) {
@@ -674,13 +745,16 @@
             html += '<div class="product-item">'
               + '<span class="product-rank">' + (i + 1) + '</span>'
               + '<div class="product-info"><div class="name">' + p.name + '</div>'
-              + '<div class="count">' + fmt(p.purchases) + ' kjøp</div></div>'
+              + '<div class="count">' + fmt(p.purchases) + ' kj\u00f8p</div></div>'
               + '<span class="product-price">~' + p.avg_price + ' kr</span>'
               + '</div>';
           });
           list.innerHTML = html;
         }
       }
+
+      // Update meta tags and JSON-LD
+      updateMeta(d);
     })
     .catch(function() { /* Silent fail – static fallbacks remain */ });
   })();

@@ -1,0 +1,30 @@
+name: Update innsikter.html stats
+
+on:
+  schedule:
+    - cron: '15 6 * * *'   # 06:15 UTC = 08:15 norsk tid, daglig
+  workflow_dispatch:        # manuell kjøring via GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch live stats and update fallbacks
+        run: node scripts/update-innsikter-stats.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add innsikter.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update innsikter.html stats from live data"
+            git push
+          fi

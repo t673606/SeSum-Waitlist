@@ -116,19 +116,22 @@ async function main() {
   html = updateDataLive(html, 'rema_cheaper_pct', (remaWins/total*100).toFixed(1).replace('.', ','));
   html = updateDataLive(html, 'kiwi_cheaper_pct', (kiwiWins/total*100).toFixed(1).replace('.', ','));
 
-  // Build price table HTML
+  // Build price table HTML (with sale badges)
+  const saleTag = ' <span class="sale-badge">tilbud</span>';
   const tableRows = featured.sort((a, b) => Math.abs(Number(b.diff_kr)) - Math.abs(Number(a.diff_kr))).map(p => {
     const rp = Number(p.rema_price);
     const kp = Number(p.kiwi_price);
     const diff = Number(p.diff_kr);
     const rClass = rp <= kp ? 'price-cheap' : '';
     const kClass = kp <= rp ? 'price-cheap' : '';
+    const rSale = p.rema_on_sale ? saleTag : '';
+    const kSale = p.kiwi_on_sale ? saleTag : '';
     const diffStr = diff > 0 ? `+${fmt(diff.toFixed(0))} kr` : diff < 0 ? `${fmt(diff.toFixed(0))} kr` : 'lik';
     const diffClass = diff === 0 ? '' : diff > 0 ? 'diff-rema' : 'diff-kiwi';
     return `            <tr>
               <td class="pl-4">${p.product_name}</td>
-              <td class="text-right ${rClass}">${fmtKr(rp)}</td>
-              <td class="text-right ${kClass}">${fmtKr(kp)}</td>
+              <td class="text-right ${rClass}">${fmtKr(rp)}${rSale}</td>
+              <td class="text-right ${kClass}">${fmtKr(kp)}${kSale}</td>
               <td class="text-right pr-4"><span class="diff-badge ${diffClass}">${diffStr}</span></td>
             </tr>`;
   }).join('\n');

@@ -379,7 +379,7 @@
     }
     /* Hero background image with bottom fade */
     .hero-bg {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
@@ -397,6 +397,7 @@
     @media (max-width: 640px) {
       .hero-bg { height: 40vh; }
       .hero-bg img { object-fit: contain; object-position: center center; }
+      .hero { padding-top: 15vh; }
     }
     .hero-bg::after {
       content: '';

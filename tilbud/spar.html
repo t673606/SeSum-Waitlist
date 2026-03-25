@@ -114,18 +114,14 @@
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
       <h1 class="text-2xl font-bold text-slate-900 mb-1">SPAR tilbud</h1>
-      <p class="text-sm text-slate-500 mb-4">50 varer på tilbud denne uken (23.3–29.3.2026). Oppdateres daglig.</p>
+      <p class="text-sm text-slate-500 mb-4">50 varer på tilbud denne uken (23.3–29.3.2026)</p>
 
-      <!-- AI-crawlable prose -->
-      <div class="insight-prose" style="background:#f0fdf4;border-left:3px solid #2d6a4f;border-radius:0.75rem;padding:0.85rem 1rem;margin-bottom:1rem">
-        <p style="font-size:0.8rem;color:#1b4332;line-height:1.6;margin:0"><strong>Hva er på tilbud hos SPAR denne uken?</strong> SPAR har 50 varer på tilbud med opptil 41% rabatt. Blant de beste tilbudene: Appelsiner løsvekt til 3,07 kr (-41%), Sørlandsis Sjokolade u/Tilsatt Sukker 1,2l til 44,94 kr (-40%), Nyt Iskrem Saltkaramell 0,5l Hennig-Olsen til 45,54 kr (-40%), Sørlandsis Sjokokirsj 1l Hennig-Olsen Is til 47,94 kr (-40%), Sørlandsis Skogsbær 0,95l Hennig-Olsen-Is til 47,94 kr (-40%). Sist oppdatert 2026-03-25.</p>
+      <!-- AI-crawlable prose (visually hidden, readable by crawlers) -->
+      <div class="insight-prose" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <p>Hva er på tilbud hos SPAR denne uken? SPAR har 50 varer på tilbud med opptil 41% rabatt. Blant de beste tilbudene: Appelsiner løsvekt til 3,07 kr (-41%), Sørlandsis Sjokolade u/Tilsatt Sukker 1,2l til 44,94 kr (-40%), Nyt Iskrem Saltkaramell 0,5l Hennig-Olsen til 45,54 kr (-40%), Sørlandsis Sjokokirsj 1l Hennig-Olsen Is til 47,94 kr (-40%), Sørlandsis Skogsbær 0,95l Hennig-Olsen-Is til 47,94 kr (-40%). Sist oppdatert 2026-03-25.</p>
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.5rem">
-          <h2 class="text-sm font-semibold text-slate-900">Topp 50 tilbud</h2>
-          <span style="font-size:0.68rem;color:#94a3b8">Sortert etter rabatt</span>
-        </div>
           <div style="display:flex;align-items:center;padding:0.7rem 0;border-bottom:1px solid #f1f5f9;gap:0.75rem">
             <img src="https://glpowwptzbokwtkbsnko.supabase.co/storage/v1/object/public/product_photos/98a02763-df47-46c3-9486-5aba2de0f127/appelsin-loesvekt.png" alt="" style="width:44px;height:44px;object-fit:contain;border-radius:0.5rem;flex-shrink:0" loading="lazy" />
             <div style="flex:1;min-width:0">
@@ -236,6 +232,16 @@
               <div style="font-size:0.65rem;font-weight:700;color:#dc2626;background:#fef2f2;padding:0.1rem 0.35rem;border-radius:0.2rem;display:inline-block">-30%</div>
             </div>
           </div>
+      </div>
+
+      <!-- App pitch - after 10 deals, before the rest -->
+      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white;text-align:center">
+        <h3 style="font-size:1.1rem;font-weight:700;margin:0 0 0.75rem 0">Se alle tilbud i SeSum-appen</h3>
+        <p style="font-size:0.82rem;opacity:0.9;margin:0 0 0.5rem 0;line-height:1.5">Filtrer på kategori · Sammenlign på tvers av kjeder<br/>Få varsel på favoritter · Se om tilbudet faktisk er billig</p>
+        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none;margin-top:0.5rem">Få tidlig tilgang</a>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">
           <div style="display:flex;align-items:center;padding:0.7rem 0;border-bottom:1px solid #f1f5f9;gap:0.75rem">
             <img src="https://bilder.ngdata.no/7038010042461/kmh/large.jpg" alt="" style="width:44px;height:44px;object-fit:contain;border-radius:0.5rem;flex-shrink:0" loading="lazy" />
             <div style="flex:1;min-width:0">
@@ -676,20 +682,6 @@
               <div style="font-size:0.65rem;font-weight:700;color:#dc2626;background:#fef2f2;padding:0.1rem 0.35rem;border-radius:0.2rem;display:inline-block">-30%</div>
             </div>
           </div>
-        <p style="font-size:0.75rem;color:#64748b;text-align:center;margin-top:1rem;padding-top:0.75rem;border-top:1px solid #e2e8f0">Viser topp 50 av SPAR sine tilbud denne uken.</p>
-      </div>
-
-      <!-- App pitch -->
-      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white">
-        <h3 style="font-size:1rem;font-weight:700;margin:0 0 0.5rem 0">Se alle tilbud i SeSum-appen</h3>
-        <ul style="font-size:0.8rem;line-height:1.7;margin:0 0 1rem 0;padding-left:1.2rem;opacity:0.9">
-          <li>Alle tilbud fra SPAR – ikke bare topp 50</li>
-          <li>Filtrer på kategori: kjøtt, meieri, frukt, drikke osv.</li>
-          <li>Sammenlign tilbud på tvers av alle butikkjeder</li>
-          <li>Få varsel når favorittvaren din er på tilbud</li>
-          <li>Se prishistorikk – er tilbudsprisen faktisk billig?</li>
-        </ul>
-        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none">Få tidlig tilgang</a>
       </div>
 
       <!-- FAQ -->

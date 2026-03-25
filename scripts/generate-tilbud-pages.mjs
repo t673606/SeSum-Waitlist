@@ -44,7 +44,7 @@ function buildChainPage(chain, deals, allChains) {
   const today = new Date().toISOString().slice(0, 10);
   const week = weekLabel();
 
-  const dealRows = deals.map(d => {
+  function renderDeal(d) {
     const discount = d.discount_percent ? `-${Math.round(d.discount_percent)}%` : '';
     const origPrice = d.original_price ? `<span style="text-decoration:line-through;color:#94a3b8;font-size:0.7rem;margin-right:0.3rem">${fmtKr(d.original_price)}</span>` : '';
     return `          <div style="display:flex;align-items:center;padding:0.7rem 0;border-bottom:1px solid #f1f5f9;gap:0.75rem">
@@ -58,7 +58,9 @@ function buildChainPage(chain, deals, allChains) {
               ${discount ? `<div style="font-size:0.65rem;font-weight:700;color:#dc2626;background:#fef2f2;padding:0.1rem 0.35rem;border-radius:0.2rem;display:inline-block">${discount}</div>` : ''}
             </div>
           </div>`;
-  }).join('\n');
+  }
+  const topDeals = deals.slice(0, 10).map(renderDeal).join('\n');
+  const restDeals = deals.slice(10).map(renderDeal).join('\n');
 
   const otherChains = allChains.filter(c => c !== chain).map(c =>
     `            <a href="/tilbud/${slugifyChain(c)}.html" style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;font-size:0.85rem;color:#334155;text-decoration:none;border-bottom:1px solid #f1f5f9">${escHtml(c)} tilbud <span style="color:#94a3b8">\u203a</span></a>`
@@ -164,34 +166,25 @@ function buildChainPage(chain, deals, allChains) {
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
       <h1 class="text-2xl font-bold text-slate-900 mb-1">${escHtml(chain)} tilbud</h1>
-      <p class="text-sm text-slate-500 mb-4">${deals.length} varer p\u00e5 tilbud denne uken (${week}). Oppdateres daglig.</p>
+      <p class="text-sm text-slate-500 mb-4">${deals.length} varer p\u00e5 tilbud denne uken (${week})</p>
 
-      <!-- AI-crawlable prose -->
-      <div class="insight-prose" style="background:#f0fdf4;border-left:3px solid #2d6a4f;border-radius:0.75rem;padding:0.85rem 1rem;margin-bottom:1rem">
-        <p style="font-size:0.8rem;color:#1b4332;line-height:1.6;margin:0"><strong>Hva er p\u00e5 tilbud hos ${escHtml(chain)} denne uken?</strong> ${escHtml(chain)} har ${deals.length} varer p\u00e5 tilbud med opptil ${deals[0]?.discount_percent ? Math.round(deals[0].discount_percent) : '?'}% rabatt. Blant de beste tilbudene: ${proseDeals}. Sist oppdatert ${today}.</p>
+      <!-- AI-crawlable prose (visually hidden, readable by crawlers) -->
+      <div class="insight-prose" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <p>Hva er p\u00e5 tilbud hos ${escHtml(chain)} denne uken? ${escHtml(chain)} har ${deals.length} varer p\u00e5 tilbud med opptil ${deals[0]?.discount_percent ? Math.round(deals[0].discount_percent) : '?'}% rabatt. Blant de beste tilbudene: ${proseDeals}. Sist oppdatert ${today}.</p>
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">
-        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.5rem">
-          <h2 class="text-sm font-semibold text-slate-900">Topp 50 tilbud</h2>
-          <span style="font-size:0.68rem;color:#94a3b8">Sortert etter rabatt</span>
-        </div>
-${dealRows}
-        <p style="font-size:0.75rem;color:#64748b;text-align:center;margin-top:1rem;padding-top:0.75rem;border-top:1px solid #e2e8f0">Viser topp 50 av ${escHtml(chain)} sine tilbud denne uken.</p>
+${topDeals}
       </div>
 
-      <!-- App pitch -->
-      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white">
-        <h3 style="font-size:1rem;font-weight:700;margin:0 0 0.5rem 0">Se alle tilbud i SeSum-appen</h3>
-        <ul style="font-size:0.8rem;line-height:1.7;margin:0 0 1rem 0;padding-left:1.2rem;opacity:0.9">
-          <li>Alle tilbud fra ${escHtml(chain)} \u2013 ikke bare topp 50</li>
-          <li>Filtrer p\u00e5 kategori: kj\u00f8tt, meieri, frukt, drikke osv.</li>
-          <li>Sammenlign tilbud p\u00e5 tvers av alle butikkjeder</li>
-          <li>F\u00e5 varsel n\u00e5r favorittvaren din er p\u00e5 tilbud</li>
-          <li>Se prishistorikk \u2013 er tilbudsprisen faktisk billig?</li>
-        </ul>
-        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none">F\u00e5 tidlig tilgang</a>
+      <!-- App pitch - after 10 deals, before the rest -->
+      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white;text-align:center">
+        <h3 style="font-size:1.1rem;font-weight:700;margin:0 0 0.75rem 0">Se alle tilbud i SeSum-appen</h3>
+        <p style="font-size:0.82rem;opacity:0.9;margin:0 0 0.5rem 0;line-height:1.5">Filtrer p\u00e5 kategori \u00b7 Sammenlign p\u00e5 tvers av kjeder<br/>F\u00e5 varsel p\u00e5 favoritter \u00b7 Se om tilbudet faktisk er billig</p>
+        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none;margin-top:0.5rem">F\u00e5 tidlig tilgang</a>
       </div>
+
+      ${restDeals ? `<div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">\n${restDeals}\n      </div>` : ''}
 
       <!-- FAQ -->
       <div class="bg-white rounded-2xl border border-slate-100 p-5 mb-4">

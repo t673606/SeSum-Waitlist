@@ -172,8 +172,25 @@ function buildChainPage(chain, deals, allChains) {
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">
-        <h2 class="text-sm font-semibold text-slate-900 mb-2">Beste tilbud</h2>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.5rem">
+          <h2 class="text-sm font-semibold text-slate-900">Topp 50 tilbud</h2>
+          <span style="font-size:0.68rem;color:#94a3b8">Sortert etter rabatt</span>
+        </div>
 ${dealRows}
+        <p style="font-size:0.75rem;color:#64748b;text-align:center;margin-top:1rem;padding-top:0.75rem;border-top:1px solid #e2e8f0">Viser topp 50 av ${escHtml(chain)} sine tilbud denne uken.</p>
+      </div>
+
+      <!-- App pitch -->
+      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white">
+        <h3 style="font-size:1rem;font-weight:700;margin:0 0 0.5rem 0">Se alle tilbud i SeSum-appen</h3>
+        <ul style="font-size:0.8rem;line-height:1.7;margin:0 0 1rem 0;padding-left:1.2rem;opacity:0.9">
+          <li>Alle tilbud fra ${escHtml(chain)} \u2013 ikke bare topp 50</li>
+          <li>Filtrer p\u00e5 kategori: kj\u00f8tt, meieri, frukt, drikke osv.</li>
+          <li>Sammenlign tilbud p\u00e5 tvers av alle butikkjeder</li>
+          <li>F\u00e5 varsel n\u00e5r favorittvaren din er p\u00e5 tilbud</li>
+          <li>Se prishistorikk \u2013 er tilbudsprisen faktisk billig?</li>
+        </ul>
+        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none">F\u00e5 tidlig tilgang</a>
       </div>
 
       <!-- FAQ -->
@@ -187,13 +204,6 @@ ${dealRows}
           <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">N\u00e5r oppdateres ${escHtml(chain)} tilbud?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
           <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">Tilbudene hos ${escHtml(chain)} oppdateres vanligvis hver mandag. SeSum henter nye tilbud daglig.</p>
         </details>
-      </div>
-
-      <div class="text-center pt-2 mb-6">
-        <p class="text-sm text-slate-600 mb-3">F\u00e5 varsel n\u00e5r favorittvaren din er p\u00e5 tilbud</p>
-        <a href="/" class="inline-block bg-[#2d6a4f] hover:bg-[#1b4332] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all active:scale-[0.97]">
-          F\u00e5 tidlig tilgang til SeSum
-        </a>
       </div>
 
       <div class="bg-white rounded-2xl border border-slate-100 p-5 mb-4">

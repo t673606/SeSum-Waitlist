@@ -21,6 +21,7 @@
   else if (path.startsWith('/tilbud')) active = 'Tilbud';
   else if (path.indexOf('-vs-') !== -1) active = 'Sammenlign';
   else if (path.startsWith('/innsikter')) active = 'Innsikter';
+  else if (path.startsWith('/prisportal')) active = 'Prisportal';
 
   if (active) {
     document.querySelectorAll('.site-nav-links a, .site-nav-mobile a').forEach(function (a) {

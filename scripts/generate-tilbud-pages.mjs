@@ -48,7 +48,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
     const discount = d.discount_percent ? `-${Math.round(d.discount_percent)}%` : '';
     const origPrice = d.original_price ? `<span style="text-decoration:line-through;color:#94a3b8;font-size:0.7rem;margin-right:0.3rem">${fmtKr(d.original_price)}</span>` : '';
     return `          <div style="display:flex;align-items:center;padding:0.7rem 0;border-bottom:1px solid #f1f5f9;gap:0.75rem">
-            ${d.image ? `<img src="${escHtml(d.image)}" alt="" style="width:44px;height:44px;object-fit:contain;border-radius:0.5rem;flex-shrink:0" loading="lazy" />` : '<div style="width:44px;height:44px;background:#f1f5f9;border-radius:0.5rem;flex-shrink:0"></div>'}
+            ${d.image ? `<img src="${escHtml(d.image)}" alt="" style="width:44px;height:44px;object-fit:contain;border-radius:0.5rem;flex-shrink:0" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><div style="width:44px;height:44px;background:#f1f5f9;border-radius:0.5rem;flex-shrink:0;display:none"></div>` : '<div style="width:44px;height:44px;background:#f1f5f9;border-radius:0.5rem;flex-shrink:0"></div>'}
             <div style="flex:1;min-width:0">
               <div style="font-size:0.82rem;font-weight:500;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(d.product_name)}</div>
               <div style="font-size:0.68rem;color:#94a3b8">Gyldig til ${fmtDate(d.valid_until)}</div>

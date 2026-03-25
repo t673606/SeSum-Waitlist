@@ -354,14 +354,13 @@
     }
     /* Hero background image with bottom fade */
     .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       width: 100%;
-      height: 520px;
+      height: 420px;
       z-index: 0;
       overflow: hidden;
       pointer-events: none;
+      margin-bottom: -320px;
     }
     .hero-bg img {
       width: 100%;
@@ -370,9 +369,9 @@
       object-position: center top;
     }
     @media (max-width: 640px) {
-      .hero-bg { height: 40vh; }
+      .hero-bg { height: 35vh; margin-bottom: -25vh; }
       .hero-bg img { object-fit: contain; object-position: center center; }
-      .hero { padding-top: 15vh; }
+      .hero { padding-top: 12vh; }
     }
     .hero-bg::after {
       content: '';
@@ -401,11 +400,6 @@
   <div class="gradient-blur" style="background:#a7f3d0;top:0;right:0;transform:translate(33%,-50%);position:absolute;"></div>
   <div class="gradient-blur" style="background:#ccfbf1;bottom:25%;left:0;transform:translateX(-50%);position:absolute;"></div>
 
-  <div class="hero-bg">
-    <img src="receipt-summary-hero.png" alt="" width="1344" height="768" loading="eager" />
-  </div>
-
-  
   <nav class="site-nav" aria-label="Hovednavigasjon">
     <div class="site-nav-inner">
       <a href="/" class="site-nav-logo">
@@ -439,7 +433,9 @@
     </div>
   </nav>
 
-
+  <div class="hero-bg">
+    <img src="receipt-summary-hero.png" alt="" width="1344" height="768" loading="eager" />
+  </div>
 
   <main style="position:relative;z-index:10;">
   <div class="hero fade">

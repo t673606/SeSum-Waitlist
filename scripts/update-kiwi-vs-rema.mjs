@@ -1,10 +1,7 @@
 /**
- * Fetches live price comparison data from get_kiwi_vs_rema_prices()
- * and updates hardcoded fallback values in kiwi-vs-rema.html.
- *
- * Curated product list: only products we've verified are correct matches.
- * Products are excluded if they have obvious data issues (wrong pack size,
- * EMV cross-contamination, non-products like pant/bærepose).
+ * Fetches live price comparison from get_kiwi_vs_rema_prices()
+ * and updates kiwi-vs-rema.html with fresh data.
+ * Only shows products where BOTH chains have prices from the last 7 days.
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -19,47 +16,15 @@ const EXCLUDE = new Set([
   'Pant stor flaske',
   'Pant liten flaske',
   'Smågodt løsvekt',
-  'PRIMA KJØTTDEIG 14% 400G',  // EMV cross-contamination
-  'Stabbur-Makrell i Tomat 110g Stabburet',  // REMA price is multi-pack
-  'Tomater stk',  // per-kg vs per-stk mismatch
-  'Mango stykk First Price',  // NG EMV at REMA
+  'PRIMA KJØTTDEIG 14% 400G',
+  'Mango stykk First Price',
 ]);
 
-// Curated products to FEATURE in the main table (recognizable everyday items)
-const FEATURED = new Set([
-  'Meierismør 500g Tine',
-  'Coca-Cola Zero 0,5l flaske',
-  'Coca-Cola Zero 1,5l flaske',
-  'Pepsi Max 1,5l flaske',
-  'Avocado 2pk',
-  'Helmelk 1l Tine',
-  'Lettmelk 1% 1,75l Q',
-  'Kremfløte 37% 3dl Tine',
-  'Kjøttdeig 14% 400g',
-  'Wienerpølse 520g Gilde',
-  'Big One Pizza American Classic 570g',
-  'Melkesjokolade Kvikk Lunsj 200g Freia',
-  'Melkesjokolade m/Daim 200g Freia',
-  'Superchips Salt 130g Maarud',
-  'Leverpostei Ovnsbakt Original 190g Gilde',
-  'Stabbur-Makrell Finhakket 90g',
-  'NUGATTI 500G',
-  'Jordbærsyltetøy Hjemmelaget 400g Nora',
-  'NATURELL KYLLINGFILET 480G',
-  'Gulrot 750g beger',
-  'Isbergsalat stk',
-  'Farris Frus Bringebær 1,5l flaske',
-  'Lettrømme 17% 300g Q',
-  'Agurk stk',
-]);
-
-function fmt(n) {
-  return String(n).replace('.', ',');
-}
+function fmt(n) { return String(n).replace('.', ','); }
 
 function fmtKr(n) {
   const num = Number(n);
-  if (Number.isInteger(num)) return num + ',–';
+  if (Number.isInteger(num)) return num + ',\u2013';
   return fmt(num.toFixed(2));
 }
 
@@ -88,46 +53,53 @@ async function main() {
     process.exit(1);
   }
 
-  // Filter exact matches
-  const exactMatches = (d.exact_matches || []).filter(p => !EXCLUDE.has(p.product_name));
-  const featured = exactMatches.filter(p => FEATURED.has(p.product_name));
-
-  // Recalculate summary from clean data only
-  const clean = exactMatches.concat(d.category_matches || []);
-  const remaWins = clean.filter(p => Number(p.rema_price || p.rema_price) < Number(p.kiwi_price || p.kiwi_price)).length;
-  const kiwiWins = clean.filter(p => Number(p.kiwi_price || p.kiwi_price) < Number(p.rema_price || p.rema_price)).length;
-  const same = clean.length - remaWins - kiwiWins;
-  const total = clean.length;
+  const products = (d.products || []).filter(p => !EXCLUDE.has(p.product_name));
+  const total = products.length;
+  const remaWins = products.filter(p => p.cheapest === 'REMA 1000').length;
+  const kiwiWins = products.filter(p => p.cheapest === 'KIWI').length;
+  const same = total - remaWins - kiwiWins;
 
   console.log('Fetched data:');
-  console.log(`  Total clean comparisons: ${total}`);
-  console.log(`  REMA cheaper: ${remaWins} (${(remaWins/total*100).toFixed(1)}%)`);
-  console.log(`  KIWI cheaper: ${kiwiWins} (${(kiwiWins/total*100).toFixed(1)}%)`);
+  console.log(`  Products (both fresh this week): ${total}`);
+  console.log(`  REMA cheaper: ${remaWins}`);
+  console.log(`  KIWI cheaper: ${kiwiWins}`);
   console.log(`  Same price: ${same}`);
-  console.log(`  Featured products: ${featured.length}`);
 
   let html = readFileSync(FILE, 'utf-8');
 
-  // Update summary stats
+  // Update summary
   html = updateDataLive(html, 'total_compared', total);
   html = updateDataLive(html, 'rema_cheaper_count', remaWins);
   html = updateDataLive(html, 'kiwi_cheaper_count', kiwiWins);
   html = updateDataLive(html, 'same_price_count', same);
-  html = updateDataLive(html, 'rema_cheaper_pct', (remaWins/total*100).toFixed(1).replace('.', ','));
-  html = updateDataLive(html, 'kiwi_cheaper_pct', (kiwiWins/total*100).toFixed(1).replace('.', ','));
 
-  // Build price table HTML (with sale badges)
+  // Build price table — sort by absolute diff (biggest differences first), then same-price at end
   const saleTag = ' <span class="sale-badge">tilbud</span>';
-  const tableRows = featured.sort((a, b) => Math.abs(Number(b.diff_kr)) - Math.abs(Number(a.diff_kr))).map(p => {
+  const sorted = products.sort((a, b) => {
+    const aDiff = Math.abs(Number(a.diff_kr));
+    const bDiff = Math.abs(Number(b.diff_kr));
+    if (aDiff === 0 && bDiff === 0) return a.product_name.localeCompare(b.product_name);
+    if (aDiff === 0) return 1;
+    if (bDiff === 0) return -1;
+    return bDiff - aDiff;
+  });
+
+  const tableRows = sorted.map(p => {
     const rp = Number(p.rema_price);
     const kp = Number(p.kiwi_price);
     const diff = Number(p.diff_kr);
-    const rClass = rp <= kp ? 'price-cheap' : '';
-    const kClass = kp <= rp ? 'price-cheap' : '';
+    const rClass = rp < kp ? 'price-cheap' : rp === kp ? '' : '';
+    const kClass = kp < rp ? 'price-cheap' : kp === rp ? '' : '';
     const rSale = p.rema_on_sale ? saleTag : '';
     const kSale = p.kiwi_on_sale ? saleTag : '';
-    const diffStr = diff > 0 ? `+${fmt(diff.toFixed(0))} kr` : diff < 0 ? `${fmt(diff.toFixed(0))} kr` : 'lik';
-    const diffClass = diff === 0 ? '' : diff > 0 ? 'diff-rema' : 'diff-kiwi';
+    let diffStr, diffClass;
+    if (diff === 0) {
+      diffStr = 'lik'; diffClass = '';
+    } else if (diff > 0) {
+      diffStr = `+${Math.round(diff)} kr`; diffClass = 'diff-rema';
+    } else {
+      diffStr = `${Math.round(diff)} kr`; diffClass = 'diff-kiwi';
+    }
     return `            <tr>
               <td class="pl-4">${p.product_name}</td>
               <td class="text-right ${rClass}">${fmtKr(rp)}${rSale}</td>
@@ -136,35 +108,30 @@ async function main() {
             </tr>`;
   }).join('\n');
 
-  // Replace table body
   html = html.replace(
     /(<tbody id="price-table-body">)[\s\S]*?(<\/tbody>)/,
     `$1\n${tableRows}\n          $2`
   );
 
-  // Update FAQ answers with fresh numbers
-  const kiwiPctStr = (kiwiWins/total*100).toFixed(0);
-  const remaPctStr = (remaWins/total*100).toFixed(0);
-
-  // Find specific product prices for FAQ
-  const melk = exactMatches.find(p => p.product_name === 'Lettmelk 1% 1,75l Q');
-  const kjottdeig = exactMatches.find(p => p.product_name === 'Kjøttdeig 14% 400g');
-  const smor = exactMatches.find(p => p.product_name === 'Meierismør 500g Tine');
+  // Update FAQ with specific product prices
+  const melk = products.find(p => p.product_name.match(/Lettmelk.*1,75l/i) || p.product_name.match(/Helmelk.*1,75l/i));
+  const kjottdeig = products.find(p => p.product_name === 'Kjøttdeig 14% 400g');
 
   html = updateDataLive(html, 'faq_total', total);
-  html = updateDataLive(html, 'faq_kiwi_pct', kiwiPctStr);
-  html = updateDataLive(html, 'faq_rema_pct', remaPctStr);
+  html = updateDataLive(html, 'faq_kiwi_count', kiwiWins);
+  html = updateDataLive(html, 'faq_rema_count', remaWins);
+  html = updateDataLive(html, 'faq_same_count', same);
 
   if (melk) {
     html = updateDataLive(html, 'faq_melk_rema', fmtKr(Number(melk.rema_price)));
     html = updateDataLive(html, 'faq_melk_kiwi', fmtKr(Number(melk.kiwi_price)));
+    html = updateDataLive(html, 'faq_melk_name', melk.product_name);
   }
   if (kjottdeig) {
     html = updateDataLive(html, 'faq_kjottdeig_rema', fmtKr(Number(kjottdeig.rema_price)));
     html = updateDataLive(html, 'faq_kjottdeig_kiwi', fmtKr(Number(kjottdeig.kiwi_price)));
   }
 
-  // Update date
   html = updateDataLive(html, 'last_updated', fmtMonth(d.generated_at));
 
   // Update JSON-LD
@@ -174,23 +141,18 @@ async function main() {
       try {
         const ld = JSON.parse(jsonStr);
         const graph = ld['@graph'] || [ld];
-        // Update Article dateModified
         const article = graph.find(g => g['@type'] === 'Article');
         if (article) article.dateModified = new Date().toISOString().slice(0, 10);
-        // Update FAQPage answers
         const faq = graph.find(g => g['@type'] === 'FAQPage');
         if (faq && faq.mainEntity) {
-          // FAQ 1: Er REMA billigere enn KIWI?
           if (faq.mainEntity[0]) {
-            faq.mainEntity[0].acceptedAnswer.text = `Basert p\u00e5 ${total} produkter med priser i begge kjeder er KIWI billigst p\u00e5 ${kiwiPctStr} % av produktene, REMA 1000 p\u00e5 ${remaPctStr} %, og ${same} produkter har lik pris. Prisforskjellene varierer mye mellom kategorier \u2013 sjekk tabellen for spesifikke produkter.`;
+            faq.mainEntity[0].acceptedAnswer.text = `Basert p\u00e5 ${total} produkter med ferske priser i begge kjeder denne uken: KIWI er billigst p\u00e5 ${kiwiWins}, REMA 1000 p\u00e5 ${remaWins}, og ${same} produkter har lik pris. Hvem som er billigst varierer fra uke til uke avhengig av tilbud og prisendringer.`;
           }
-          // FAQ 2: Hva koster melk?
           if (faq.mainEntity[1] && melk) {
-            faq.mainEntity[1].acceptedAnswer.text = `Lettmelk 1 % 1,75 l (Q) koster ${fmtKr(Number(melk.rema_price))} p\u00e5 REMA 1000 og ${fmtKr(Number(melk.kiwi_price))} p\u00e5 KIWI. Prisene er normalpriser (ikke tilbud) fra SeSum sin prisportal.`;
+            faq.mainEntity[1].acceptedAnswer.text = `${melk.product_name} koster ${fmtKr(Number(melk.rema_price))} p\u00e5 REMA 1000 og ${fmtKr(Number(melk.kiwi_price))} p\u00e5 KIWI denne uken. Prisene oppdateres daglig fra SeSum sin prisportal.`;
           }
-          // FAQ 3: Hva koster kjøttdeig?
           if (faq.mainEntity[2] && kjottdeig) {
-            faq.mainEntity[2].acceptedAnswer.text = `Kj\u00f8ttdeig 14 % 400 g koster ${fmtKr(Number(kjottdeig.rema_price))} p\u00e5 REMA 1000 og ${fmtKr(Number(kjottdeig.kiwi_price))} p\u00e5 KIWI. Begge kjedene har ogs\u00e5 billigere EMV-alternativer (Prima hos REMA, First Price hos KIWI).`;
+            faq.mainEntity[2].acceptedAnswer.text = `Kj\u00f8ttdeig 14 % 400 g koster ${fmtKr(Number(kjottdeig.rema_price))} p\u00e5 REMA 1000 og ${fmtKr(Number(kjottdeig.kiwi_price))} p\u00e5 KIWI denne uken.`;
           }
         }
         return open + '\n  ' + JSON.stringify(ld, null, 2).split('\n').join('\n  ') + '\n  ' + close;
@@ -201,14 +163,10 @@ async function main() {
     }
   );
 
-  // Update meta description
+  // Update meta
   html = html.replace(
     /(<meta\s+name="description"\s+content=")[^"]*"/,
-    `$1Sammenligning av KIWI og REMA 1000: Basert p\u00e5 ${total} produkter er KIWI billigst p\u00e5 ${kiwiPctStr} % og REMA p\u00e5 ${remaPctStr} %. Se faktiske priser p\u00e5 hverdagsvarer."`
-  );
-  html = html.replace(
-    /(<meta\s+property="og:description"\s+content=")[^"]*"/,
-    `$1KIWI vs REMA 1000: Hvem er billigst? Se faktiske priser p\u00e5 ${total} produkter."`
+    `$1Prissammenligning KIWI vs REMA 1000: Se faktiske priser p\u00e5 ${total} dagligvarer denne uken. Oppdateres daglig fra SeSum."`
   );
 
   writeFileSync(FILE, html, 'utf-8');

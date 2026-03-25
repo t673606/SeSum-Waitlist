@@ -1,0 +1,134 @@
+/* === SeSum Site Navigation === */
+.site-nav {
+  padding: 1rem 1.25rem;
+  position: relative;
+  z-index: 50;
+}
+.site-nav-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #0f172a;
+}
+.site-nav-logo img {
+  height: 2.25rem;
+  width: auto;
+  border-radius: 0.75rem;
+  display: block;
+}
+.site-nav-logo span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.site-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.site-nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.site-nav-links a:hover {
+  color: #334155;
+}
+.site-nav-links a[aria-current="page"] {
+  color: #2d6a4f;
+}
+.site-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: #334155;
+  line-height: 0;
+}
+.site-nav-icon-close {
+  display: none;
+}
+.site-nav-mobile {
+  display: none;
+}
+
+/* Mobile: <=640px */
+@media (max-width: 640px) {
+  .site-nav-links {
+    display: none;
+  }
+  .site-nav-toggle {
+    display: block;
+  }
+  .site-nav-mobile {
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 0.75rem;
+    padding-top: 0.25rem;
+  }
+  .site-nav-mobile.is-open {
+    display: flex;
+  }
+  .site-nav-mobile a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .site-nav-mobile a:last-child {
+    border-bottom: none;
+  }
+  .site-nav-mobile a:hover,
+  .site-nav-mobile a[aria-current="page"] {
+    color: #2d6a4f;
+  }
+}
+
+/* === SeSum Site Footer === */
+.site-footer {
+  padding: 1.25rem 1.25rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+.site-footer-inner {
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.site-footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.site-footer-links a {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.site-footer-links a:hover {
+  color: #334155;
+}
+.site-footer-copy {
+  font-size: 0.625rem;
+  color: #94a3b8;
+  margin: 0;
+}

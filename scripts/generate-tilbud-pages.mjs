@@ -153,12 +153,17 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
   </style>
 </head>
 <body class="min-h-screen overflow-x-hidden">
-  <nav class="px-5 py-5 flex items-center justify-between relative z-10">
+  <nav class="px-5 py-4 flex items-center justify-between relative z-10">
     <a href="/" class="flex items-center gap-2">
-      <img src="/sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
-      <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
+      <img src="/sesum-logo.png" alt="SeSum logo" class="h-8 w-auto rounded-xl" width="32" height="32" />
+      <span class="text-lg font-bold tracking-tight text-slate-900">SeSum</span>
     </a>
-    <a href="/tilbud/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Alle tilbud</a>
+    <div class="flex gap-4">
+      <a href="/produkt/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Produkter</a>
+      <a href="/tilbud/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Tilbud</a>
+      <a href="/kiwi-vs-rema.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Sammenlign</a>
+      <a href="/innsikter.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Innsikter</a>
+    </div>
   </nav>
 
   <div class="px-5">
@@ -238,7 +243,7 @@ ${otherChains}
     <div class="max-w-md mx-auto text-center space-y-3">
       <div class="flex justify-center flex-wrap gap-4 text-xs text-slate-500">
         <a href="/" class="hover:text-slate-700">Forside</a>
-        <a href="/priser.html" class="hover:text-slate-700">Priser</a>
+        <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
         <a href="/tilbud/" class="hover:text-slate-700">Tilbud</a>
         <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
         <a href="/innsikter.html" class="hover:text-slate-700">Innsikter</a>
@@ -328,7 +333,12 @@ function buildIndexPage(chains) {
       <img src="/sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
       <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
     </a>
-    <a href="/priser.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Priser</a>
+    <div class="flex gap-4">
+      <a href="/produkt/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Produkter</a>
+      <a href="/tilbud/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Tilbud</a>
+      <a href="/kiwi-vs-rema.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Sammenlign</a>
+      <a href="/innsikter.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Innsikter</a>
+    </div>
   </nav>
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
@@ -349,7 +359,7 @@ ${chainCards}
     <div class="max-w-md mx-auto text-center space-y-3">
       <div class="flex justify-center flex-wrap gap-4 text-xs text-slate-500">
         <a href="/" class="hover:text-slate-700">Forside</a>
-        <a href="/priser.html" class="hover:text-slate-700">Priser</a>
+        <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
         <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
         <a href="/innsikter.html" class="hover:text-slate-700">Innsikter</a>
         <a href="mailto:hei@sesum.no" class="hover:text-slate-700">Kontakt</a>

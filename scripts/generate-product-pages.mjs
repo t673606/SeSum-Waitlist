@@ -45,6 +45,10 @@ function buildProductPage(product, slug) {
               </tr>`;
   }).join('\n');
 
+  const today = new Date().toISOString().slice(0, 10);
+  const chainList = prices.map(p => p.chain).join(', ');
+  const priceListProse = prices.map(p => `${fmtKr(p.price)} kr hos ${p.chain}${p.is_on_sale ? ' (tilbud)' : ''}`).join(', ');
+
   const offersLd = prices.map(p => ({
     '@type': 'Offer',
     'seller': { '@type': 'Organization', 'name': p.chain },
@@ -53,6 +57,8 @@ function buildProductPage(product, slug) {
     'availability': 'https://schema.org/InStock',
     'priceValidUntil': new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10)
   }));
+
+  const faqAnswer = `${product.name} koster ${priceListProse}. Billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig.`;
 
   const ld = {
     '@context': 'https://schema.org',
@@ -72,6 +78,27 @@ function buildProductPage(product, slug) {
         }
       },
       {
+        '@type': 'FAQPage',
+        'mainEntity': [
+          {
+            '@type': 'Question',
+            'name': `Hva koster ${product.name}?`,
+            'acceptedAnswer': { '@type': 'Answer', 'text': faqAnswer }
+          },
+          {
+            '@type': 'Question',
+            'name': `Hvor er ${product.name} billigst?`,
+            'acceptedAnswer': { '@type': 'Answer', 'text': `${product.name} er billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr. ${mostExpensive.chain} er dyrest med ${fmtKr(mostExpensive.price)} kr.` }
+          }
+        ]
+      },
+      {
+        '@type': 'WebPage',
+        'name': `Pris ${product.name}`,
+        'dateModified': today,
+        'speakable': { '@type': 'SpeakableSpecification', 'cssSelector': ['h1', '.insight-prose'] }
+      },
+      {
         '@type': 'BreadcrumbList',
         'itemListElement': [
           { '@type': 'ListItem', 'position': 1, 'name': 'Forside', 'item': 'https://www.sesum.no/' },
@@ -83,12 +110,11 @@ function buildProductPage(product, slug) {
     ]
   };
 
-  const brandStr = product.brand ? ` (${escHtml(product.brand)})` : '';
   const imgHtml = product.image
     ? `\n          <img src="${escHtml(product.image)}" alt="${escHtml(product.name)}" style="max-width:120px;max-height:120px;border-radius:0.75rem;margin:0 auto 1rem" loading="lazy" />`
     : '';
 
-  const description = `Hva koster ${product.name} i norske butikker? Se priser hos ${prices.map(p => p.chain).join(', ')}. Billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr.`;
+  const description = `Hva koster ${product.name}? Billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr. Se priser hos ${chainList}. Oppdatert ${today}.`;
 
   return `<!DOCTYPE html>
 <html lang="nb">
@@ -107,6 +133,7 @@ function buildProductPage(product, slug) {
   <meta property="og:title" content="Pris ${escHtml(product.name)} \u2013 SeSum" />
   <meta property="og:description" content="${escHtml(description)}" />
   <meta property="og:site_name" content="SeSum" />
+  ${product.image ? `<meta property="og:image" content="${escHtml(product.image)}" />` : ''}
   <script type="application/ld+json">
   ${JSON.stringify(ld, null, 2).split('\n').join('\n  ')}
   </script>
@@ -175,8 +202,9 @@ ${priceRows}
       </div>
 
       <!-- AI-crawlable prose -->
-      <div style="background:#f0fdf4;border-left:3px solid #2d6a4f;border-radius:0.75rem;padding:0.85rem 1rem;margin-bottom:1rem">
-        <p style="font-size:0.8rem;color:#1b4332;line-height:1.6;margin:0">${escHtml(product.name)} koster ${fmtKr(cheapest.price)} kr hos ${cheapest.chain} \u2013 ${prices.length > 1 ? `${fmtKr(mostExpensive.price)} kr hos ${mostExpensive.chain}` : ''}. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig.</p>
+      <div class="insight-prose" style="background:#f0fdf4;border-left:3px solid #2d6a4f;border-radius:0.75rem;padding:0.85rem 1rem;margin-bottom:1rem">
+        <p style="font-size:0.8rem;color:#1b4332;line-height:1.6;margin:0 0 0.5rem 0"><strong>Hva koster ${escHtml(product.name)}?</strong> Billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr${cheapest.is_on_sale ? ' (tilbudspris)' : ''}. ${mostExpensive.chain} er dyrest med ${fmtKr(mostExpensive.price)} kr \u2013 en forskjell p\u00e5 ${fmtKr(Number(mostExpensive.price) - Number(cheapest.price))} kr.</p>
+        <p style="font-size:0.75rem;color:#1b4332;line-height:1.6;margin:0">Priser: ${priceListProse}. Sist oppdatert ${today}. Prisdata fra <a href="https://www.sesum.no" style="color:#2d6a4f;text-decoration:underline">SeSum</a> sin prisportal for matvarer.</p>
       </div>
 
       <div class="text-center pt-2 mb-4">
@@ -186,7 +214,7 @@ ${priceRows}
         </a>
       </div>
 
-      <p class="text-[10px] text-slate-400 text-center">Prisdata fra SeSum. Oppdateres daglig. Priser kan variere mellom butikkfilialer.</p>
+      <p class="text-[10px] text-slate-400 text-center">Prisdata fra SeSum. Sist oppdatert ${today}. Priser kan variere mellom butikkfilialer.</p>
     </div>
   </main>
 

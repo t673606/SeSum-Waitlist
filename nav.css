@@ -82,17 +82,26 @@
   .site-nav-mobile a {
     display: block;
     padding: 0.75rem 0;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: #334155;
     text-decoration: none;
     border-bottom: 1px solid #f1f5f9;
   }
   .site-nav-mobile a:last-child {
     border-bottom: none;
   }
-  .site-nav-mobile a:hover,
-  .site-nav-mobile a[aria-current="page"] {
+  .site-nav-mobile a .site-nav-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #334155;
+  }
+  .site-nav-mobile a .site-nav-desc {
+    display: block;
+    font-size: 0.6875rem;
+    color: #94a3b8;
+    margin-top: 0.125rem;
+  }
+  .site-nav-mobile a:hover .site-nav-label,
+  .site-nav-mobile a[aria-current="page"] .site-nav-label {
     color: #2d6a4f;
   }
 }

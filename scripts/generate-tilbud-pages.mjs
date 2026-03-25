@@ -199,18 +199,18 @@ ${topDeals}
           <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Prishistorikk</span>
           <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Varsler p\u00e5 favoritter</span>
         </div>
-        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none">Pr\u00f8v SeSum gratis</a>
+        <a href="/" style="display:block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.85rem 1.5rem;border-radius:0.75rem;text-decoration:none;text-align:center">Bli med \u00e5 teste SeSum</a>
       </div>
 
       ${restDeals ? `<div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">\n${restDeals}\n      </div>` : ''}
 
-      <!-- FAQ -->
+      <!-- FAQ (first Q hidden visually, visible to crawlers) -->
+      <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+        <h2>Hva er p\u00e5 tilbud hos ${escHtml(chain)} denne uken?</h2>
+        <p>${escHtml(chain)} har ${deals.length} varer p\u00e5 tilbud denne uken. St\u00f8rste rabatter: ${proseDeals}.</p>
+      </div>
       <div class="bg-white rounded-2xl border border-slate-100 p-5 mb-4">
         <h2 class="text-sm font-semibold text-slate-900 mb-3">Vanlige sp\u00f8rsm\u00e5l</h2>
-        <details style="border-bottom:1px solid #f1f5f9;padding-bottom:0.5rem;margin-bottom:0.5rem">
-          <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">Hva er p\u00e5 tilbud hos ${escHtml(chain)} denne uken?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
-          <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">${escHtml(chain)} har ${deals.length} varer p\u00e5 tilbud denne uken. St\u00f8rste rabatter: ${proseDeals}.</p>
-        </details>
         <details style="border-bottom:1px solid #f1f5f9;padding-bottom:0.5rem;margin-bottom:0.5rem">
           <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">Hva er forskjellen p\u00e5 SeSum og en tilbudsavis-app?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
           <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">Tilbudsavis-apper viser kun ukens kampanjer fra reklameaviser. SeSum er en prisportal \u2013 du ser b\u00e5de tilbudspriser og vanlige priser p\u00e5 alle varer, slik at du kan sjekke om et \u00abtilbud\u00bb faktisk er billig. Du kan ogs\u00e5 sammenligne priser p\u00e5 tvers av alle kjeder, ikke bare se \u00e9n kjede om gangen.</p>

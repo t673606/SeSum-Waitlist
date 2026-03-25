@@ -82,8 +82,18 @@ function buildChainPage(chain, deals, allChains) {
       },
       {
         '@type': 'Question',
+        'name': 'Hva er forskjellen p\u00e5 SeSum og en tilbudsavis-app?',
+        'acceptedAnswer': { '@type': 'Answer', 'text': 'Tilbudsavis-apper viser kun ukens kampanjer fra reklameaviser. SeSum er en prisportal \u2013 du ser b\u00e5de tilbudspriser og vanlige priser p\u00e5 alle varer, slik at du kan sjekke om et \u00abtilbud\u00bb faktisk er billig. Du kan ogs\u00e5 sammenligne priser p\u00e5 tvers av alle kjeder.' }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Hvordan f\u00e5r SeSum prisene sine?',
+        'acceptedAnswer': { '@type': 'Answer', 'text': 'SeSum bygger prisene fra kvitteringsdata som brukerne deler. N\u00e5r du bruker appen og deler kvitteringene dine, bidrar du til \u00e5 bygge Norges f\u00f8rste ekte prisportal for matvarer. Jo flere som bruker SeSum, jo bedre og mer n\u00f8yaktige blir prisene for alle.' }
+      },
+      {
+        '@type': 'Question',
         'name': `N\u00e5r oppdateres ${chain} tilbud?`,
-        'acceptedAnswer': { '@type': 'Answer', 'text': `Tilbudene hos ${chain} oppdateres vanligvis hver mandag. SeSum henter nye tilbud daglig fra butikkenes reklameaviser.` }
+        'acceptedAnswer': { '@type': 'Answer', 'text': `SeSum henter nye tilbud fra butikkenes reklameaviser daglig. Vanlige priser oppdateres l\u00f8pende basert p\u00e5 kvitteringsdata fra brukerne.` }
       }
     ]
   };
@@ -178,10 +188,18 @@ ${topDeals}
       </div>
 
       <!-- App pitch - after 10 deals, before the rest -->
-      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white;text-align:center">
-        <h3 style="font-size:1.1rem;font-weight:700;margin:0 0 0.75rem 0">Se alle tilbud i SeSum-appen</h3>
-        <p style="font-size:0.82rem;opacity:0.9;margin:0 0 0.5rem 0;line-height:1.5">Filtrer p\u00e5 kategori \u00b7 Sammenlign p\u00e5 tvers av kjeder<br/>F\u00e5 varsel p\u00e5 favoritter \u00b7 Se om tilbudet faktisk er billig</p>
-        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none;margin-top:0.5rem">F\u00e5 tidlig tilgang</a>
+      <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white">
+        <div style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;opacity:0.7;margin-bottom:0.5rem">Norges prisportal for matvarer</div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 0.5rem 0;line-height:1.3">SeSum viser deg alle priser \u2013 ikke bare tilbud</h3>
+        <p style="font-size:0.8rem;opacity:0.85;margin:0 0 1rem 0;line-height:1.6">Se hva varer faktisk koster i alle butikker, sjekk om \u00abtilbudsprisen\u00bb virkelig er billig, og sammenlign p\u00e5 tvers av kjeder. Bygget p\u00e5 ekte kvitteringsdata fra norske forbrukere.</p>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Alle priser, ikke bare tilbud</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Sammenlign priser og tilbud p\u00e5 tvers av alle kjeder</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 14 butikkjeder</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Prishistorikk</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Varsler p\u00e5 favoritter</span>
+        </div>
+        <a href="/" style="display:inline-block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.75rem;text-decoration:none">Pr\u00f8v SeSum gratis</a>
       </div>
 
       ${restDeals ? `<div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">\n${restDeals}\n      </div>` : ''}
@@ -193,9 +211,17 @@ ${topDeals}
           <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">Hva er p\u00e5 tilbud hos ${escHtml(chain)} denne uken?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
           <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">${escHtml(chain)} har ${deals.length} varer p\u00e5 tilbud denne uken. St\u00f8rste rabatter: ${proseDeals}.</p>
         </details>
+        <details style="border-bottom:1px solid #f1f5f9;padding-bottom:0.5rem;margin-bottom:0.5rem">
+          <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">Hva er forskjellen p\u00e5 SeSum og en tilbudsavis-app?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
+          <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">Tilbudsavis-apper viser kun ukens kampanjer fra reklameaviser. SeSum er en prisportal \u2013 du ser b\u00e5de tilbudspriser og vanlige priser p\u00e5 alle varer, slik at du kan sjekke om et \u00abtilbud\u00bb faktisk er billig. Du kan ogs\u00e5 sammenligne priser p\u00e5 tvers av alle kjeder, ikke bare se \u00e9n kjede om gangen.</p>
+        </details>
+        <details style="border-bottom:1px solid #f1f5f9;padding-bottom:0.5rem;margin-bottom:0.5rem">
+          <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">Hvordan f\u00e5r SeSum prisene sine?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
+          <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">SeSum bygger prisene fra kvitteringsdata som brukerne deler. N\u00e5r du bruker appen og deler kvitteringene dine, bidrar du til \u00e5 bygge Norges f\u00f8rste ekte prisportal for matvarer. Jo flere som bruker SeSum, jo bedre og mer n\u00f8yaktige blir prisene for alle.</p>
+        </details>
         <details>
-          <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">N\u00e5r oppdateres ${escHtml(chain)} tilbud?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
-          <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">Tilbudene hos ${escHtml(chain)} oppdateres vanligvis hver mandag. SeSum henter nye tilbud daglig.</p>
+          <summary style="font-size:0.85rem;font-weight:600;color:#1e293b;cursor:pointer;padding:0.25rem 0;list-style:none;display:flex;justify-content:space-between;align-items:center">N\u00e5r oppdateres tilbudene?<span style="color:#2d6a4f;font-weight:700;font-size:1.1rem">+</span></summary>
+          <p style="font-size:0.78rem;color:#64748b;line-height:1.6;padding:0.25rem 0">SeSum henter nye tilbud fra butikkenes reklameaviser daglig. Vanlige priser oppdateres l\u00f8pende basert p\u00e5 kvitteringsdata fra brukerne.</p>
         </details>
       </div>
 

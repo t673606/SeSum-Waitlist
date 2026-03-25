@@ -610,6 +610,7 @@
     <div class="flex justify-center mb-6 animate-fade-up delay-400">
       <div style="width:55vw;max-width:280px;border-radius:2rem;overflow:hidden">
         <video
+          id="hero-video"
           autoplay
           muted
           loop
@@ -622,6 +623,22 @@
         </video>
       </div>
     </div>
+    <script>
+    (function(){
+      var v = document.getElementById('hero-video');
+      if (!v) return;
+      v.muted = true;
+      v.setAttribute('muted', '');
+      v.setAttribute('playsinline', '');
+      var p = v.play();
+      if (p !== undefined) {
+        p.catch(function() {
+          v.muted = true;
+          v.play().catch(function(){});
+        });
+      }
+    })();
+    </script>
   </main>
 
   <!-- Utforsk prisdata -->

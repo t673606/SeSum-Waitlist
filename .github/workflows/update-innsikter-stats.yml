@@ -20,11 +20,14 @@ jobs:
       - name: Update kiwi-vs-rema.html prices
         run: node scripts/update-kiwi-vs-rema.mjs
 
+      - name: Update prisportal-matvarer.html stats
+        run: node scripts/update-prisportal.mjs
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add innsikter.html kiwi-vs-rema.html
+          git add innsikter.html kiwi-vs-rema.html prisportal-matvarer.html
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

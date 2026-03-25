@@ -13,6 +13,8 @@ SeSum bygger Norges første fungerende prisportal for matvarer fra bunn og opp. 
 - [Coop Extra vs KIWI](https://www.sesum.no/coop-vs-kiwi.html): Prissammenligning mellom Coop Extra og KIWI
 - [REMA 1000 vs Coop Extra](https://www.sesum.no/rema-vs-coop.html): Prissammenligning mellom REMA 1000 og Coop Extra
 - [Metode og datakilder](https://www.sesum.no/metode.html): Hvordan vi samler inn og beregner priser
+- [Prisinnsikter](https://www.sesum.no/innsikter.html): Prisutvikling, prisforskjeller og sparepotensial basert på 17 000+ kvitteringer
+- [Produktpriser](https://www.sesum.no/produkt/): Priser på 100 populære dagligvarer hos flere butikkjeder - oppdateres daglig
 - [Presse](https://www.sesum.no/presse.html): Presseinformasjon, logo og kontakt for medier
 - [Personvern](https://www.sesum.no/personvern.html): Personvernerklæring
 - [Bruksvilkår](https://www.sesum.no/bruksvilkar.html): Vilkår for bruk

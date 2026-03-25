@@ -3,11 +3,13 @@
   var toggle = document.querySelector('.site-nav-toggle');
   var mobile = document.querySelector('.site-nav-mobile');
   if (toggle && mobile) {
+    var iconOpen = toggle.querySelector('.site-nav-icon-open');
+    var iconClose = toggle.querySelector('.site-nav-icon-close');
     toggle.addEventListener('click', function () {
       var opening = !mobile.classList.contains('is-open');
       mobile.classList.toggle('is-open');
-      toggle.querySelector('.site-nav-icon-open').style.display = opening ? 'none' : '';
-      toggle.querySelector('.site-nav-icon-close').style.display = opening ? '' : 'none';
+      iconOpen.style.display = opening ? 'none' : 'inline';
+      iconClose.style.display = opening ? 'inline' : 'none';
       toggle.setAttribute('aria-expanded', String(opening));
     });
   }

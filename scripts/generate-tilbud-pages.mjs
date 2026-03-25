@@ -39,7 +39,7 @@ function weekLabel() {
   return `${f(start)}\u2013${f(end)}.${end.getFullYear()}`;
 }
 
-function buildChainPage(chain, deals, allChains) {
+function buildChainPage(chain, deals, allChains, totalDeals) {
   const slug = slugifyChain(chain);
   const today = new Date().toISOString().slice(0, 10);
   const week = weekLabel();
@@ -176,7 +176,7 @@ function buildChainPage(chain, deals, allChains) {
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
       <h1 class="text-2xl font-bold text-slate-900 mb-1">${escHtml(chain)} tilbud</h1>
-      <p class="text-sm text-slate-500 mb-4">${deals.length} varer p\u00e5 tilbud denne uken (${week})</p>
+      <p class="text-sm text-slate-500 mb-4">Viser ${deals.length} av ${totalDeals} tilbud denne uken (${week})</p>
 
       <!-- AI-crawlable prose (visually hidden, readable by crawlers) -->
       <div class="insight-prose" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
@@ -190,8 +190,8 @@ ${topDeals}
       <!-- App pitch - after 10 deals, before the rest -->
       <div style="background:linear-gradient(135deg,#2d6a4f 0%,#1b4332 100%);border-radius:1rem;padding:1.5rem;margin-bottom:1rem;color:white">
         <div style="font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;opacity:0.7;margin-bottom:0.5rem">Norges prisportal for matvarer</div>
-        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 0.5rem 0;line-height:1.3">SeSum viser deg alle priser \u2013 ikke bare tilbud</h3>
-        <p style="font-size:0.8rem;opacity:0.85;margin:0 0 1rem 0;line-height:1.6">Se hva varer faktisk koster i alle butikker, sjekk om \u00abtilbudsprisen\u00bb virkelig er billig, og sammenlign p\u00e5 tvers av kjeder. Bygget p\u00e5 ekte kvitteringsdata fra norske forbrukere.</p>
+        <h3 style="font-size:1.15rem;font-weight:700;margin:0 0 0.5rem 0;line-height:1.3">Du ser ${deals.length} av ${totalDeals} tilbud</h3>
+        <p style="font-size:0.8rem;opacity:0.85;margin:0 0 1rem 0;line-height:1.6">I SeSum-appen ser du alle ${totalDeals} tilbudene fra ${escHtml(chain)}, sammenligner p\u00e5 tvers av kjeder, og sjekker om tilbudsprisen faktisk er billig. Bygget p\u00e5 ekte kvitteringsdata fra norske forbrukere.</p>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
           <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Alle priser, ikke bare tilbud</span>
           <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Sammenlign priser og tilbud p\u00e5 tvers av alle kjeder</span>
@@ -383,7 +383,7 @@ async function main() {
   for (const c of chains) {
     if (!c.deals || c.deals.length === 0) continue;
     const slug = slugifyChain(c.chain);
-    writeFileSync(`${OUT_DIR}/${slug}.html`, buildChainPage(c.chain, c.deals, allChainNames), 'utf-8');
+    writeFileSync(`${OUT_DIR}/${slug}.html`, buildChainPage(c.chain, c.deals, allChainNames, c.total_deals || c.deals.length), 'utf-8');
     console.log(`  ${c.chain}: ${c.deals.length} deals`);
   }
 

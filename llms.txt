@@ -15,6 +15,9 @@ SeSum bygger Norges første fungerende prisportal for matvarer fra bunn og opp. 
 - [Metode og datakilder](https://www.sesum.no/metode.html): Hvordan vi samler inn og beregner priser
 - [Prisinnsikter](https://www.sesum.no/innsikter.html): Prisutvikling, prisforskjeller og sparepotensial basert på 17 000+ kvitteringer
 - [Produktpriser](https://www.sesum.no/produkt/): Priser på 100 populære dagligvarer hos flere butikkjeder - oppdateres daglig
+- [Dagligvaretilbud](https://www.sesum.no/tilbud/): Ukens beste tilbud fra KIWI, REMA 1000, Meny, SPAR og Joker - oppdateres daglig
+- [KIWI tilbud](https://www.sesum.no/tilbud/kiwi.html): Denne ukens tilbud hos KIWI
+- [REMA 1000 tilbud](https://www.sesum.no/tilbud/rema-1000.html): Denne ukens tilbud hos REMA 1000
 - [Presse](https://www.sesum.no/presse.html): Presseinformasjon, logo og kontakt for medier
 - [Personvern](https://www.sesum.no/personvern.html): Personvernerklæring
 - [Bruksvilkår](https://www.sesum.no/bruksvilkar.html): Vilkår for bruk

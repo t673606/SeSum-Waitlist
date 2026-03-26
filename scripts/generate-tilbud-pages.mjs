@@ -151,34 +151,43 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
     * { -webkit-tap-highlight-color: transparent; }
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; -webkit-font-smoothing: antialiased; }
   </style>
+  <link rel="stylesheet" href="/nav.css" />
+  <script src="/nav.js" defer></script>
 </head>
 <body class="min-h-screen overflow-x-hidden">
-  <header class="relative z-10 pt-4 pb-2">
-    <div class="flex justify-center items-center gap-2 mb-2">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/sesum-logo.png" alt="SeSum logo" class="h-8 w-auto rounded-xl" width="32" height="32" />
-        <span class="text-lg font-bold tracking-tight text-slate-900">SeSum</span>
-      </a>
-    </div>
-    <nav class="flex justify-center gap-4 px-5">
-      <a href="/produkt/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Produkter</a>
-      <a href="/tilbud/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Tilbud</a>
-      <a href="/kiwi-vs-rema.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Sammenlign</a>
-      <a href="/innsikter.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Innsikter</a>
-    </nav>
-  </header>
 
-  <div class="px-5">
-    <div class="max-w-md mx-auto">
-      <nav class="text-[11px] text-slate-400 mb-4" aria-label="Br\u00f8dsmuler">
-        <a href="/" class="hover:text-slate-600">Forside</a>
-        <span class="mx-1">/</span>
-        <a href="/tilbud/" class="hover:text-slate-600">Tilbud</a>
-        <span class="mx-1">/</span>
-        <span class="text-slate-600">${escHtml(chain)}</span>
-      </nav>
+  <nav class="site-nav" aria-label="Hovednavigasjon">
+    <div class="site-nav-inner">
+      <a href="/" class="site-nav-logo">
+        <img src="/sesum-logo.png" alt="SeSum logo" width="36" height="36" />
+        <span>SeSum</span>
+      </a>
+      <div class="site-nav-links">
+        <a href="/produkt/">Produkter</a>
+        <a href="/tilbud/">Tilbud</a>
+        <a href="/kiwi-vs-rema.html">Sammenlign</a>
+        <a href="/innsikter.html">Innsikter</a>
+        <a href="/prisportal-matvarer.html">Prisportal</a>
+      </div>
+      <button class="site-nav-toggle" aria-label="Meny" aria-expanded="false">
+        <svg class="site-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="site-nav-icon-close" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
-  </div>
+    <div class="site-nav-mobile">
+      <a href="/produkt/"><span class="site-nav-label">Produkter</span><span class="site-nav-desc">Se priser p\u00e5 et utvalg dagligvarer</span></a>
+      <a href="/tilbud/"><span class="site-nav-label">Tilbud</span><span class="site-nav-desc">Ukens beste tilbud fra alle kjeder</span></a>
+      <a href="/kiwi-vs-rema.html"><span class="site-nav-label">Sammenlign</span><span class="site-nav-desc">Hvilken kjede er billigst?</span></a>
+      <a href="/innsikter.html"><span class="site-nav-label">Innsikter</span><span class="site-nav-desc">Prisutvikling og sparedata</span></a>
+      <a href="/prisportal-matvarer.html"><span class="site-nav-label">Prisportal</span><span class="site-nav-desc">Hvorfor trenger vi en prisportal?</span></a>
+    </div>
+  </nav>
+
+  <nav class="site-breadcrumb" aria-label="Br\u00f8dsmuler">
+    <div class="site-breadcrumb-inner">
+      <a href="/">Forside</a><span class="site-bc-sep">/</span><a href="/tilbud/">Tilbud</a><span class="site-bc-sep">/</span><span class="site-bc-current">${escHtml(chain)}</span>
+    </div>
+  </nav>
 
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
@@ -237,21 +246,25 @@ ${topDeals}
 ${otherChains}
       </div>
 
-      <p class="text-[10px] text-slate-400 text-center">Tilbudsdata fra butikkenes reklameaviser. Sist oppdatert ${today}.</p>
+      <p class="text-[10px] text-slate-400 text-center">Tilbudsdata fra butikkenes reklameaviser. Sist oppdatert ${today}. Feil kan forekomme - sjekk alltid prisen i butikk.</p>
     </div>
   </main>
 
-  <footer class="px-5 pb-8">
-    <div class="max-w-md mx-auto text-center space-y-3">
-      <div class="flex justify-center flex-wrap gap-4 text-xs text-slate-500">
-        <a href="/" class="hover:text-slate-700">Forside</a>
-        <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
-        <a href="/tilbud/" class="hover:text-slate-700">Tilbud</a>
-        <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
-        <a href="/innsikter.html" class="hover:text-slate-700">Innsikter</a>
-        <a href="mailto:hei@sesum.no" class="hover:text-slate-700">Kontakt</a>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-links">
+        <a href="/">Forside</a>
+        <a href="/produkt/">Produkter</a>
+        <a href="/tilbud/">Tilbud</a>
+        <a href="/kiwi-vs-rema.html">Sammenlign</a>
+        <a href="/innsikter.html">Innsikter</a>
+        <a href="/prisportal-matvarer.html">Prisportal</a>
+        <a href="/presse.html">Presse</a>
+        <a href="/personvern.html">Personvern</a>
+        <a href="/bruksvilkar.html">Bruksvilk\u00e5r</a>
+        <a href="mailto:hei@sesum.no">Kontakt</a>
       </div>
-      <p class="text-[10px] text-slate-400">&copy; 2026 SeSum. Laget i Norge.</p>
+      <p class="site-footer-copy">&copy; 2026 SeSum. Sammenlign dagligvarepriser i Norge. Laget i Norge.</p>
     </div>
   </footer>
 </body>
@@ -328,20 +341,38 @@ function buildIndexPage(chains) {
     * { -webkit-tap-highlight-color: transparent; }
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; -webkit-font-smoothing: antialiased; }
   </style>
+  <link rel="stylesheet" href="/nav.css" />
+  <script src="/nav.js" defer></script>
 </head>
 <body class="min-h-screen overflow-x-hidden">
-  <nav class="px-5 py-5 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <img src="/sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
-      <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
-    </a>
-    <div class="flex gap-4">
-      <a href="/produkt/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Produkter</a>
-      <a href="/tilbud/" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Tilbud</a>
-      <a href="/kiwi-vs-rema.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Sammenlign</a>
-      <a href="/innsikter.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Innsikter</a>
+
+  <nav class="site-nav" aria-label="Hovednavigasjon">
+    <div class="site-nav-inner">
+      <a href="/" class="site-nav-logo">
+        <img src="/sesum-logo.png" alt="SeSum logo" width="36" height="36" />
+        <span>SeSum</span>
+      </a>
+      <div class="site-nav-links">
+        <a href="/produkt/">Produkter</a>
+        <a href="/tilbud/">Tilbud</a>
+        <a href="/kiwi-vs-rema.html">Sammenlign</a>
+        <a href="/innsikter.html">Innsikter</a>
+        <a href="/prisportal-matvarer.html">Prisportal</a>
+      </div>
+      <button class="site-nav-toggle" aria-label="Meny" aria-expanded="false">
+        <svg class="site-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="site-nav-icon-close" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="site-nav-mobile">
+      <a href="/produkt/"><span class="site-nav-label">Produkter</span><span class="site-nav-desc">Se priser p\u00e5 et utvalg dagligvarer</span></a>
+      <a href="/tilbud/"><span class="site-nav-label">Tilbud</span><span class="site-nav-desc">Ukens beste tilbud fra alle kjeder</span></a>
+      <a href="/kiwi-vs-rema.html"><span class="site-nav-label">Sammenlign</span><span class="site-nav-desc">Hvilken kjede er billigst?</span></a>
+      <a href="/innsikter.html"><span class="site-nav-label">Innsikter</span><span class="site-nav-desc">Prisutvikling og sparedata</span></a>
+      <a href="/prisportal-matvarer.html"><span class="site-nav-label">Prisportal</span><span class="site-nav-desc">Hvorfor trenger vi en prisportal?</span></a>
     </div>
   </nav>
+
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
       <h1 class="text-2xl font-bold text-slate-900 mb-1">Dagligvaretilbud</h1>
@@ -357,16 +388,21 @@ ${chainCards}
       </div>
     </div>
   </main>
-  <footer class="px-5 pb-8">
-    <div class="max-w-md mx-auto text-center space-y-3">
-      <div class="flex justify-center flex-wrap gap-4 text-xs text-slate-500">
-        <a href="/" class="hover:text-slate-700">Forside</a>
-        <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
-        <a href="/produkt/" class="hover:text-slate-700">Produkter</a>
-        <a href="/innsikter.html" class="hover:text-slate-700">Innsikter</a>
-        <a href="mailto:hei@sesum.no" class="hover:text-slate-700">Kontakt</a>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-links">
+        <a href="/">Forside</a>
+        <a href="/produkt/">Produkter</a>
+        <a href="/tilbud/">Tilbud</a>
+        <a href="/kiwi-vs-rema.html">Sammenlign</a>
+        <a href="/innsikter.html">Innsikter</a>
+        <a href="/prisportal-matvarer.html">Prisportal</a>
+        <a href="/presse.html">Presse</a>
+        <a href="/personvern.html">Personvern</a>
+        <a href="/bruksvilkar.html">Bruksvilk\u00e5r</a>
+        <a href="mailto:hei@sesum.no">Kontakt</a>
       </div>
-      <p class="text-[10px] text-slate-400">&copy; 2026 SeSum. Laget i Norge.</p>
+      <p class="site-footer-copy">&copy; 2026 SeSum. Sammenlign dagligvarepriser i Norge. Laget i Norge.</p>
     </div>
   </footer>
 </body>

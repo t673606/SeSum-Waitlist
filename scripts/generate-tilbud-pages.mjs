@@ -419,9 +419,12 @@ async function main() {
 
   console.log(`Generating tilbud pages for ${chains.length} chains...`);
 
-  // Clean and recreate
+  // Clean chain pages (but preserve index.html which is manually maintained)
   if (existsSync(OUT_DIR)) {
-    for (const f of readdirSync(OUT_DIR)) rmSync(`${OUT_DIR}/${f}`);
+    for (const f of readdirSync(OUT_DIR)) {
+      if (f === 'index.html') continue;
+      rmSync(`${OUT_DIR}/${f}`);
+    }
   } else {
     mkdirSync(OUT_DIR, { recursive: true });
   }
@@ -434,8 +437,6 @@ async function main() {
     writeFileSync(`${OUT_DIR}/${slug}.html`, buildChainPage(c.chain, c.deals, allChainNames, c.total_deals || c.deals.length), 'utf-8');
     console.log(`  ${c.chain}: ${c.deals.length} deals`);
   }
-
-  writeFileSync(`${OUT_DIR}/index.html`, buildIndexPage(chains), 'utf-8');
 
   // Update sitemap
   const today = new Date().toISOString().slice(0, 10);

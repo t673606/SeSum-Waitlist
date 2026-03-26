@@ -337,10 +337,13 @@ async function main() {
 
   console.log(`Generating ${products.length} product pages...`);
 
-  // Clean and recreate output dir
+  // Clean product pages (but preserve index.html which is manually maintained)
   if (existsSync(OUT_DIR)) {
     const files = readdirSync(OUT_DIR);
-    for (const f of files) rmSync(`${OUT_DIR}/${f}`);
+    for (const f of files) {
+      if (f === 'index.html') continue; // preserve manually designed index
+      rmSync(`${OUT_DIR}/${f}`);
+    }
   } else {
     mkdirSync(OUT_DIR, { recursive: true });
   }
@@ -353,9 +356,6 @@ async function main() {
     writeFileSync(`${OUT_DIR}/${slug}.html`, buildProductPage(p, slug), 'utf-8');
     slugs.push(slug);
   }
-
-  // Generate index page
-  writeFileSync(`${OUT_DIR}/index.html`, buildIndexPage(products.filter(p => p.prices?.length >= 2)), 'utf-8');
 
   // Update sitemap
   const today = new Date().toISOString().slice(0, 10);

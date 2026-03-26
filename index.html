@@ -445,6 +445,10 @@
     @media (min-width: 768px) {
       .md\:w-\[50vw\] { width: 50vw; }
     }
+    @media (max-width: 640px) {
+      .home-nav-wrap { margin: 0.5rem 0.75rem 0 !important; }
+      .home-nav-wrap > nav { display: block !important; width: 100% !important; }
+    }
   </style>
   <link rel="stylesheet" href="/nav.css" />
   <script src="/nav.js" defer></script>
@@ -463,7 +467,7 @@
 
   <!-- Nav -->
 
-  <div style="display:flex;justify-content:center;padding-top:0.75rem;position:relative;z-index:50">
+  <div class="home-nav-wrap" style="display:flex;justify-content:center;padding-top:0.75rem;position:relative;z-index:50">
     <nav class="site-nav" aria-label="Hovednavigasjon" style="background:rgba(250,250,250,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:1.25rem;padding:0.75rem 1.25rem;display:inline-block">
       <div class="site-nav-inner" style="justify-content:center;gap:2rem">
         <a href="/" class="site-nav-logo">

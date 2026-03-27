@@ -143,6 +143,11 @@ async function main() {
         const graph = ld['@graph'] || [ld];
         const article = graph.find(g => g['@type'] === 'Article');
         if (article) article.dateModified = new Date().toISOString().slice(0, 10);
+        // Ensure Dataset always has license
+        const dataset = graph.find(g => g['@type'] === 'Dataset');
+        if (dataset && !dataset.license) {
+          dataset.license = 'https://www.sesum.no/bruksvilkar.html';
+        }
         const faq = graph.find(g => g['@type'] === 'FAQPage');
         if (faq && faq.mainEntity) {
           if (faq.mainEntity[0]) {

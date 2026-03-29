@@ -490,7 +490,7 @@
     <div class="flex justify-center mb-4 animate-fade-up">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/60 shadow-sm">
         <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-        <span id="spots-left" class="text-[11px] font-medium text-slate-600">Lukket beta - bli med og test</span>
+        <span id="spots-left" class="text-[11px] font-medium text-slate-600">Gratis for iPhone</span>
       </div>
     </div>
 
@@ -544,14 +544,14 @@
             id="submit-button"
             class="bg-sesum text-white px-5 py-3.5 rounded-xl font-semibold text-sm transition-all active:scale-[0.97] disabled:opacity-50 whitespace-nowrap"
           >
-            Få tidlig betatilgang
+            Prøv SeSum gratis
           </button>
         </form>
 
         <p id="form-error" class="text-xs text-red-500 text-center mt-2 hidden"></p>
 
         <p class="text-[10px] text-slate-400 text-center mt-3 leading-relaxed">
-          Null spam. Vi sender e-post når det er din tur.
+          Du får nedlastingslenke på e-post med en gang.
         </p>
       </div>
 
@@ -562,12 +562,12 @@
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
           </div>
-          <h3 class="text-base font-bold text-slate-900 mb-1">Du er på listen!</h3>
-          <p class="text-xs text-slate-500 mb-5">Vi sender e-post når det er din tur.</p>
+          <h3 class="text-base font-bold text-slate-900 mb-1">Sjekk e-posten din!</h3>
+          <p class="text-xs text-slate-500 mb-5">Vi har sendt deg en nedlastingslenke.</p>
 
           <!-- Utforsk mens du venter -->
           <div class="border-t border-slate-100 pt-4">
-            <p style="font-size:0.75rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem">Utforsk mens du venter</p>
+            <p style="font-size:0.75rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem">Utforsk prisdata</p>
             <div style="display:flex;flex-direction:column;gap:0.5rem;text-align:left">
               <a href="/produkt/" style="display:flex;align-items:center;gap:0.75rem;padding:0.625rem 0.75rem;background:#f8fafc;border-radius:0.75rem;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='#f0fdf4'" onmouseout="this.style.background='#f8fafc'">
                 <div style="width:2rem;height:2rem;background:#ecfdf5;border-radius:0.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
@@ -830,7 +830,7 @@
           </details>
           <details style="border-bottom:1px solid #f1f5f9;padding-bottom:0.5rem">
             <summary style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;font-size:0.875rem;font-weight:600;color:#1e293b;cursor:pointer;list-style:none">Når lanseres SeSum?<svg style="width:1rem;height:1rem;color:#94a3b8;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></summary>
-            <p style="font-size:0.75rem;color:#475569;line-height:1.6;padding-top:0.25rem;padding-bottom:0.5rem">Lukket beta for iPhone. Planlagt full lansering i 2026.</p>
+            <p style="font-size:0.75rem;color:#475569;line-height:1.6;padding-top:0.25rem;padding-bottom:0.5rem">Gratis beta for iPhone. Planlagt full lansering i 2026.</p>
           </details>
           <details>
             <summary style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;font-size:0.875rem;font-weight:600;color:#1e293b;cursor:pointer;list-style:none">Kommer det en Android-versjon?<svg style="width:1rem;height:1rem;color:#94a3b8;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></summary>
@@ -957,7 +957,7 @@
     async function updateSpotsLeft() {
       const spotsElement = document.getElementById('spots-left');
       if (!spotsElement) return;
-      spotsElement.innerText = 'Lukket beta - bli med og test';
+      spotsElement.innerText = 'Gratis for iPhone';
     }
 
     // Live stats hydration

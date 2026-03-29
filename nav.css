@@ -5,11 +5,11 @@
   z-index: 50;
 }
 .site-nav-inner {
-  max-width: 42rem;
+  max-width: 48rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 2.5rem;
 }
 .site-nav-logo {
   display: inline-flex;
@@ -32,8 +32,9 @@
 }
 .site-nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
   align-items: center;
+  margin-left: auto;
 }
 .site-nav-links a {
   font-size: 0.8125rem;
@@ -47,6 +48,22 @@
 }
 .site-nav-links a[aria-current="page"] {
   color: #2d6a4f;
+}
+/* Nav CTA button */
+.site-nav-cta {
+  background: #2d6a4f;
+  color: #fff !important;
+  padding: 0.4375rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+  margin-left: 0.75rem;
+}
+.site-nav-cta:hover {
+  color: #fff !important;
+  opacity: 0.9;
 }
 .site-nav-toggle {
   display: none;

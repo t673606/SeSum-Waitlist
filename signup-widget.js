@@ -214,47 +214,8 @@
     });
   }
 
-  // --- Add CTA to nav (both desktop and mobile) ---
-  function injectNavCTA() {
-    // Don't add on homepage
-    if (location.pathname === '/' || location.pathname === '/index.html') return;
-
-    // Desktop nav — add more gap between logo and links
-    var navInner = document.querySelector('.site-nav-inner');
-    if (navInner) {
-      navInner.style.gap = '2rem';
-    }
-
-    var navLinks = document.querySelector('.site-nav-links');
-    if (navLinks) {
-      // Add separator space before CTA
-      var cta = document.createElement('a');
-      cta.href = '/#signup';
-      cta.textContent = 'Prøv gratis';
-      cta.style.cssText =
-        'background:#2d6a4f;color:#fff !important;padding:0.4375rem 0.875rem;' +
-        'border-radius:0.5rem;font-size:0.8125rem;font-weight:600;' +
-        'text-decoration:none;transition:opacity 0.15s;margin-left:1rem;';
-      cta.onmouseover = function () { this.style.opacity = '0.9'; };
-      cta.onmouseout = function () { this.style.opacity = '1'; };
-      navLinks.appendChild(cta);
-    }
-
-    // Mobile nav
-    var mobileNav = document.querySelector('.site-nav-mobile');
-    if (mobileNav) {
-      var mobileCta = document.createElement('a');
-      mobileCta.href = '/#signup';
-      mobileCta.innerHTML =
-        '<span class="site-nav-label" style="color:#2d6a4f">Prøv SeSum gratis</span>' +
-        '<span class="site-nav-desc">Gratis for iPhone</span>';
-      mobileNav.appendChild(mobileCta);
-    }
-  }
-
   // --- Init ---
   function init() {
-    injectNavCTA();
     injectInlineForm();
     // Sticky bar only on mobile
     if (window.innerWidth <= 640) {

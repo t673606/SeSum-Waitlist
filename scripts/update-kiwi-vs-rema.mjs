@@ -168,10 +168,10 @@ async function main() {
     }
   );
 
-  // Update meta
+  // Update meta — static description, don't overwrite with dynamic numbers
   html = html.replace(
     /(<meta\s+name="description"\s+content=")[^"]*"/,
-    `$1Prissammenligning KIWI vs REMA 1000: Se faktiske priser p\u00e5 ${total} dagligvarer denne uken. Oppdateres daglig fra SeSum."`
+    `$1KIWI eller REMA 1000: Hvem er billigst? Se faktiske priser side om side, basert p\u00e5 ekte kvitteringsdata fra norske forbrukere. Oppdatert daglig."`
   );
 
   writeFileSync(FILE, html, 'utf-8');

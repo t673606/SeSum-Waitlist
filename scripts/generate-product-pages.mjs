@@ -120,7 +120,7 @@ function buildProductPage(product, slug) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pris ${escHtml(product.name)} \u2013 ${prices.map(p => p.chain).join(', ')} | SeSum</title>
+  <title>Pris ${escHtml(product.name)} | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/produkt/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -146,36 +146,12 @@ function buildProductPage(product, slug) {
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; -webkit-font-smoothing: antialiased; }
   </style>
   <link rel="stylesheet" href="/nav.css" />
-  <script src="/nav.js" defer></script>
+  <script src="/nav-component.js" defer></script>
+  <script src="/signup-widget.js" defer></script>
 </head>
 <body class="min-h-screen overflow-x-hidden">
 
-  <nav class="site-nav" aria-label="Hovednavigasjon">
-    <div class="site-nav-inner">
-      <a href="/" class="site-nav-logo">
-        <img src="/sesum-logo.png" alt="SeSum logo" width="36" height="36" />
-        <span>SeSum</span>
-      </a>
-      <div class="site-nav-links">
-        <a href="/produkt/">Produkter</a>
-        <a href="/tilbud/">Tilbud</a>
-        <a href="/kiwi-vs-rema.html">Sammenlign</a>
-        <a href="/innsikter.html">Innsikter</a>
-        <a href="/prisportal-matvarer.html">Prisportal</a>
-      </div>
-      <button class="site-nav-toggle" aria-label="Meny" aria-expanded="false">
-        <svg class="site-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <svg class="site-nav-icon-close" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="site-nav-mobile">
-      <a href="/produkt/"><span class="site-nav-label">Produkter</span><span class="site-nav-desc">Se priser p\u00e5 et utvalg dagligvarer</span></a>
-      <a href="/tilbud/"><span class="site-nav-label">Tilbud</span><span class="site-nav-desc">Ukens beste tilbud fra alle kjeder</span></a>
-      <a href="/kiwi-vs-rema.html"><span class="site-nav-label">Sammenlign</span><span class="site-nav-desc">Hvilken kjede er billigst?</span></a>
-      <a href="/innsikter.html"><span class="site-nav-label">Innsikter</span><span class="site-nav-desc">Prisutvikling og sparedata</span></a>
-      <a href="/prisportal-matvarer.html"><span class="site-nav-label">Prisportal</span><span class="site-nav-desc">Hvorfor trenger vi en prisportal?</span></a>
-    </div>
-  </nav>
+  <div id="site-nav"></div>
 
   <nav class="site-breadcrumb" aria-label="Br\u00f8dsmuler">
     <div class="site-breadcrumb-inner">
@@ -274,6 +250,13 @@ function buildIndexPage(products) {
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="description" content="Se priser p\u00e5 ${products.length} popul\u00e6re dagligvarer hos norske butikkjeder. Sammenlign priser mellom KIWI, REMA 1000, Meny, SPAR og flere." />
   <meta name="theme-color" content="#2d6a4f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sesum.no/produkt/" />
+  <meta property="og:title" content="Dagligvarepriser - Popul\u00e6re produkter | SeSum" />
+  <meta property="og:description" content="Se priser p\u00e5 ${products.length} popul\u00e6re dagligvarer hos norske butikkjeder. Sammenlign priser mellom KIWI, REMA 1000, Meny, SPAR og flere." />
+  <meta property="og:image" content="https://www.sesum.no/og-image.webp" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:site_name" content="SeSum" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -283,15 +266,12 @@ function buildIndexPage(products) {
     * { -webkit-tap-highlight-color: transparent; }
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; -webkit-font-smoothing: antialiased; }
   </style>
+  <link rel="stylesheet" href="/nav.css" />
+  <script src="/nav-component.js" defer></script>
+  <script src="/signup-widget.js" defer></script>
 </head>
 <body class="min-h-screen overflow-x-hidden">
-  <nav class="px-5 py-5 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <img src="/sesum-logo.png" alt="SeSum logo" class="h-9 w-auto rounded-xl" width="36" height="36" />
-      <span class="text-xl font-bold tracking-tight text-slate-900">SeSum</span>
-    </a>
-    <a href="/priser.html" class="text-xs font-semibold text-slate-500 hover:text-slate-700">Priser</a>
-  </nav>
+  <div id="site-nav"></div>
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
       <h1 class="text-2xl font-bold text-slate-900 mb-1">Dagligvarepriser</h1>

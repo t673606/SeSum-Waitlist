@@ -105,19 +105,19 @@ async function main() {
   }
 
   // 3. Update <title>
-  const titleStr = `Prisutvikling dagligvarer Norge 2025\u20132026 | Ekte data fra ${r}+ kvitteringer | SeSum`;
+  const titleStr = `Prisutvikling dagligvarer Norge 2026 | SeSum`;
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${titleStr}</title>`);
 
   // 4. Update meta tags
   const pc = fmt(d.overview.price_changes_tracked);
   html = updateMeta(html, 'meta[name="description"]',
-    `Hva koster dagligvarer i Norge egentlig? SeSum har analysert ${r}+ kvitteringer og sporet ${pc} prisendringer. Se prisutvikling, prisforskjeller og hva du kan spare.`);
+    `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`);
   html = updateMeta(html, 'meta[property="og:title"]',
-    `Prisutvikling dagligvarer Norge 2025\u20132026 | Ekte data fra ${r}+ kvitteringer`);
+    `Prisutvikling dagligvarer Norge 2026 | SeSum`);
   html = updateMeta(html, 'meta[property="og:description"]',
-    `SeSum har analysert ${r}+ kvitteringer og sporet ${pc} prisendringer. Se hva maten faktisk koster.`);
+    `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`);
   html = updateMeta(html, 'meta[name="twitter:description"]',
-    `${r}+ kvitteringer analysert. Se hva dagligvarer faktisk koster i norske butikker.`);
+    `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`);
 
   // 5. Update JSON-LD structured data
   html = html.replace(
@@ -129,8 +129,8 @@ async function main() {
         if (!graph) return match;
 
         // WebPage
-        graph[0].name = `Prisutvikling dagligvarer Norge 2025\u20132026 | Ekte data fra ${r}+ kvitteringer`;
-        graph[0].description = `SeSum har analysert ${r}+ kvitteringer og sporet ${pc} prisendringer.`;
+        graph[0].name = `Prisutvikling dagligvarer Norge 2026 | SeSum`;
+        graph[0].description = `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`;
         graph[0].dateModified = new Date().toISOString().slice(0, 10);
 
         // Dataset

@@ -69,17 +69,26 @@
     if (sticky) sticky.style.display = 'none';
   }
 
-  // --- Hide existing CTA buttons that link to homepage ---
+  // --- Hide existing CTA buttons/sections that link to homepage ---
   function hideExistingCTAs() {
-    // Remove "Prøv SeSum gratis" link buttons that just point to homepage
+    // Known CTA texts that should be replaced by the inline signup form
+    var ctaTexts = [
+      'Prøv SeSum gratis',
+      'Få tidlig tilgang til SeSum',
+      'Bli med å teste SeSum'
+    ];
     document.querySelectorAll('a[href="/"]').forEach(function (a) {
-      if (a.textContent.trim() === 'Prøv SeSum gratis') {
-        var parent = a.closest('.text-center, div');
-        if (parent && parent.querySelector('p')) {
-          parent.style.display = 'none';
-        } else {
-          a.style.display = 'none';
-        }
+      var text = a.textContent.trim();
+      var isCtaLink = ctaTexts.some(function (t) { return text === t; });
+      if (!isCtaLink) return;
+
+      // Hide the wrapping CTA section (text-center div, .cta-section, or parent div)
+      var section = a.closest('.cta-section, .text-center');
+      if (section) {
+        section.style.display = 'none';
+      } else {
+        // For inline links inside larger blocks (e.g. tilbud promo cards)
+        a.style.display = 'none';
       }
     });
   }

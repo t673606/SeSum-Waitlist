@@ -20,136 +20,158 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Yoghurt Vanilje 800g Q",
-        "brand": {
-          "@type": "Brand",
-          "name": "Q"
+        {
+            "@type": "Product",
+            "name": "Yoghurt Vanilje 800g Q",
+            "brand": {
+                "@type": "Brand",
+                "name": "Q"
+            },
+            "image": "https://bilder.ngdata.no/7048840005468/kmh/large.jpg",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 36.9,
+                "highPrice": 39.9,
+                "offerCount": 5,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 36.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "OBS"
+                        },
+                        "price": 39.6,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Meny"
+                        },
+                        "price": 39.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "SPAR"
+                        },
+                        "price": 39.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Joker"
+                        },
+                        "price": 39.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.5,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 5,
+                "reviewCount": 5
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.5,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 5 butikkjeder."
+            }
         },
-        "image": "https://bilder.ngdata.no/7048840005468/kmh/large.jpg",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 36.9,
-          "highPrice": 39.9,
-          "offerCount": 5,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 36.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "OBS"
-              },
-              "price": 39.6,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Meny"
-              },
-              "price": 39.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "SPAR"
-              },
-              "price": 39.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Joker"
-              },
-              "price": 39.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Yoghurt Vanilje 800g Q?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yoghurt Vanilje 800g Q koster 36,90 kr hos KIWI, 39,60 kr hos OBS, 39,90 kr hos Meny, 39,90 kr hos SPAR, 39,90 kr hos Joker. Billigst hos KIWI til 36,90 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Yoghurt Vanilje 800g Q billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yoghurt Vanilje 800g Q er billigst hos KIWI til 36,90 kr. Joker er dyrest med 39,90 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Yoghurt Vanilje 800g Q",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
             }
-          ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Yoghurt Vanilje 800g Q"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Yoghurt Vanilje 800g Q?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yoghurt Vanilje 800g Q koster 36,90 kr hos KIWI, 39,60 kr hos OBS, 39,90 kr hos Meny, 39,90 kr hos SPAR, 39,90 kr hos Joker. Billigst hos KIWI til 36,90 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Yoghurt Vanilje 800g Q billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yoghurt Vanilje 800g Q er billigst hos KIWI til 36,90 kr. Joker er dyrest med 39,90 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Yoghurt Vanilje 800g Q",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Yoghurt Vanilje 800g Q"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

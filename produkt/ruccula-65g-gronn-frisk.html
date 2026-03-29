@@ -20,114 +20,136 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Ruccula 65g Grønn&Frisk",
-        "brand": {
-          "@type": "Brand",
-          "name": "Grønn&Frisk"
+        {
+            "@type": "Product",
+            "name": "Ruccula 65g Grønn&Frisk",
+            "brand": {
+                "@type": "Brand",
+                "name": "Grønn&Frisk"
+            },
+            "image": "https://bilder.ngdata.no/7023026089401/kmh/large.jpg",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 16.9,
+                "highPrice": 24.9,
+                "offerCount": 3,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 16.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "SPAR"
+                        },
+                        "price": 17.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Meny"
+                        },
+                        "price": 24.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.0,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 3,
+                "reviewCount": 3
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.0,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 3 butikkjeder."
+            }
         },
-        "image": "https://bilder.ngdata.no/7023026089401/kmh/large.jpg",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 16.9,
-          "highPrice": 24.9,
-          "offerCount": 3,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 16.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "SPAR"
-              },
-              "price": 17.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Meny"
-              },
-              "price": 24.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Ruccula 65g Grønn&Frisk?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ruccula 65g Grønn&Frisk koster 16,90 kr hos KIWI, 17,90 kr hos SPAR, 24,90 kr hos Meny. Billigst hos KIWI til 16,90 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Ruccula 65g Grønn&Frisk billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ruccula 65g Grønn&Frisk er billigst hos KIWI til 16,90 kr. Meny er dyrest med 24,90 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Ruccula 65g Grønn&Frisk",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
             }
-          ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Ruccula 65g Grønn&Frisk"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Ruccula 65g Grønn&Frisk?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ruccula 65g Grønn&Frisk koster 16,90 kr hos KIWI, 17,90 kr hos SPAR, 24,90 kr hos Meny. Billigst hos KIWI til 16,90 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Ruccula 65g Grønn&Frisk billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ruccula 65g Grønn&Frisk er billigst hos KIWI til 16,90 kr. Meny er dyrest med 24,90 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Ruccula 65g Grønn&Frisk",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Ruccula 65g Grønn&Frisk"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

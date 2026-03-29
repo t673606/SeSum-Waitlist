@@ -20,125 +20,147 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Havregryn Lettkokte 1,2kg Urkraft",
-        "brand": {
-          "@type": "Brand",
-          "name": "Urkraft"
+        {
+            "@type": "Product",
+            "name": "Havregryn Lettkokte 1,2kg Urkraft",
+            "brand": {
+                "@type": "Brand",
+                "name": "Urkraft"
+            },
+            "image": "https://bilder.ngdata.no/7020655841165/kmh/large.jpg",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 22.9,
+                "highPrice": 28.9,
+                "offerCount": 4,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 22.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "SPAR"
+                        },
+                        "price": 28.5,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Meny"
+                        },
+                        "price": 28.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Joker"
+                        },
+                        "price": 28.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.3,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 4,
+                "reviewCount": 4
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.3,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 4 butikkjeder."
+            }
         },
-        "image": "https://bilder.ngdata.no/7020655841165/kmh/large.jpg",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 22.9,
-          "highPrice": 28.9,
-          "offerCount": 4,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 22.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "SPAR"
-              },
-              "price": 28.5,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Meny"
-              },
-              "price": 28.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Joker"
-              },
-              "price": 28.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Havregryn Lettkokte 1,2kg Urkraft?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Havregryn Lettkokte 1,2kg Urkraft koster 22,90 kr hos KIWI, 28,50 kr hos SPAR, 28,90 kr hos Meny, 28,90 kr hos Joker. Billigst hos KIWI til 22,90 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Havregryn Lettkokte 1,2kg Urkraft billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Havregryn Lettkokte 1,2kg Urkraft er billigst hos KIWI til 22,90 kr. Joker er dyrest med 28,90 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Havregryn Lettkokte 1,2kg Urkraft",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
             }
-          ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Havregryn Lettkokte 1,2kg Urkraft"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Havregryn Lettkokte 1,2kg Urkraft?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Havregryn Lettkokte 1,2kg Urkraft koster 22,90 kr hos KIWI, 28,50 kr hos SPAR, 28,90 kr hos Meny, 28,90 kr hos Joker. Billigst hos KIWI til 22,90 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Havregryn Lettkokte 1,2kg Urkraft billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Havregryn Lettkokte 1,2kg Urkraft er billigst hos KIWI til 22,90 kr. Joker er dyrest med 28,90 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Havregryn Lettkokte 1,2kg Urkraft",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Havregryn Lettkokte 1,2kg Urkraft"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -20,114 +20,136 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Sjokomelk 1l Tine",
-        "brand": {
-          "@type": "Brand",
-          "name": "Tine"
+        {
+            "@type": "Product",
+            "name": "Sjokomelk 1l Tine",
+            "brand": {
+                "@type": "Brand",
+                "name": "Tine"
+            },
+            "image": "https://bilder.ngdata.no/7038010042461/kmh/large.jpg",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 25.3,
+                "highPrice": 28.9,
+                "offerCount": 3,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "REMA 1000"
+                        },
+                        "price": 25.3,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 25.4,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Meny"
+                        },
+                        "price": 28.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.0,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 3,
+                "reviewCount": 3
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.0,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 3 butikkjeder."
+            }
         },
-        "image": "https://bilder.ngdata.no/7038010042461/kmh/large.jpg",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 25.3,
-          "highPrice": 28.9,
-          "offerCount": 3,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "REMA 1000"
-              },
-              "price": 25.3,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 25.4,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Meny"
-              },
-              "price": 28.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Sjokomelk 1l Tine?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sjokomelk 1l Tine koster 25,30 kr hos REMA 1000, 25,40 kr hos KIWI, 28,90 kr hos Meny. Billigst hos REMA 1000 til 25,30 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Sjokomelk 1l Tine billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sjokomelk 1l Tine er billigst hos REMA 1000 til 25,30 kr. Meny er dyrest med 28,90 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Sjokomelk 1l Tine",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
             }
-          ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Sjokomelk 1l Tine"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Sjokomelk 1l Tine?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sjokomelk 1l Tine koster 25,30 kr hos REMA 1000, 25,40 kr hos KIWI, 28,90 kr hos Meny. Billigst hos REMA 1000 til 25,30 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Sjokomelk 1l Tine billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sjokomelk 1l Tine er billigst hos REMA 1000 til 25,30 kr. Meny er dyrest med 28,90 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Sjokomelk 1l Tine",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Sjokomelk 1l Tine"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

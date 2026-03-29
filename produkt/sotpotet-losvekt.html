@@ -20,110 +20,132 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Søtpotet løsvekt",
-        "image": "https://glpowwptzbokwtkbsnko.supabase.co/storage/v1/object/public/product_photos/98a02763-df47-46c3-9486-5aba2de0f127/soetpotet-loesvekt.png",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 7.96,
-          "highPrice": 18.9,
-          "offerCount": 3,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "SPAR"
-              },
-              "price": 7.96,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "Product",
+            "name": "Søtpotet løsvekt",
+            "image": "https://glpowwptzbokwtkbsnko.supabase.co/storage/v1/object/public/product_photos/98a02763-df47-46c3-9486-5aba2de0f127/soetpotet-loesvekt.png",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 7.96,
+                "highPrice": 18.9,
+                "offerCount": 3,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "SPAR"
+                        },
+                        "price": 7.96,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Meny"
+                        },
+                        "price": 15.96,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 18.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
             },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Meny"
-              },
-              "price": 15.96,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.0,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 3,
+                "reviewCount": 3
             },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 18.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.0,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 3 butikkjeder."
             }
-          ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Søtpotet løsvekt?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Søtpotet løsvekt koster 7,96 kr hos SPAR, 15,96 kr hos Meny, 18,90 kr hos KIWI. Billigst hos SPAR til 7,96 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Søtpotet løsvekt billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Søtpotet løsvekt er billigst hos SPAR til 7,96 kr. KIWI er dyrest med 18,90 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Søtpotet løsvekt",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Søtpotet løsvekt"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Søtpotet løsvekt?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Søtpotet løsvekt koster 7,96 kr hos SPAR, 15,96 kr hos Meny, 18,90 kr hos KIWI. Billigst hos SPAR til 7,96 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Søtpotet løsvekt billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Søtpotet løsvekt er billigst hos SPAR til 7,96 kr. KIWI er dyrest med 18,90 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Søtpotet løsvekt",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Søtpotet løsvekt"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

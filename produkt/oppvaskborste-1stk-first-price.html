@@ -20,114 +20,136 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Oppvaskbørste 1stk First Price",
-        "brand": {
-          "@type": "Brand",
-          "name": "First Price"
+        {
+            "@type": "Product",
+            "name": "Oppvaskbørste 1stk First Price",
+            "brand": {
+                "@type": "Brand",
+                "name": "First Price"
+            },
+            "image": "https://bilder.ngdata.no/7035620053610/kmh/large.jpg",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 10.4,
+                "highPrice": 16.4,
+                "offerCount": 3,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Meny"
+                        },
+                        "price": 10.4,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "SPAR"
+                        },
+                        "price": 10.4,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 16.4,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.0,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 3,
+                "reviewCount": 3
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.0,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 3 butikkjeder."
+            }
         },
-        "image": "https://bilder.ngdata.no/7035620053610/kmh/large.jpg",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 10.4,
-          "highPrice": 16.4,
-          "offerCount": 3,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Meny"
-              },
-              "price": 10.4,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "SPAR"
-              },
-              "price": 10.4,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 16.4,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Oppvaskbørste 1stk First Price?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oppvaskbørste 1stk First Price koster 10,40 kr hos Meny, 10,40 kr hos SPAR, 16,40 kr hos KIWI. Billigst hos Meny til 10,40 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Oppvaskbørste 1stk First Price billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oppvaskbørste 1stk First Price er billigst hos Meny til 10,40 kr. KIWI er dyrest med 16,40 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Oppvaskbørste 1stk First Price",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
             }
-          ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Oppvaskbørste 1stk First Price"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Oppvaskbørste 1stk First Price?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oppvaskbørste 1stk First Price koster 10,40 kr hos Meny, 10,40 kr hos SPAR, 16,40 kr hos KIWI. Billigst hos Meny til 10,40 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Oppvaskbørste 1stk First Price billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oppvaskbørste 1stk First Price er billigst hos Meny til 10,40 kr. KIWI er dyrest med 16,40 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Oppvaskbørste 1stk First Price",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Oppvaskbørste 1stk First Price"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -20,114 +20,136 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Product",
-        "name": "Revet Lett 17%, 200 g",
-        "brand": {
-          "@type": "Brand",
-          "name": "Synnøve"
+        {
+            "@type": "Product",
+            "name": "Revet Lett 17%, 200 g",
+            "brand": {
+                "@type": "Brand",
+                "name": "Synnøve"
+            },
+            "image": "https://images.oda.com/local_products/a51d7855-b391-429a-b265-defcc62fc5f6.jpg?fit=bounds&format=auto&optimize=medium&width=725&s=0x6556bef8b19999fbe20b236cf565bc51b813c4e3",
+            "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 29.8,
+                "highPrice": 33.9,
+                "offerCount": 3,
+                "priceCurrency": "NOK",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "REMA 1000"
+                        },
+                        "price": 29.8,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "KIWI"
+                        },
+                        "price": 29.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    },
+                    {
+                        "@type": "Offer",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Oda"
+                        },
+                        "price": 33.9,
+                        "priceCurrency": "NOK",
+                        "availability": "https://schema.org/InStock",
+                        "priceValidUntil": "2026-04-03"
+                    }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": 4.0,
+                "bestRating": 5,
+                "worstRating": 1,
+                "ratingCount": 3,
+                "reviewCount": 3
+            },
+            "review": {
+                "@type": "Review",
+                "author": {
+                    "@type": "Organization",
+                    "name": "SeSum"
+                },
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": 4.0,
+                    "bestRating": 5,
+                    "worstRating": 1
+                },
+                "reviewBody": "Prissammenligning basert på ekte kvitteringsdata fra 3 butikkjeder."
+            }
         },
-        "image": "https://images.oda.com/local_products/a51d7855-b391-429a-b265-defcc62fc5f6.jpg?fit=bounds&format=auto&optimize=medium&width=725&s=0x6556bef8b19999fbe20b236cf565bc51b813c4e3",
-        "offers": {
-          "@type": "AggregateOffer",
-          "lowPrice": 29.8,
-          "highPrice": 33.9,
-          "offerCount": 3,
-          "priceCurrency": "NOK",
-          "offers": [
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "REMA 1000"
-              },
-              "price": 29.8,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "KIWI"
-              },
-              "price": 29.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
-            },
-            {
-              "@type": "Offer",
-              "seller": {
-                "@type": "Organization",
-                "name": "Oda"
-              },
-              "price": 33.9,
-              "priceCurrency": "NOK",
-              "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2026-04-03"
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva koster Revet Lett 17%, 200 g?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Revet Lett 17%, 200 g koster 29,80 kr hos REMA 1000, 29,90 kr hos KIWI, 33,90 kr hos Oda. Billigst hos REMA 1000 til 29,80 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor er Revet Lett 17%, 200 g billigst?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Revet Lett 17%, 200 g er billigst hos REMA 1000 til 29,80 kr. Oda er dyrest med 33,90 kr."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "WebPage",
+            "name": "Pris Revet Lett 17%, 200 g",
+            "dateModified": "2026-03-27",
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": [
+                    "h1",
+                    ".insight-prose"
+                ]
             }
-          ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Forside",
+                    "item": "https://www.sesum.no/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Produkter",
+                    "item": "https://www.sesum.no/produkt/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Revet Lett 17%, 200 g"
+                }
+            ]
         }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Hva koster Revet Lett 17%, 200 g?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Revet Lett 17%, 200 g koster 29,80 kr hos REMA 1000, 29,90 kr hos KIWI, 33,90 kr hos Oda. Billigst hos REMA 1000 til 29,80 kr. Prisene er hentet fra SeSum sin prisportal og oppdateres daglig."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hvor er Revet Lett 17%, 200 g billigst?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Revet Lett 17%, 200 g er billigst hos REMA 1000 til 29,80 kr. Oda er dyrest med 33,90 kr."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebPage",
-        "name": "Pris Revet Lett 17%, 200 g",
-        "dateModified": "2026-03-27",
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".insight-prose"
-          ]
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Forside",
-            "item": "https://www.sesum.no/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Produkter",
-            "item": "https://www.sesum.no/produkt/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Revet Lett 17%, 200 g"
-          }
-        ]
-      }
     ]
-  }
+}
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />

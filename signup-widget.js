@@ -69,8 +69,25 @@
     if (sticky) sticky.style.display = 'none';
   }
 
+  // --- Hide existing CTA buttons that link to homepage ---
+  function hideExistingCTAs() {
+    // Remove "Prøv SeSum gratis" link buttons that just point to homepage
+    document.querySelectorAll('a[href="/"]').forEach(function (a) {
+      if (a.textContent.trim() === 'Prøv SeSum gratis') {
+        var parent = a.closest('.text-center, div');
+        if (parent && parent.querySelector('p')) {
+          parent.style.display = 'none';
+        } else {
+          a.style.display = 'none';
+        }
+      }
+    });
+  }
+
   // --- Inline signup form ---
   function injectInlineForm() {
+    hideExistingCTAs();
+
     var target = document.querySelector('[data-signup-inline]');
     if (!target) {
       // Auto-inject before footer if no explicit target
@@ -202,16 +219,22 @@
     // Don't add on homepage
     if (location.pathname === '/' || location.pathname === '/index.html') return;
 
-    // Desktop nav
+    // Desktop nav — add more gap between logo and links
+    var navInner = document.querySelector('.site-nav-inner');
+    if (navInner) {
+      navInner.style.gap = '2rem';
+    }
+
     var navLinks = document.querySelector('.site-nav-links');
     if (navLinks) {
+      // Add separator space before CTA
       var cta = document.createElement('a');
       cta.href = '/#signup';
       cta.textContent = 'Prøv gratis';
       cta.style.cssText =
         'background:#2d6a4f;color:#fff !important;padding:0.4375rem 0.875rem;' +
         'border-radius:0.5rem;font-size:0.8125rem;font-weight:600;' +
-        'text-decoration:none;transition:opacity 0.15s;margin-left:0.25rem;';
+        'text-decoration:none;transition:opacity 0.15s;margin-left:1rem;';
       cta.onmouseover = function () { this.style.opacity = '0.9'; };
       cta.onmouseout = function () { this.style.opacity = '1'; };
       navLinks.appendChild(cta);

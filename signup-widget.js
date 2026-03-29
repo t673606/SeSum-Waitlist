@@ -175,7 +175,7 @@
       headline = 'Prøv Norges prisportal for matvarer';
       subtext = 'Søk opp varer, sammenlign priser og følg prisutvikling hos 14 butikkjeder.';
     } else if (page.indexOf('/produkt') !== -1) {
-      headline = 'Se priser på 9 400+ produkter i appen';
+      headline = 'Se priser på 25 000+ produkter i appen';
       subtext = 'Søk opp varer, lag handlelister og finn billigste butikk.';
     } else if (page.indexOf('/tilbud') !== -1) {
       headline = 'Få varsel når favorittvarene dine er på tilbud';

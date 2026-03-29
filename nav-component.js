@@ -21,6 +21,7 @@
           '<a href="/prisportal-matvarer.html">Prisportal</a>' +
           '<a href="/" class="site-nav-cta">Prøv gratis</a>' +
         '</div>' +
+        '<a href="/" class="site-nav-cta-mobile">Prøv gratis</a>' +
         '<button class="site-nav-toggle" aria-label="Meny" aria-expanded="false">' +
           '<svg class="site-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>' +
           '<svg class="site-nav-icon-close" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
@@ -73,10 +74,12 @@
       });
     }
 
-    // --- Hide CTA on homepage (already has its own form) ---
+    // --- Hide CTAs on homepage (already has its own form) ---
     if (path === '/' || path === '/index.html') {
       var cta = document.querySelector('.site-nav-cta');
       if (cta) cta.style.display = 'none';
+      var ctaMobile = document.querySelector('.site-nav-cta-mobile');
+      if (ctaMobile) ctaMobile.style.display = 'none';
       var mobileCta = document.querySelector('.site-nav-mobile a:last-child');
       if (mobileCta && mobileCta.textContent.indexOf('Prøv SeSum') !== -1) {
         mobileCta.style.display = 'none';

@@ -136,7 +136,7 @@ function buildProductPage(product, slug) {
   <script type="application/ld+json">
   ${JSON.stringify(ld, null, 2).split('\n').join('\n  ')}
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -144,7 +144,6 @@ function buildProductPage(product, slug) {
   <style>
     * { -webkit-tap-highlight-color: transparent; }
     body { font-family: 'DM Sans', sans-serif; background: #fafafa; -webkit-font-smoothing: antialiased; }
-    .text-sesum { color: #2d6a4f; }
   </style>
   <link rel="stylesheet" href="/nav.css" />
   <script src="/nav.js" defer></script>
@@ -275,7 +274,7 @@ function buildIndexPage(products) {
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="description" content="Se priser p\u00e5 ${products.length} popul\u00e6re dagligvarer hos norske butikkjeder. Sammenlign priser mellom KIWI, REMA 1000, Meny, SPAR og flere." />
   <meta name="theme-color" content="#2d6a4f" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />

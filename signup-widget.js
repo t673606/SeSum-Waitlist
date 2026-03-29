@@ -82,33 +82,71 @@
     if (sticky) sticky.style.display = 'none';
   }
 
-  // --- Hide existing CTA buttons/sections that link to homepage ---
-  function hideExistingCTAs() {
-    // Known CTA texts that should be replaced by the inline signup form
+  // --- Replace existing CTA buttons with inline signup forms ---
+  function replaceExistingCTAs() {
     var ctaTexts = [
       'Prøv SeSum gratis',
       'Få tidlig tilgang til SeSum',
       'Bli med å teste SeSum'
     ];
+
+    var page = location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || 'home';
+    var pageName = page.split('/').pop() || 'home';
+    var formIndex = 0;
+
     document.querySelectorAll('a[href="/"]').forEach(function (a) {
       var text = a.textContent.trim();
       var isCtaLink = ctaTexts.some(function (t) { return text === t; });
       if (!isCtaLink) return;
 
-      // Hide the wrapping CTA section (text-center div, .cta-section, or parent div)
-      var section = a.closest('.cta-section, .text-center');
-      if (section) {
-        section.style.display = 'none';
+      // Check if this link is inside a dark promo card (green gradient)
+      var promoCard = a.closest('[style*="gradient"]');
+      if (promoCard) {
+        // Replace the link with an inline signup form (white on dark bg)
+        var formId = 'promo_' + pageName + '_' + formIndex++;
+        var formHtml =
+          '<div class="sw-wrapper">' +
+            '<form class="sw-form" onsubmit="return false" style="display:flex;gap:0.5rem">' +
+              '<input type="email" required placeholder="E-post" autocomplete="email" ' +
+                'style="flex:1;min-width:0;padding:0.75rem 1rem;border-radius:0.75rem;border:none;font-size:0.875rem;font-family:inherit;outline:none;color:#0f172a" />' +
+              '<button type="submit" ' +
+                'style="background:white;color:#2d6a4f;padding:0.75rem 1.25rem;border-radius:0.75rem;font-size:0.8125rem;font-weight:700;border:none;cursor:pointer;white-space:nowrap;font-family:inherit;transition:opacity 0.15s" ' +
+                'onmouseover="this.style.opacity=\'0.9\'" onmouseout="this.style.opacity=\'1\'">Prøv gratis</button>' +
+            '</form>' +
+            '<p class="sw-error" style="display:none;color:#fca5a5;font-size:0.75rem;margin:0.5rem 0 0;text-align:center"></p>' +
+            '<p style="font-size:0.625rem;opacity:0.6;margin:0.5rem 0 0;text-align:center">Du får nedlastingslenke på e-post med en gang.</p>' +
+            '<div class="sw-success" style="display:none;text-align:center;padding:0.5rem 0">' +
+              '<span style="font-size:0.9375rem;font-weight:700;color:white">Sjekk e-posten din!</span>' +
+              '<p style="font-size:0.8125rem;opacity:0.8;margin:0.25rem 0 0">Vi har sendt deg en nedlastingslenke.</p>' +
+            '</div>' +
+          '</div>';
+
+        a.outerHTML = formHtml;
+
+        // Bind submit handler on the newly inserted form
+        var forms = promoCard.querySelectorAll('.sw-form');
+        var newForm = forms[forms.length - 1];
+        if (newForm) {
+          newForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSubmit(newForm, formId);
+          });
+        }
       } else {
-        // For inline links inside larger blocks (e.g. tilbud promo cards)
-        a.style.display = 'none';
+        // Non-promo card CTA: hide the wrapping section
+        var section = a.closest('.cta-section, .text-center');
+        if (section) {
+          section.style.display = 'none';
+        } else {
+          a.style.display = 'none';
+        }
       }
     });
   }
 
   // --- Inline signup form ---
   function injectInlineForm() {
-    hideExistingCTAs();
+    replaceExistingCTAs();
 
     var target = document.querySelector('[data-signup-inline]');
     if (!target) {

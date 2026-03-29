@@ -917,12 +917,23 @@
       }
     }
 
+    function getUtmParams() {
+      var params = new URLSearchParams(window.location.search);
+      var utm = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(k) {
+        var v = params.get(k);
+        if (v) utm[k] = v;
+      });
+      return utm;
+    }
+
     function showSuccess() {
       document.getElementById('waitlist-form').classList.add('hidden');
       document.getElementById('success-message').classList.remove('hidden');
 
       if (window.posthog) {
-        posthog.capture('waitlist_signup');
+        var props = Object.assign({ source: 'homepage' }, getUtmParams());
+        posthog.capture('waitlist_signup', props);
       }
 
       updateSpotsLeft();
@@ -1002,6 +1013,9 @@
     function openFeature(key) {
       var d = featureData[key];
       if (!d) return;
+      if (window.posthog) {
+        posthog.capture('feature_modal_open', { feature: key });
+      }
       var html = '<div style="margin-bottom:1rem">';
       html += '<h3 style="font-size:1.125rem;font-weight:700;color:#0f172a;margin:0 0 0.5rem">' + d.title + '</h3>';
       html += '<p style="font-size:0.8125rem;color:#475569;line-height:1.6;margin:0">' + d.desc + '</p>';

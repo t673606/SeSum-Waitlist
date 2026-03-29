@@ -54,6 +54,16 @@
     }
   }
 
+  function getUtmParams() {
+    var params = new URLSearchParams(window.location.search);
+    var utm = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function(k) {
+      var v = params.get(k);
+      if (v) utm[k] = v;
+    });
+    return utm;
+  }
+
   function showSuccess(form, formId) {
     var wrapper = form.closest('.sw-wrapper');
     if (wrapper) {
@@ -62,7 +72,10 @@
       if (successEl) successEl.style.display = 'block';
     }
     if (window.posthog) {
-      posthog.capture('waitlist_signup', { source: formId });
+      var props = { source: formId, page: location.pathname };
+      var utm = getUtmParams();
+      for (var k in utm) props[k] = utm[k];
+      posthog.capture('waitlist_signup', props);
     }
     // Also hide sticky bar if inline form was used
     var sticky = document.getElementById('sw-sticky');

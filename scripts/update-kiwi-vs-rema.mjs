@@ -168,10 +168,10 @@ async function main() {
     }
   );
 
-  // Update meta — static description, don't overwrite with dynamic numbers
+  // Update meta with dynamic product count
   html = html.replace(
     /(<meta\s+name="description"\s+content=")[^"]*"/,
-    `$1KIWI eller REMA 1000: Hvem er billigst? Se faktiske priser side om side, basert p\u00e5 ekte kvitteringsdata fra norske forbrukere. Oppdatert daglig."`
+    `$1KIWI eller REMA 1000: Hvem er billigst? Se priser p\u00e5 ${total} varer side om side. Oppdatert daglig med ekte kvitteringsdata."`
   );
 
   writeFileSync(FILE, html, 'utf-8');

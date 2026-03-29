@@ -111,13 +111,13 @@ async function main() {
   // 4. Update meta tags
   const pc = fmt(d.overview.price_changes_tracked);
   html = updateMeta(html, 'meta[name="description"]',
-    `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`);
+    `Hva koster dagligvarer i Norge? ${r}+ kvitteringer analysert. Se prisutvikling, prisforskjeller og finn billigste butikk.`);
   html = updateMeta(html, 'meta[property="og:title"]',
     `Prisutvikling dagligvarer Norge 2026 | SeSum`);
   html = updateMeta(html, 'meta[property="og:description"]',
-    `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`);
+    `Hva koster dagligvarer i Norge? ${r}+ kvitteringer analysert. Se prisutvikling, prisforskjeller og finn billigste butikk.`);
   html = updateMeta(html, 'meta[name="twitter:description"]',
-    `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`);
+    `${r}+ kvitteringer analysert. Se prisutvikling og prisforskjeller for dagligvarer i Norge.`);
 
   // 5. Update JSON-LD structured data
   html = html.replace(
@@ -130,7 +130,7 @@ async function main() {
 
         // WebPage
         graph[0].name = `Prisutvikling dagligvarer Norge 2026 | SeSum`;
-        graph[0].description = `Hva koster dagligvarer i Norge? Se prisutvikling og prisforskjeller basert på ekte kvitteringsdata. Finn ut hvilken butikk som er billigst.`;
+        graph[0].description = `Hva koster dagligvarer i Norge? ${r}+ kvitteringer analysert. Se prisutvikling, prisforskjeller og finn billigste butikk.`;
         graph[0].dateModified = new Date().toISOString().slice(0, 10);
 
         // Dataset

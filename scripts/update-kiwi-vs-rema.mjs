@@ -18,6 +18,15 @@ const EXCLUDE = new Set([
   'Smågodt løsvekt',
   'PRIMA KJØTTDEIG 14% 400G',
   'Mango stykk First Price',
+  // Løsvekt products with stk/kg unit mismatch between chains
+  'Lime løsvekt',
+  'Plommer løsvekt',
+  'Ingefær løsvekt',
+  'Vannmelon løsvekt',
+  'Champignon løsvekt',
+  'Paprika Rød løsvekt',
+  'Honningmelon løsvekt',
+  'Pizzabit Husets Varm pr stykk',
 ]);
 
 function fmt(n) { return String(n).replace('.', ','); }

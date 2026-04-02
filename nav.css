@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   gap: 2.5rem;
+  width: 100%;
 }
 .site-nav-logo {
   display: inline-flex;

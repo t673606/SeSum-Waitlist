@@ -843,6 +843,25 @@
     </div>
   </section>
 
+  <!-- Omtalt i E24 -->
+  <section class="px-5 pb-12 relative z-10">
+    <div class="max-w-md mx-auto" style="text-align:center">
+      <p style="font-size:0.6875rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem">Omtalt i</p>
+      <div style="display:flex;flex-direction:column;gap:0.5rem">
+        <a href="https://e24.no/naeringsliv/i/K8Mp6G/rema-oensker-ny-prisportal" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;padding:0.75rem 1rem;background:#fff;border:1px solid #e2e8f0;border-radius:0.75rem;transition:box-shadow 0.15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-size:1.125rem;font-weight:800;color:#d4391c;flex-shrink:0;line-height:1">E24</span>
+          <span style="font-size:0.75rem;color:#334155;text-align:left;line-height:1.4">Rema ønsker ny prisportal</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:auto"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="https://e24.no/naeringsliv/i/GxMQ4m/helg-ga-opp-prisportal-ingen-toer-aa-gaa-mot-kjedene" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;padding:0.75rem 1rem;background:#fff;border:1px solid #e2e8f0;border-radius:0.75rem;transition:box-shadow 0.15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-size:1.125rem;font-weight:800;color:#d4391c;flex-shrink:0;line-height:1">E24</span>
+          <span style="font-size:0.75rem;color:#334155;text-align:left;line-height:1.4">Ga opp prisportal: Ingen tør å gå mot kjedene</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:auto"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="px-5 pb-16 relative z-10">
     <div class="max-w-md mx-auto">
@@ -875,7 +894,15 @@
           </details>
           <details>
             <summary style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;font-size:0.875rem;font-weight:600;color:#1e293b;cursor:pointer;list-style:none">Kommer det en Android-versjon?<svg style="width:1rem;height:1rem;color:#94a3b8;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></summary>
-            <p style="font-size:0.75rem;color:#475569;line-height:1.6;padding-top:0.25rem;padding-bottom:0.5rem">iPhone først. Android er planlagt, men ingen dato ennå.</p>
+            <div style="font-size:0.75rem;color:#475569;line-height:1.6;padding-top:0.25rem;padding-bottom:0.5rem">
+              <p style="margin:0 0 0.75rem">iPhone først. Android er planlagt, men vi har ikke en dato ennå. Legg igjen e-posten din, så varsler vi deg.</p>
+              <form id="android-waitlist-form" onsubmit="return submitAndroidWaitlist(event)" style="display:flex;gap:0.375rem">
+                <input id="android-email" type="email" required placeholder="din@epost.no" style="flex:1;padding:0.4rem 0.625rem;border:1px solid #e2e8f0;border-radius:0.5rem;font-size:0.75rem;font-family:inherit;outline:none" />
+                <button type="submit" style="padding:0.4rem 0.75rem;background:#2d6a4f;color:#fff;border:none;border-radius:0.5rem;font-size:0.75rem;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit">Varsle meg</button>
+              </form>
+              <p id="android-waitlist-success" style="display:none;margin:0.5rem 0 0;color:#2d6a4f;font-weight:600;font-size:0.75rem">Du er på ventelisten!</p>
+              <p id="android-waitlist-error" style="display:none;margin:0.5rem 0 0;color:#ef4444;font-size:0.75rem"></p>
+            </div>
           </details>
         </div>
       </div>
@@ -895,7 +922,7 @@
         </div>
         <h2 class="text-base font-bold text-slate-900 mb-1">Støtt utvikleren</h2>
         <p class="text-xs text-slate-500 mb-4 leading-relaxed">
-          SeSum bygges av en student ved siden av studier og jobb. Appen er gratis, men har reelle driftskostnader. En liten donasjon hjelper med å holde tjenesten i live.
+          SeSum er uavhengig og bygges uten investorer. Appen er gratis, men har reelle driftskostnader. En liten donasjon hjelper med å holde tjenesten i live.
         </p>
         <div class="flex gap-3 justify-center mb-3">
           <a href="https://betal.vipps.no/dzj5qj"             class="flex-1 max-w-[100px] py-2.5 rounded-xl text-sm font-semibold border-2 border-sesum text-sesum hover:bg-sesum hover:text-white transition-all active:scale-[0.97]">
@@ -1033,6 +1060,39 @@
       })
       .catch(function() {});
     })();
+
+    // Android waitlist
+    function submitAndroidWaitlist(e) {
+      e.preventDefault();
+      var email = document.getElementById('android-email').value.trim();
+      if (!email) return false;
+      var btn = e.target.querySelector('button');
+      btn.textContent = '...';
+      btn.disabled = true;
+      fetch('https://glpowwptzbokwtkbsnko.supabase.co/rest/v1/android_waitlist', {
+        method: 'POST',
+        headers: {
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscG93d3B0emJva3d0a2JzbmtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMyMDY1MDUsImV4cCI6MjA3ODc4MjUwNX0.NCuL94b5hbGybvYHhGhk3ePpYfNK3KwaONRmDAr0MvM',
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ email: email })
+      }).then(function(r) {
+        if (r.ok || r.status === 409) {
+          document.getElementById('android-waitlist-form').style.display = 'none';
+          document.getElementById('android-waitlist-success').style.display = 'block';
+        } else {
+          throw new Error(r.status);
+        }
+      }).catch(function() {
+        var err = document.getElementById('android-waitlist-error');
+        err.textContent = 'Noe gikk galt. Prøv igjen.';
+        err.style.display = 'block';
+        btn.textContent = 'Varsle meg';
+        btn.disabled = false;
+      });
+      return false;
+    }
 
     // Feature modals
     var featureData = {

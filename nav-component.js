@@ -79,6 +79,8 @@
     if (path === '/' || path === '/index.html') {
       var cta = document.querySelector('.site-nav-cta');
       if (cta) cta.style.display = 'none';
+      var ctaMobile = document.querySelector('.site-nav-cta-mobile');
+      if (ctaMobile) ctaMobile.style.display = 'none';
       var mobileCta = document.querySelector('.site-nav-mobile a:last-child');
       if (mobileCta && mobileCta.textContent.indexOf('Prøv SeSum') !== -1) {
         mobileCta.style.display = 'none';

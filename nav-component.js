@@ -80,9 +80,7 @@
       var cta = document.querySelector('.site-nav-cta');
       if (cta) cta.style.display = 'none';
       var ctaMobile = document.querySelector('.site-nav-cta-mobile');
-      if (ctaMobile) ctaMobile.style.display = 'none';
-      var navToggle = document.querySelector('.site-nav-toggle');
-      if (navToggle) navToggle.style.marginLeft = 'auto';
+      if (ctaMobile) ctaMobile.remove();
       var mobileCta = document.querySelector('.site-nav-mobile a:last-child');
       if (mobileCta && mobileCta.textContent.indexOf('Prøv SeSum') !== -1) {
         mobileCta.style.display = 'none';

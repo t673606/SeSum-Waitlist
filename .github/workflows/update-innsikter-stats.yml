@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Update index.html fallback stats
+        run: node scripts/update-index-stats.mjs
+
       - name: Update innsikter.html stats
         run: node scripts/update-innsikter-stats.mjs
 
@@ -33,7 +36,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add innsikter.html kiwi-vs-rema.html prisportal-matvarer.html produkt/ tilbud/ sitemap.xml
+          git add index.html index-v2.html innsikter.html kiwi-vs-rema.html prisportal-matvarer.html produkt/ tilbud/ sitemap.xml
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

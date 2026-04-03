@@ -94,16 +94,19 @@
     banner.id = 'cookie-banner';
     banner.setAttribute('style',
       'position:fixed;bottom:0;left:0;right:0;z-index:9999;' +
-      'background:#1b4332;color:white;' +
-      'padding:0.875rem 1rem;' +
-      'display:flex;align-items:center;justify-content:center;gap:0.75rem;flex-wrap:wrap;' +
-      'font-family:"DM Sans",sans-serif;font-size:0.8rem;'
+      'background:linear-gradient(135deg,#1b4332 0%,#14332a 100%);color:white;' +
+      'padding:1rem 1.25rem;' +
+      'box-shadow:0 -4px 20px rgba(0,0,0,0.15);' +
+      'font-family:"DM Sans",sans-serif;'
     );
     banner.innerHTML =
-      '<span>Vi bruker cookies for å gjøre siden bedre. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Les mer</a></span>' +
-      '<div style="display:flex;align-items:center;gap:0.75rem">' +
-        '<button id="cookie-ok" style="background:white;color:#1b4332;font-weight:700;font-size:0.8rem;padding:0.5rem 1.25rem;border-radius:0.5rem;border:none;cursor:pointer">Greit</button>' +
-        '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.4);font-size:0.65rem;padding:0;border:none;cursor:pointer;text-decoration:underline">Avslå</button>' +
+      '<div style="max-width:28rem;margin:0 auto;width:100%">' +
+        '<p style="margin:0 0 0.25rem;font-weight:600;font-size:0.85rem">Vi bruker cookies for å hjelpe deg finne billigste handlekurv</p>' +
+        '<p style="margin:0 0 0.75rem;font-size:0.7rem;opacity:0.7">Anonymisert analyse hjelper oss å forbedre prisportalen. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Personvern</a></p>' +
+        '<div style="display:flex;align-items:center;gap:0.75rem">' +
+          '<button id="cookie-ok" style="flex:1;background:#2d6a4f;color:white;font-weight:700;font-size:0.85rem;padding:0.65rem 1.25rem;border-radius:0.75rem;border:2px solid #3fa989;cursor:pointer">Godta og fortsett</button>' +
+          '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.45);font-size:0.65rem;padding:0;border:none;cursor:pointer;white-space:nowrap">Velg innstillinger</button>' +
+        '</div>' +
       '</div>';
     document.body.appendChild(banner);
 

@@ -101,11 +101,11 @@
     );
     banner.innerHTML =
       '<div style="max-width:28rem;margin:0 auto;width:100%">' +
-        '<p style="margin:0 0 0.25rem;font-weight:600;font-size:0.85rem">Vi bruker cookies for å hjelpe deg finne billigste handlekurv</p>' +
-        '<p style="margin:0 0 0.75rem;font-size:0.7rem;opacity:0.7">Anonymisert analyse hjelper oss å forbedre prisportalen. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Personvern</a></p>' +
+        '<p style="margin:0 0 0.25rem;font-weight:600;font-size:0.85rem">Vi bruker cookies for å forbedre SeSum</p>' +
+        '<p style="margin:0 0 0.75rem;font-size:0.7rem;opacity:0.7">Hjelper oss forstå hva som fungerer. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Personvern</a></p>' +
         '<div style="display:flex;align-items:center;gap:0.75rem">' +
           '<button id="cookie-ok" style="flex:1;background:#2d6a4f;color:white;font-weight:700;font-size:0.85rem;padding:0.65rem 1.25rem;border-radius:0.75rem;border:2px solid #3fa989;cursor:pointer">Godta og fortsett</button>' +
-          '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.45);font-size:0.65rem;padding:0;border:none;cursor:pointer;white-space:nowrap">Velg innstillinger</button>' +
+          '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.4);font-size:0.65rem;padding:0;border:none;cursor:pointer;white-space:nowrap">Nei takk</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(banner);

@@ -113,14 +113,14 @@ function buildProductPage(product, slug) {
     ? `\n          <img src="${escHtml(product.image)}" alt="${escHtml(product.name)}" style="max-width:120px;max-height:120px;border-radius:0.75rem;margin:0 auto 1rem" loading="lazy" />`
     : '';
 
-  const description = `Hva koster ${product.name}? Billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr. Se priser hos ${chainList}. Oppdatert ${today}.`;
+  const description = `${product.name} pris: billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr. Sammenlign priser hos ${chainList}. Oppdatert ${today} med ekte kvitteringsdata.`;
 
   return `<!DOCTYPE html>
 <html lang="nb">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pris ${escHtml(product.name)} | SeSum</title>
+  <title>${escHtml(product.name)} pris | Sammenlign butikker | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/produkt/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -129,7 +129,7 @@ function buildProductPage(product, slug) {
   <meta name="theme-color" content="#2d6a4f" />
   <meta property="og:type" content="product" />
   <meta property="og:url" content="https://www.sesum.no/produkt/${slug}.html" />
-  <meta property="og:title" content="Pris ${escHtml(product.name)} \u2013 SeSum" />
+  <meta property="og:title" content="${escHtml(product.name)} pris \u2013 Sammenlign butikker | SeSum" />
   <meta property="og:description" content="${escHtml(description)}" />
   <meta property="og:site_name" content="SeSum" />
   ${product.image ? `<meta property="og:image" content="${escHtml(product.image)}" />` : ''}
@@ -243,12 +243,12 @@ function buildIndexPage(products) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dagligvarepriser \u2013 Popul\u00e6re produkter | SeSum</title>
+  <title>Dagligvarepriser | Sammenlign matpriser i Norge | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/produkt/" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Se priser p\u00e5 ${products.length} popul\u00e6re dagligvarer hos norske butikkjeder. Sammenlign priser mellom KIWI, REMA 1000, Meny, SPAR og flere." />
+  <meta name="description" content="Sammenlign matpriser i Norge. Se priser p\u00e5 ${products.length} dagligvarer hos KIWI, REMA 1000, Meny, SPAR og flere. Ekte priser fra kvitteringsdata. Oppdateres daglig." />
   <meta name="theme-color" content="#2d6a4f" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.sesum.no/produkt/" />

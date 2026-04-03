@@ -71,7 +71,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
   ).join(', ');
 
   const ldDescription = `${chain} tilbud denne uken (${week}): ${deals.length} varer p\u00e5 tilbud. ${proseDeals}. Se alle tilbud fra ${chain} p\u00e5 SeSum.`;
-  const description = `${chain} tilbud denne uken: ${deals.length} varer p\u00e5 tilbud. Se priser, sammenlign med andre kjeder. Oppdateres daglig.`;
+  const description = `${chain} tilbud og kundeavis denne uken: ${deals.length} varer p\u00e5 tilbud. Se alle tilbud, sammenlign priser med andre kjeder. Oppdateres daglig.`;
 
   const faqLd = {
     '@type': 'FAQPage',
@@ -126,7 +126,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${escHtml(chain)} tilbud denne uken (${week}) | SeSum</title>
+  <title>${escHtml(chain)} tilbud denne uken | Kundeavis og tilbud ${week} | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/tilbud/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -166,7 +166,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
 
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
-      <h1 class="text-2xl font-bold text-slate-900 mb-1">${escHtml(chain)} tilbud</h1>
+      <h1 class="text-2xl font-bold text-slate-900 mb-1">${escHtml(chain)} tilbud og kundeavis</h1>
       <p class="text-sm text-slate-500 mb-4">Viser ${deals.length} av ${totalDeals} tilbud denne uken (${week})</p>
 
       <!-- AI-crawlable prose (visually hidden, readable by crawlers) -->
@@ -268,12 +268,12 @@ function buildIndexPage(chains) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dagligvaretilbud denne uken | SeSum</title>
+  <title>Dagligvaretilbud og kundeaviser denne uken | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/tilbud/" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Se ukens beste tilbud p\u00e5 dagligvarer fra KIWI, REMA 1000, Meny, SPAR og Joker. ${totalDeals} varer p\u00e5 tilbud denne uken. Oppdateres daglig." />
+  <meta name="description" content="Dagligvaretilbud og kundeaviser fra KIWI, REMA 1000, Meny, SPAR og Joker. ${totalDeals} varer p\u00e5 tilbud denne uken. Sammenlign tilbud p\u00e5 tvers av kjeder. Oppdateres daglig." />
   <meta name="theme-color" content="#2d6a4f" />
   <script type="application/ld+json">
   {

@@ -948,7 +948,7 @@
       document.getElementById('success-message').classList.remove('hidden');
 
       if (window.posthog) {
-        posthog.capture('waitlist_signup');
+        posthog.capture('waitlist_signup', { source: 'homepage_v2', page: location.pathname });
       }
 
       updateSpotsLeft();

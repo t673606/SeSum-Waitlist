@@ -1081,6 +1081,9 @@
         if (r.ok || r.status === 409) {
           document.getElementById('android-waitlist-form').style.display = 'none';
           document.getElementById('android-waitlist-success').style.display = 'block';
+          if (window.posthog) {
+            posthog.capture('android_waitlist_signup', { source: 'homepage_faq', page: location.pathname });
+          }
         } else {
           throw new Error(r.status);
         }

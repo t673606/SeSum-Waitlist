@@ -101,11 +101,10 @@
     );
     banner.innerHTML =
       '<div style="max-width:28rem;margin:0 auto;width:100%">' +
-        '<p style="margin:0 0 0.25rem;font-weight:600;font-size:0.85rem">Vi bruker cookies for å forbedre SeSum</p>' +
-        '<p style="margin:0 0 0.75rem;font-size:0.7rem;opacity:0.7">Hjelper oss forstå hva som fungerer. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Personvern</a></p>' +
-        '<div style="display:flex;align-items:center;gap:0.75rem">' +
-          '<button id="cookie-ok" style="flex:1;background:#2d6a4f;color:white;font-weight:700;font-size:0.85rem;padding:0.65rem 1.25rem;border-radius:0.75rem;border:2px solid #3fa989;cursor:pointer">Godta og fortsett</button>' +
-          '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.4);font-size:0.65rem;padding:0;border:none;cursor:pointer;white-space:nowrap">Nei takk</button>' +
+        '<p style="margin:0 0 0.625rem;font-size:0.8rem">Vi bruker cookies for å forbedre SeSum. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Les mer</a></p>' +
+        '<div style="display:flex;gap:0.5rem">' +
+          '<button id="cookie-ok" style="flex:1;background:#3fa989;color:white;font-weight:700;font-size:0.8rem;padding:0.6rem 1rem;border-radius:0.625rem;border:none;cursor:pointer">Godta</button>' +
+          '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.55);font-weight:500;font-size:0.8rem;padding:0.6rem 1rem;border-radius:0.625rem;border:1px solid rgba(255,255,255,0.2);cursor:pointer">Avvis</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(banner);

@@ -100,10 +100,10 @@
       'font-family:"DM Sans",sans-serif;font-size:0.8rem;'
     );
     banner.innerHTML =
-      '<span>Vi bruker cookies for bedre analyse. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Les mer</a></span>' +
-      '<div style="display:flex;gap:0.5rem">' +
-        '<button id="cookie-ok" style="background:white;color:#1b4332;font-weight:700;font-size:0.75rem;padding:0.4rem 1rem;border-radius:0.5rem;border:none;cursor:pointer">OK</button>' +
-        '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.7);font-weight:600;font-size:0.75rem;padding:0.4rem 0.75rem;border-radius:0.5rem;border:1px solid rgba(255,255,255,0.3);cursor:pointer">Nei takk</button>' +
+      '<span>Vi bruker cookies for å gjøre siden bedre. <a href="/personvern.html" style="color:#a7f3d0;text-decoration:underline">Les mer</a></span>' +
+      '<div style="display:flex;align-items:center;gap:0.75rem">' +
+        '<button id="cookie-ok" style="background:white;color:#1b4332;font-weight:700;font-size:0.8rem;padding:0.5rem 1.25rem;border-radius:0.5rem;border:none;cursor:pointer">Greit</button>' +
+        '<button id="cookie-no" style="background:transparent;color:rgba(255,255,255,0.4);font-size:0.65rem;padding:0;border:none;cursor:pointer;text-decoration:underline">Avslå</button>' +
       '</div>';
     document.body.appendChild(banner);
 

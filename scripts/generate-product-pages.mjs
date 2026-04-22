@@ -123,6 +123,7 @@ function buildProductPage(product, slug) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escHtml(shortName)} fra ${fmtKr(cheapest.price)} kr - Sammenlign priser | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/produkt/${slug}.html" />
+  <link rel="alternate" hreflang="nb" href="https://www.sesum.no/produkt/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

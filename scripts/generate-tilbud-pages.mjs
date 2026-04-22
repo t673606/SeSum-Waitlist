@@ -130,6 +130,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escHtml(chain)} tilbud denne uken (uke ${weekNum}) - ${deals.length} varer p\u00e5 tilbud | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/tilbud/${slug}.html" />
+  <link rel="alternate" hreflang="nb" href="https://www.sesum.no/tilbud/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

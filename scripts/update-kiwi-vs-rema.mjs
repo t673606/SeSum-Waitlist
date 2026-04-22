@@ -180,7 +180,13 @@ async function main() {
   // Update meta with dynamic product count
   html = html.replace(
     /(<meta\s+name="description"\s+content=")[^"]*"/,
-    `$1KIWI eller REMA 1000: Hvem er billigst? Se priser p\u00e5 ${total} varer side om side. Oppdatert daglig med ekte kvitteringsdata."`
+    `$1Se faktiske priser p\u00e5 melk, br\u00f8d, kj\u00f8ttdeig og ${total - 3} andre varer hos KIWI og REMA 1000 side om side. Finn ut hvem som er billigst - oppdatert daglig."`
+  );
+
+  // Update title with dynamic product count
+  html = html.replace(
+    /(<title>)[^<]*(<\/title>)/,
+    `$1KIWI vs REMA 1000: Sammenlign priser p\u00e5 ${total} varer | SeSum$2`
   );
 
   writeFileSync(FILE, html, 'utf-8');

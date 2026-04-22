@@ -71,7 +71,9 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
   ).join(', ');
 
   const ldDescription = `${chain} tilbud denne uken (${week}): ${deals.length} varer p\u00e5 tilbud. ${proseDeals}. Se alle tilbud fra ${chain} p\u00e5 SeSum.`;
-  const description = `${chain} tilbud og kundeavis denne uken: ${deals.length} varer p\u00e5 tilbud. Se alle tilbud, sammenlign priser med andre kjeder. Oppdateres daglig.`;
+  const weekNum = Math.ceil(((new Date() - new Date(new Date().getFullYear(), 0, 1)) / 86400000 + new Date(new Date().getFullYear(), 0, 1).getDay() + 1) / 7);
+  const otherChainNames = allChains.filter(c => c !== chain).slice(0, 3).join(', ');
+  const description = `Se alle ${chain}-tilbud denne uken (uke ${weekNum}): ${deals.length} varer p\u00e5 tilbud. Sammenlign med ${otherChainNames} - finn ut om tilbudet faktisk er billigst. Oppdatert daglig.`;
 
   const faqLd = {
     '@type': 'FAQPage',
@@ -126,7 +128,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${escHtml(chain)} tilbud denne uken | Kundeavis og tilbud ${week} | SeSum</title>
+  <title>${escHtml(chain)} tilbud denne uken (uke ${weekNum}) - ${deals.length} varer p\u00e5 tilbud | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/tilbud/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -135,7 +137,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
   <meta name="theme-color" content="#2d6a4f" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.sesum.no/tilbud/${slug}.html" />
-  <meta property="og:title" content="${escHtml(chain)} tilbud denne uken \u2013 SeSum" />
+  <meta property="og:title" content="${escHtml(chain)} tilbud denne uken - SeSum" />
   <meta property="og:description" content="${escHtml(description)}" />
   <meta property="og:site_name" content="SeSum" />
   <script type="application/ld+json">

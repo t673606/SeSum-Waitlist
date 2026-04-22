@@ -113,14 +113,15 @@ function buildProductPage(product, slug) {
     ? `\n          <img src="${escHtml(product.image)}" alt="${escHtml(product.name)}" style="max-width:120px;max-height:120px;border-radius:0.75rem;margin:0 auto 1rem" loading="lazy" />`
     : '';
 
-  const description = `${product.name} pris: billigst hos ${cheapest.chain} til ${fmtKr(cheapest.price)} kr. Sammenlign priser hos ${chainList}. Oppdatert ${today} med ekte kvitteringsdata.`;
+  const shortName = product.name.replace(/\s+/g, ' ');
+  const description = `Sammenlign priser på ${product.name} hos ${chainList}. Billigst hos ${cheapest.chain} (${fmtKr(cheapest.price)} kr). Oppdatert daglig med ekte kvitteringsdata.`;
 
   return `<!DOCTYPE html>
 <html lang="nb">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${escHtml(product.name)} pris | Sammenlign butikker | SeSum</title>
+  <title>${escHtml(shortName)} fra ${fmtKr(cheapest.price)} kr - Sammenlign priser | SeSum</title>
   <link rel="canonical" href="https://www.sesum.no/produkt/${slug}.html" />
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -129,7 +130,7 @@ function buildProductPage(product, slug) {
   <meta name="theme-color" content="#2d6a4f" />
   <meta property="og:type" content="product" />
   <meta property="og:url" content="https://www.sesum.no/produkt/${slug}.html" />
-  <meta property="og:title" content="${escHtml(product.name)} pris \u2013 Sammenlign butikker | SeSum" />
+  <meta property="og:title" content="${escHtml(shortName)} fra ${fmtKr(cheapest.price)} kr - Sammenlign priser | SeSum" />
   <meta property="og:description" content="${escHtml(description)}" />
   <meta property="og:site_name" content="SeSum" />
   ${product.image ? `<meta property="og:image" content="${escHtml(product.image)}" />` : ''}

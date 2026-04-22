@@ -250,6 +250,7 @@ function buildIndexPage(chains) {
   const today = new Date().toISOString().slice(0, 10);
   const week = weekLabel();
   const totalDeals = chains.reduce((sum, c) => sum + (c.deals?.length || 0), 0);
+  const chainNames = chains.map(c => c.chain).join(', ');
 
   const chainCards = chains.map(c => {
     const slug = slugifyChain(c.chain);
@@ -262,6 +263,118 @@ function buildIndexPage(chains) {
           ${topDeal ? `<p class="text-xs text-slate-500">Beste: ${escHtml(topDeal.product_name)} til ${fmtKr(topDeal.promo_price)} kr ${topDeal.discount_percent ? `(-${Math.round(topDeal.discount_percent)}%)` : ''}</p>` : ''}
         </a>`;
   }).join('\n');
+
+  const description = `Dagligvaretilbud og kundeaviser fra ${chainNames}. Se ukens beste mattilbud, sammenlign tilbud p\u00e5 tvers av kjeder. Oppdateres daglig.`;
+  const ogDescription = `Se ukens beste tilbud p\u00e5 dagligvarer fra ${chainNames}. ${totalDeals} varer p\u00e5 tilbud denne uken. Oppdateres daglig.`;
+
+  return `<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dagligvaretilbud og kundeaviser denne uken | SeSum</title>
+  <link rel="canonical" href="https://www.sesum.no/tilbud/" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="description" content="${escHtml(description)}" />
+  <meta name="theme-color" content="#2d6a4f" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sesum.no/tilbud/" />
+  <meta property="og:title" content="Dagligvaretilbud denne uken | SeSum" />
+  <meta property="og:description" content="${escHtml(ogDescription)}" />
+  <meta property="og:image" content="https://www.sesum.no/og-image.webp" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:site_name" content="SeSum" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Dagligvaretilbud denne uken",
+        "description": "${totalDeals} varer p\u00e5 tilbud hos norske dagligvarekjeder denne uken.",
+        "dateModified": "${today}"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hvilke dagligvaretilbud gjelder denne uken?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Denne uken (${week}) er det ${totalDeals} varer p\u00e5 tilbud hos ${chainNames}. SeSum henter tilbud daglig fra butikkenes reklameaviser." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Forside", "item": "https://www.sesum.no/" },
+          { "@type": "ListItem", "position": 2, "name": "Tilbud" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="/consent.js" defer></script>
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body { font-family: 'DM Sans', sans-serif; background: #fafafa; -webkit-font-smoothing: antialiased; }
+  </style>
+  <link rel="stylesheet" href="/nav.css" />
+  <script src="/nav-component.js" defer></script>
+  <script src="/signup-widget.js" defer></script>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+  <div id="site-nav"></div>
+  <nav class="site-breadcrumb" aria-label="Br\u00f8dsmuler">
+    <div class="site-breadcrumb-inner">
+      <a href="/">Forside</a><span class="site-bc-sep">/</span><span class="site-bc-current">Tilbud</span>
+    </div>
+  </nav>
+
+  <main class="px-5 pb-12">
+    <div class="max-w-md mx-auto">
+      <h1 class="text-2xl font-bold text-slate-900 mb-1">Dagligvaretilbud</h1>
+      <p class="text-sm text-slate-500 mb-6">${totalDeals} varer p\u00e5 tilbud denne uken (${week}). Oppdateres daglig.</p>
+      <div class="space-y-3">
+${chainCards}
+      </div>
+      <div class="text-center pt-6 mb-4">
+        <p class="text-sm text-slate-600 mb-3">F\u00e5 varsel n\u00e5r favorittvaren din er p\u00e5 tilbud</p>
+        <a href="/" class="inline-block bg-[#2d6a4f] hover:bg-[#1b4332] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all active:scale-[0.97]">
+          F\u00e5 tidlig tilgang til SeSum
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-links">
+        <a href="/">Forside</a>
+        <a href="/produkt/">Produkter</a>
+        <a href="/tilbud/">Tilbud</a>
+        <a href="/kiwi-vs-rema.html">Sammenlign</a>
+        <a href="/innsikter.html">Innsikter</a>
+        <a href="/prisportal-matvarer.html">Prisportal</a>
+        <a href="/presse.html">Presse</a>
+        <a href="/personvern.html">Personvern</a>
+        <a href="/bruksvilkar.html">Bruksvilk\u00e5r</a>
+        <a href="mailto:hei@sesum.no">Kontakt</a>
+      </div>
+      <p class="site-footer-copy">&copy; 2026 SeSum. Sammenlign dagligvarepriser i Norge. Laget i Norge.</p>
+    </div>
+  </footer>
+</body>
+</html>`;
+}
 
   return `<!DOCTYPE html>
 <html lang="nb">
@@ -371,7 +484,6 @@ async function main() {
   // Clean chain pages (but preserve index.html which is manually maintained)
   if (existsSync(OUT_DIR)) {
     for (const f of readdirSync(OUT_DIR)) {
-      if (f === 'index.html') continue;
       rmSync(`${OUT_DIR}/${f}`);
     }
   } else {
@@ -386,6 +498,9 @@ async function main() {
     writeFileSync(`${OUT_DIR}/${slug}.html`, buildChainPage(c.chain, c.deals, allChainNames, c.total_deals || c.deals.length), 'utf-8');
     console.log(`  ${c.chain}: ${c.deals.length} deals`);
   }
+  // Generate index page
+  writeFileSync(`${OUT_DIR}/index.html`, buildIndexPage(chains.filter(c => c.deals?.length > 0)), 'utf-8');
+  console.log('  index.html');
 
   // Update sitemap
   const today = new Date().toISOString().slice(0, 10);

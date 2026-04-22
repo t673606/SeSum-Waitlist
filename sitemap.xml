@@ -667,6 +667,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/tilbud/extra.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/tilbud/joker.html</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>

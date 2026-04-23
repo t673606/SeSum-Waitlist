@@ -109,8 +109,11 @@ async function main() {
     } else {
       diffStr = `${Math.round(diff)} kr`; diffClass = 'diff-kiwi';
     }
+    const imgTag = p.image
+      ? `<img src="${p.image}" alt="" style="width:28px;height:28px;object-fit:contain;border-radius:0.375rem;flex-shrink:0;background:#f8fafc" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><div style="width:28px;height:28px;border-radius:0.375rem;flex-shrink:0;background:#f1f5f9;display:none;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>`
+      : `<div style="width:28px;height:28px;border-radius:0.375rem;flex-shrink:0;background:#f1f5f9;display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>`;
     return `            <tr>
-              <td class="pl-4">${p.product_name}</td>
+              <td class="pl-4"><div style="display:flex;align-items:center;gap:0.5rem">${imgTag}<span>${p.product_name}</span></div></td>
               <td class="text-right ${rClass}">${fmtKr(rp)}${rSale}</td>
               <td class="text-right ${kClass}">${fmtKr(kp)}${kSale}</td>
               <td class="text-right pr-4"><span class="diff-badge ${diffClass}">${diffStr}</span></td>

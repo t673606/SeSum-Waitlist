@@ -29,6 +29,16 @@ function escHtml(s) {
   return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+function daysAgo(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
+  const diff = Math.round((now - d) / 86400000);
+  if (diff <= 0) return 'I dag';
+  if (diff === 1) return '1 d. siden';
+  return `${diff} d. siden`;
+}
+
 function buildProductPage(product, slug) {
   const prices = product.prices || [];
   const cheapest = prices[0];
@@ -41,7 +51,7 @@ function buildProductPage(product, slug) {
     return `              <tr style="border-bottom:1px solid #f1f5f9">
                 <td style="padding:0.6rem 0.5rem">${escHtml(p.chain)}</td>
                 <td style="padding:0.6rem 0.5rem;text-align:right;font-family:'DM Mono',monospace;${cls}">${fmtKr(p.price)}${sale}</td>
-                <td style="padding:0.6rem 0.5rem;text-align:right;font-size:0.7rem;color:#94a3b8">${p.observed}</td>
+                <td style="padding:0.6rem 0.5rem;text-align:right"><span style="font-size:0.65rem;color:#64748b;background:#f1f5f9;padding:0.15rem 0.5rem;border-radius:9999px;white-space:nowrap">${daysAgo(p.observed)}</span></td>
               </tr>`;
   }).join('\n');
 
@@ -318,7 +328,7 @@ async function main() {
   if (existsSync(OUT_DIR)) {
     const files = readdirSync(OUT_DIR);
     for (const f of files) {
-      if (f === 'index.html') continue; // preserve manually designed index
+      if (f === 'index.html' || f === 'smagodt-losvekt.html') continue; // preserve manually designed pages
       rmSync(`${OUT_DIR}/${f}`);
     }
   } else {
@@ -352,6 +362,28 @@ async function main() {
 
   sitemap = sitemap.replace('</urlset>', `${productEntries}\n</urlset>`);
   writeFileSync(sitemapPath, sitemap, 'utf-8');
+
+  // Update prices on the manually designed index page
+  const indexPath = `${OUT_DIR}/index.html`;
+  if (existsSync(indexPath)) {
+    let indexHtml = readFileSync(indexPath, 'utf-8');
+    const priceMap = {};
+    for (const p of products) {
+      if (!p.prices || p.prices.length < 2) continue;
+      const slug = slugify(p.name);
+      priceMap[slug] = fmtKr(p.prices[0].price);
+    }
+    indexHtml = indexHtml.replace(
+      /href="\/produkt\/([^"]+)\.html"([\s\S]*?)product-price">fra [^<]+<\/span/g,
+      (match, slug, middle) => {
+        const price = priceMap[slug];
+        if (!price) return match;
+        return `href="/produkt/${slug}.html"${middle}product-price">fra ${price} kr</span`;
+      }
+    );
+    writeFileSync(indexPath, indexHtml, 'utf-8');
+    console.log('Updated prices on index page');
+  }
 
   console.log(`Generated ${slugs.length} product pages + index`);
   console.log(`Updated sitemap with ${slugs.length + 1} product URLs`);

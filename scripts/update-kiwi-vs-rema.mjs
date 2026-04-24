@@ -146,19 +146,6 @@ async function main() {
 
   html = updateDataLive(html, 'last_updated', fmtMonth(d.generated_at));
 
-  // Basket totals
-  const totalRema = products.reduce((sum, p) => sum + Number(p.rema_price), 0);
-  const totalKiwi = products.reduce((sum, p) => sum + Number(p.kiwi_price), 0);
-  const fmtTotal = n => Math.round(n).toLocaleString('nb-NO') + ' kr';
-  html = updateDataLive(html, 'basket_rema_total', fmtTotal(totalRema));
-  html = updateDataLive(html, 'basket_kiwi_total', fmtTotal(totalKiwi));
-  const basketDiff = Math.abs(Math.round(totalRema - totalKiwi));
-  const basketWinner = totalRema < totalKiwi ? 'REMA 1000' : totalKiwi < totalRema ? 'KIWI' : null;
-  const winnerText = basketWinner
-    ? `${basketWinner} er ${basketDiff.toLocaleString('nb-NO')} kr billigere totalt`
-    : 'Lik totalpris';
-  html = updateDataLive(html, 'basket_winner', winnerText);
-
   // Update JSON-LD
   html = html.replace(
     /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/,

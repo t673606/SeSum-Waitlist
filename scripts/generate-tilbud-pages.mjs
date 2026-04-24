@@ -14,6 +14,28 @@ function slugifyChain(chain) {
   return chain.toLowerCase().replace(/\s+/g, '-');
 }
 
+const CHAIN_LOGOS = {
+  'SPAR': 'spar',
+  'KIWI': 'kiwi',
+  'REMA 1000': 'rema',
+  'Meny': 'meny',
+  'EXTRA': 'extra',
+  'Coop Extra': 'extra',
+  'COOP MEGA': 'coop_mega',
+  'Joker': 'joker',
+  'Bunnpris': 'bunnpris',
+  'Eurospar': 'eurospar',
+  'Coop Prix': 'coop_prix',
+  'Coop Marked': 'coop_marked',
+  'Obs': 'obs',
+};
+
+function chainLogoHtml(chain, size = 20) {
+  const key = CHAIN_LOGOS[chain];
+  if (!key) return '';
+  return `<img src="/logos/${key}.webp" alt="" width="${size}" height="${size}" style="display:inline;width:${size}px;height:${size}px;object-fit:contain;vertical-align:middle;flex-shrink:0" loading="lazy" />`;
+}
+
 function fmtKr(n) {
   const num = Number(n);
   if (Number.isInteger(num)) return num + ',\u2013';
@@ -63,7 +85,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
   const restDeals = deals.slice(10).map(renderDeal).join('\n');
 
   const otherChains = allChains.filter(c => c !== chain).map(c =>
-    `            <a href="/tilbud/${slugifyChain(c)}.html" style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;font-size:0.85rem;color:#334155;text-decoration:none;border-bottom:1px solid #f1f5f9">${escHtml(c)} tilbud <span style="color:#94a3b8">\u203a</span></a>`
+    `            <a href="/tilbud/${slugifyChain(c)}.html" style="display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0;font-size:0.85rem;color:#334155;text-decoration:none;border-bottom:1px solid #f1f5f9"><span style="display:flex;align-items:center;gap:0.5rem">${chainLogoHtml(c, 20)}${escHtml(c)} tilbud</span> <span style="color:#94a3b8">\u203a</span></a>`
   ).join('\n');
 
   const proseDeals = deals.slice(0, 5).map(d =>
@@ -169,7 +191,7 @@ function buildChainPage(chain, deals, allChains, totalDeals) {
 
   <main class="px-5 pb-12">
     <div class="max-w-md mx-auto">
-      <h1 class="text-2xl font-bold text-slate-900 mb-1">${escHtml(chain)} tilbud og kundeavis</h1>
+      <h1 class="text-2xl font-bold text-slate-900 mb-1" style="display:flex;align-items:center;gap:0.5rem">${chainLogoHtml(chain, 32)}${escHtml(chain)} tilbud og kundeavis</h1>
       <p class="text-sm text-slate-500 mb-4">Viser ${deals.length} av ${totalDeals} tilbud denne uken (${week})</p>
 
       <!-- AI-crawlable prose (visually hidden, readable by crawlers) -->
@@ -260,7 +282,7 @@ function buildIndexPage(chains) {
     const topDeal = c.deals?.[0];
     return `        <a href="/tilbud/${slug}.html" class="block bg-white rounded-2xl border border-slate-100 p-4 hover:border-emerald-200 transition-colors">
           <div class="flex items-center justify-between mb-2">
-            <span class="text-base font-bold text-slate-900">${escHtml(c.chain)}</span>
+            <span class="text-base font-bold text-slate-900" style="display:flex;align-items:center;gap:0.5rem">${chainLogoHtml(c.chain, 24)}${escHtml(c.chain)}</span>
             <span class="text-xs font-semibold text-[#2d6a4f] bg-emerald-50 px-2 py-0.5 rounded-full">${c.deals?.length || 0} tilbud</span>
           </div>
           ${topDeal ? `<p class="text-xs text-slate-500">Beste: ${escHtml(topDeal.product_name)} til ${fmtKr(topDeal.promo_price)} kr ${topDeal.discount_percent ? `(-${Math.round(topDeal.discount_percent)}%)` : ''}</p>` : ''}

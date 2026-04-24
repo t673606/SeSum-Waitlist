@@ -58,7 +58,7 @@ const CHAIN_LOGOS = {
 function chainLogoHtml(chain) {
   const key = CHAIN_LOGOS[chain];
   if (!key) return '';
-  return `<img src="/logos/${key}.webp" alt="${escHtml(chain)}" width="20" height="20" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:6px" loading="lazy" />`;
+  return `<img src="/logos/${key}.webp" alt="${escHtml(chain)}" width="20" height="20" style="display:inline;width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:6px" loading="lazy" />`;
 }
 
 function buildProductPage(product, slug) {

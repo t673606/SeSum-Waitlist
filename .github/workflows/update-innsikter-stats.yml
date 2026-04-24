@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0    # nødvendig for git log i sitemap-scriptet
 
       - name: Update index.html fallback stats
         run: node scripts/update-index-stats.mjs
@@ -31,6 +33,9 @@ jobs:
 
       - name: Generate tilbud pages
         run: node scripts/generate-tilbud-pages.mjs
+
+      - name: Update sitemap <lastmod> from git history
+        run: node scripts/update-sitemap-lastmod.mjs
 
       - name: Commit and push if changed
         run: |

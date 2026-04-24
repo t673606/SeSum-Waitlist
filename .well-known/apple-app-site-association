@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2AT3SH8BAU.com.tobias.sesum"],
+        "components": [
+          {
+            "/": "/app/*",
+            "comment": "Open app from email links"
+          }
+        ]
+      }
+    ]
+  }
+}

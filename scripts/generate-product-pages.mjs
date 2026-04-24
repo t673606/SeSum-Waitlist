@@ -39,6 +39,28 @@ function daysAgo(dateStr) {
   return `${diff} d. siden`;
 }
 
+const CHAIN_LOGOS = {
+  'SPAR': 'spar',
+  'KIWI': 'kiwi',
+  'REMA 1000': 'rema',
+  'Meny': 'meny',
+  'EXTRA': 'extra',
+  'Coop Extra': 'extra',
+  'COOP MEGA': 'coop_mega',
+  'Joker': 'joker',
+  'Bunnpris': 'bunnpris',
+  'Eurospar': 'eurospar',
+  'Coop Prix': 'coop_prix',
+  'Coop Marked': 'coop_marked',
+  'Obs': 'obs',
+};
+
+function chainLogoHtml(chain) {
+  const key = CHAIN_LOGOS[chain];
+  if (!key) return '';
+  return `<img src="/logos/${key}.webp" alt="${escHtml(chain)}" width="20" height="20" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-right:6px" loading="lazy" />`;
+}
+
 function buildProductPage(product, slug) {
   const prices = product.prices || [];
   const cheapest = prices[0];
@@ -49,7 +71,7 @@ function buildProductPage(product, slug) {
     const cls = isCheapest ? 'color:#2d6a4f;font-weight:600' : '';
     const sale = p.is_on_sale ? ' <span style="font-size:0.55rem;font-weight:700;color:#dc2626;background:#fef2f2;padding:0.05rem 0.3rem;border-radius:0.2rem;margin-left:0.2rem;vertical-align:middle">tilbud</span>' : '';
     return `              <tr style="border-bottom:1px solid #f1f5f9">
-                <td style="padding:0.6rem 0.5rem">${escHtml(p.chain)}</td>
+                <td style="padding:0.6rem 0.5rem">${chainLogoHtml(p.chain)}${escHtml(p.chain)}</td>
                 <td style="padding:0.6rem 0.5rem;text-align:right;font-family:'DM Mono',monospace;${cls}">${fmtKr(p.price)}${sale}</td>
                 <td style="padding:0.6rem 0.5rem;text-align:right"><span style="font-size:0.65rem;color:#64748b;background:#f1f5f9;padding:0.15rem 0.5rem;border-radius:9999px;white-space:nowrap">${daysAgo(p.observed)}</span></td>
               </tr>`;

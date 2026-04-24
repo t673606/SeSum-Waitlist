@@ -55,6 +55,42 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/tilbud/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/tilbud/extra.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/tilbud/joker.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/tilbud/kiwi.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/tilbud/meny.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/tilbud/spar.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
@@ -62,6 +98,12 @@
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/bananer-klase.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/smagodt-losvekt.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -265,13 +307,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/helmelk-4-1-75l-q.html</loc>
+    <loc>https://www.sesum.no/produkt/farris-frus-bringebaer-1-5l-flaske.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/farris-frus-bringebaer-1-5l-flaske.html</loc>
+    <loc>https://www.sesum.no/produkt/helmelk-4-1-75l-q.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -331,13 +373,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/melkesjokolade-200g-freia.html</loc>
+    <loc>https://www.sesum.no/produkt/salatbar.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/salatbar.html</loc>
+    <loc>https://www.sesum.no/produkt/melkesjokolade-200g-freia.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -355,13 +397,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/sotpotet-losvekt.html</loc>
+    <loc>https://www.sesum.no/produkt/mollehjul-fullkorn-420g-hatting.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/mollehjul-fullkorn-420g-hatting.html</loc>
+    <loc>https://www.sesum.no/produkt/sotpotet-losvekt.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -421,13 +463,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/polarbrod-havre-12stk-450g.html</loc>
+    <loc>https://www.sesum.no/produkt/melkesjokolade-kvikk-lunsj-200g-freia.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/melkesjokolade-kvikk-lunsj-200g-freia.html</loc>
+    <loc>https://www.sesum.no/produkt/polarbrod-havre-12stk-450g.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -493,13 +535,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/havregryn-lettkokte-1-2kg-urkraft.html</loc>
+    <loc>https://www.sesum.no/produkt/pepsi-max-1-5l-flaske.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/pepsi-max-1-5l-flaske.html</loc>
+    <loc>https://www.sesum.no/produkt/havregryn-lettkokte-1-2kg-urkraft.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -535,13 +577,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/epler-granny-smith.html</loc>
+    <loc>https://www.sesum.no/produkt/paerer-pr-kg.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/paerer-pr-kg.html</loc>
+    <loc>https://www.sesum.no/produkt/epler-granny-smith.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -595,13 +637,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/superchips-salt-130g-maarud.html</loc>
+    <loc>https://www.sesum.no/produkt/skruf-no2-fresh-s2.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/skruf-no2-fresh-s2.html</loc>
+    <loc>https://www.sesum.no/produkt/superchips-salt-130g-maarud.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -619,6 +661,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/skyr-mini-jordbaer-90g-pose-q.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/druer-rode-bla-500g-beger.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/biola-syrnet-melk-blabaer-1000g-tine.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
@@ -626,12 +680,6 @@
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/naturell-kyllingfilet-480g.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/skyr-mini-jordbaer-90g-pose-q.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -647,53 +695,5 @@
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/extra-white-sweetmint-84g-boks.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/pepsi-max-6-x-1-5l-9-l.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/tilbud/</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/tilbud/extra.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/tilbud/joker.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/tilbud/kiwi.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/tilbud/meny.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/tilbud/spar.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>

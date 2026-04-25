@@ -169,7 +169,7 @@
   <link rel="preconnect" href="https://glpowwptzbokwtkbsnko.supabase.co" />
 
   <!-- Preload LCP image -->
-  <link rel="preload" as="image" href="sesum-app-sammenlign-matvarepriser.webp" type="image/webp" />
+  <link rel="preload" as="image" href="app-poster.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Google Fonts: non-blocking load -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,500&display=swap" />
@@ -585,6 +585,9 @@
           playsinline
           preload="auto"
           poster="app-poster.webp"
+          fetchpriority="high"
+          width="602"
+          height="1282"
           style="width:100%;height:auto;display:block"
         >
           <source src="app-demo.mp4" type="video/mp4" />
@@ -787,7 +790,7 @@
         <!-- Testimonial 1: grocery basket breaking out, offset left -->
         <div style="position:relative;padding-top:2.5rem">
           <div style="position:absolute;top:calc(-1.5rem - 18px);left:50%;transform:translateX(-50%) rotate(-6deg);z-index:2;filter:drop-shadow(1px 3px 6px rgba(0,0,0,0.25))">
-            <img src="/sticker-handlekurv.png" alt="" style="width:130px;height:auto">
+            <img src="/sticker-handlekurv.webp" alt="" width="260" height="256" style="width:130px;height:auto" loading="lazy">
           </div>
           <div style="background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:3rem 1.25rem 1.25rem;position:relative;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
             <p style="font-size:0.8125rem;color:#334155;line-height:1.7;margin:0 0 0.75rem;font-style:italic">"Sykt mye funksjonalitet samlet på ett sted! Strålende med push-varslinger ved tilbud, penger spart osv. Veldig PEN app, ser helproff ut."</p>
@@ -803,7 +806,7 @@
         <!-- Testimonial 2: tilbud sticker breaking out, offset right -->
         <div style="position:relative;padding-top:2rem">
           <div style="position:absolute;top:-0.75rem;left:50%;transform:translateX(-50%) rotate(4deg);z-index:2;filter:drop-shadow(1px 3px 6px rgba(0,0,0,0.25))">
-            <img src="/sticker-tilbud.png" alt="" style="width:140px;height:auto">
+            <img src="/sticker-tilbud.webp" alt="" width="280" height="186" style="width:140px;height:auto" loading="lazy">
           </div>
           <div style="background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:2.5rem 1.25rem 1.25rem;position:relative;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
             <p style="font-size:0.8125rem;color:#334155;line-height:1.7;margin:0 0 0.75rem;font-style:italic">"Et mye bedre totalbilde. Enkelt å se når en sparer penger, og hvor en kan spare penger. Enklere å få oversikt over tilbud på varer jeg SELV kjøper."</p>
@@ -819,7 +822,7 @@
         <!-- Testimonial 3: receipt sticker breaking out -->
         <div style="position:relative;padding-top:2.5rem">
           <div style="position:absolute;top:calc(-1rem - 6px);left:50%;transform:translateX(-50%) rotate(5deg);z-index:2;filter:drop-shadow(1px 3px 6px rgba(0,0,0,0.25))">
-            <img src="/sticker-kvittering.png" alt="" style="width:80px;height:auto">
+            <img src="/sticker-kvittering.webp" alt="" width="106" height="160" style="width:80px;height:auto" loading="lazy">
           </div>
           <div style="background:#fff;border:1px solid #e2e8f0;border-radius:1rem;padding:2.5rem 1.25rem 1.25rem;position:relative;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
             <p style="font-size:0.8125rem;color:#334155;line-height:1.7;margin:0 0 0.75rem;font-style:italic">"Liker at den er integrert med Trumf og Rema så jeg slipper skanne kvitteringer."</p>
@@ -850,12 +853,12 @@
       <p style="font-size:0.6875rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem">Omtalt i</p>
       <div style="display:flex;flex-direction:column;gap:0.5rem">
         <a href="https://e24.no/naeringsliv/i/K8Mp6G/rema-oensker-ny-prisportal" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;padding:0.75rem 1rem;background:#fff;border:1px solid #e2e8f0;border-radius:0.75rem;transition:box-shadow 0.15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
-          <img src="/e24-logo.png" alt="E24" style="height:1.25rem;width:auto;flex-shrink:0" />
+          <img src="/e24-logo.png" alt="E24" width="250" height="125" style="height:1.25rem;width:auto;flex-shrink:0" loading="lazy" />
           <span style="font-size:0.75rem;color:#334155;text-align:left;line-height:1.4">Rema ønsker ny prisportal</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:auto"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a href="https://e24.no/naeringsliv/i/GxMQ4m/helg-ga-opp-prisportal-ingen-toer-aa-gaa-mot-kjedene" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;padding:0.75rem 1rem;background:#fff;border:1px solid #e2e8f0;border-radius:0.75rem;transition:box-shadow 0.15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow='none'">
-          <img src="/e24-logo.png" alt="E24" style="height:1.25rem;width:auto;flex-shrink:0" />
+          <img src="/e24-logo.png" alt="E24" width="250" height="125" style="height:1.25rem;width:auto;flex-shrink:0" loading="lazy" />
           <span style="font-size:0.75rem;color:#334155;text-align:left;line-height:1.4">Ga opp prisportal: Ingen tør å gå mot kjedene</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:auto"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>

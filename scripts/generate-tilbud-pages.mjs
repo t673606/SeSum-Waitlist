@@ -215,7 +215,7 @@ ${topDeals}
           <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Prishistorikk</span>
           <span style="font-size:0.7rem;background:rgba(255,255,255,0.15);padding:0.3rem 0.6rem;border-radius:999px">\u2713 Varsler p\u00e5 favoritter</span>
         </div>
-        <a href="/" style="display:block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.85rem 1.5rem;border-radius:0.75rem;text-decoration:none;text-align:center">Bli med \u00e5 teste SeSum</a>
+        <a href="https://testflight.apple.com/join/arY9Ke6U" style="display:block;background:white;color:#2d6a4f;font-weight:700;font-size:0.875rem;padding:0.85rem 1.5rem;border-radius:0.75rem;text-decoration:none;text-align:center">Last ned SeSum</a>
       </div>
 
       ${restDeals ? `<div class="bg-white rounded-2xl border border-slate-100 p-4 mb-4">\n${restDeals}\n      </div>` : ''}
@@ -373,8 +373,8 @@ ${chainCards}
       </div>
       <div class="text-center pt-6 mb-4">
         <p class="text-sm text-slate-600 mb-3">F\u00e5 varsel n\u00e5r favorittvaren din er p\u00e5 tilbud</p>
-        <a href="/" class="inline-block bg-[#2d6a4f] hover:bg-[#1b4332] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all active:scale-[0.97]">
-          F\u00e5 tidlig tilgang til SeSum
+        <a href="https://testflight.apple.com/join/arY9Ke6U" class="inline-block bg-[#2d6a4f] hover:bg-[#1b4332] text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all active:scale-[0.97]">
+          Last ned SeSum
         </a>
       </div>
     </div>

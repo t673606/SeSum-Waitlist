@@ -19,9 +19,9 @@
           '<a href="/kiwi-vs-rema.html">Sammenlign</a>' +
           '<a href="/innsikter.html">Innsikter</a>' +
           '<a href="/prisportal-matvarer.html">Prisportal</a>' +
-          '<a href="/" class="site-nav-cta">Prøv gratis</a>' +
+          '<a href="https://testflight.apple.com/join/arY9Ke6U" class="site-nav-cta">Last ned</a>' +
         '</div>' +
-        '<a href="/" class="site-nav-cta-mobile">Prøv gratis</a>' +
+        '<a href="https://testflight.apple.com/join/arY9Ke6U" class="site-nav-cta-mobile">Last ned</a>' +
         '<button class="site-nav-toggle" aria-label="Meny" aria-expanded="false">' +
           '<svg class="site-nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>' +
           '<svg class="site-nav-icon-close" style="display:none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
@@ -33,7 +33,7 @@
         '<a href="/kiwi-vs-rema.html"><span class="site-nav-label">Sammenlign</span><span class="site-nav-desc">Hvilken kjede er billigst?</span></a>' +
         '<a href="/innsikter.html"><span class="site-nav-label">Innsikter</span><span class="site-nav-desc">Prisutvikling og sparedata</span></a>' +
         '<a href="/prisportal-matvarer.html"><span class="site-nav-label">Prisportal</span><span class="site-nav-desc">Hvorfor trenger vi en prisportal?</span></a>' +
-        '<a href="/"><span class="site-nav-label" style="color:#2d6a4f">Prøv SeSum gratis</span><span class="site-nav-desc">Gratis for iPhone</span></a>' +
+        '<a href="https://testflight.apple.com/join/arY9Ke6U"><span class="site-nav-label" style="color:#2d6a4f">Last ned SeSum</span><span class="site-nav-desc">Åpen beta for iPhone</span></a>' +
       '</div>' +
     '</nav>';
 
@@ -74,17 +74,12 @@
       });
     }
 
-    // --- Hide desktop nav CTA on homepage (already has its own form) ---
-    // Mobile CTA button stays visible on all pages including homepage
+    // --- Hide nav CTA on homepage (already has its own download button) ---
     if (path === '/' || path === '/index.html') {
       var cta = document.querySelector('.site-nav-cta');
       if (cta) cta.style.display = 'none';
       var ctaMobile = document.querySelector('.site-nav-cta-mobile');
-      if (ctaMobile) ctaMobile.remove();
-      var mobileCta = document.querySelector('.site-nav-mobile a:last-child');
-      if (mobileCta && mobileCta.textContent.indexOf('Prøv SeSum') !== -1) {
-        mobileCta.style.display = 'none';
-      }
+      if (ctaMobile) ctaMobile.style.display = 'none';
     }
   }
 

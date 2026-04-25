@@ -109,6 +109,20 @@
       '</div>';
     document.body.appendChild(banner);
 
+    // Hide banner when input is focused to avoid overlap with keyboard
+    document.addEventListener('focusin', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        banner.style.display = 'none';
+      }
+    });
+    document.addEventListener('focusout', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        if (document.getElementById('cookie-banner')) {
+          banner.style.display = '';
+        }
+      }
+    });
+
     document.getElementById('cookie-ok').addEventListener('click', function () {
       localStorage.setItem(CONSENT_KEY, 'yes');
       banner.remove();

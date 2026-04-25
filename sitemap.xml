@@ -61,25 +61,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/bananer-klase.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/smagodt-losvekt.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/avocado-2pk.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://www.sesum.no/produkt/bananer-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/agurk-stk.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/smagodt-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/avocado-2pk.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -97,6 +97,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/klementiner-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/lettmelk-0-5-1-75l-q.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
@@ -109,8 +115,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/lime-losvekt.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://www.sesum.no/produkt/lime-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -121,19 +127,31 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/sitron-losvekt.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://www.sesum.no/produkt/sitron-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/epler-rode.html</loc>
+    <loc>https://www.sesum.no/produkt/epler-rode-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/isbergsalat-stk.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/cottage-cheese-mager-2-400g-tine.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/crispi-salat-stk.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -151,13 +169,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/smatomater-beger-150-200g.html</loc>
+    <loc>https://www.sesum.no/produkt/meierismor-500g-tine.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/meierismor-500g-tine.html</loc>
+    <loc>https://www.sesum.no/produkt/smatomater-beger-150-200g.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -169,14 +187,32 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/kremflote-37-3dl-tine.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://www.sesum.no/produkt/tortilla-hvete-large-6stk-25cm-370-g.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/avocado-stk.html</loc>
     <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/sjampinjong-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/kremflote-37-3dl-tine.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/tomater-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -193,7 +229,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/champignon-losvekt.html</loc>
+    <loc>https://www.sesum.no/produkt/paerer-pr-kg.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -205,19 +241,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/tomater-stk.html</loc>
+    <loc>https://www.sesum.no/produkt/blabaer-400g-beger.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/lettromme-17-300g-q.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/blabaer-400g-beger.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -247,6 +277,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/norvegia-26-skorpefri-ca1kg-tine.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/lettmelk-1-1-75l-q.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
@@ -259,13 +295,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/paprika-rod-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/druer-gronne-beger-cevita.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/norvegia-26-skorpefri-ca1kg-tine.html</loc>
+    <loc>https://www.sesum.no/produkt/leverpostei-100g-stabburet.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -289,37 +331,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/sjokomelk-1l-tine.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/leverpostei-100g-stabburet.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.sesum.no/produkt/solo-super-1-5l-flaske.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/klementiner-kg.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/paprika-rod-losvekt.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/gul-lok-strompe-2-stk.html</loc>
+    <loc>https://www.sesum.no/produkt/sjokomelk-1l-tine.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -331,7 +349,19 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/melkesjokolade-200g-freia.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/coca-cola-zero-0-33l-boks.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/gul-lok-strompe-2-stk.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -343,7 +373,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/melkesjokolade-200g-freia.html</loc>
+    <loc>https://www.sesum.no/produkt/yoghurt-vanilje-800g-q.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -355,7 +385,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/yoghurt-vanilje-800g-q.html</loc>
+    <loc>https://www.sesum.no/produkt/sotpotet-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/smatomater-beger-500g.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -367,7 +403,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/sotpotet-losvekt.html</loc>
+    <loc>https://www.sesum.no/produkt/grandiosa-pizza-575g-stabburet.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -379,43 +415,19 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/smatomater-beger-500g.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/grandiosa-pizza-575g-stabburet.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.sesum.no/produkt/cottage-cheese-mager-1-8-vanilje-400g.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/poteter-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/gronnkal-150g-gronn-frisk.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/yoghurt-gresk-type-naturell-850g-tine.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/yt-proteinmelk-kakao-1l-tine.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/skyr-mini-banan-90g-pose-q.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -427,7 +439,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/yoghurt-gresk-type-naturell-850g-tine.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/melkesjokolade-kvikk-lunsj-200g-freia.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/skyr-mini-banan-90g-pose-q.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/yt-proteinmelk-kakao-1l-tine.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,7 +475,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/poteter-losvekt.html</loc>
+    <loc>https://www.sesum.no/produkt/red-bull-sukkerfri-250ml-boks.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -457,19 +487,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/red-bull-sukkerfri-250ml-boks.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://www.sesum.no/produkt/appelsiner-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/julius-favoritt-brod-750g-bakehuset.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/appelsiner-losvekt.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -481,7 +505,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.sesum.no/produkt/havregryn-lettkokte-1-2kg-urkraft.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/pepsi-max-1-5l-flaske.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.sesum.no/produkt/kjottdeig-14-fett-400g-first-price.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/mango-umoden-stk.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -499,36 +541,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/pepsi-max-1-5l-flaske.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/havregryn-lettkokte-1-2kg-urkraft.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/mango-umoden-stk.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/crispi-salat-stk.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/isbergsalat-stk.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.sesum.no/produkt/nugatti-original-500g.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
@@ -541,14 +553,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/paerer-pr-kg.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/epler-granny-smith.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://www.sesum.no/produkt/epler-granny-smith-pr-kg.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -583,12 +589,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/salami-siliana-skivet-130g-gilde.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.sesum.no/produkt/potetgull-salt-pepper-250g-maarud.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
@@ -601,31 +601,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/skruf-no2-fresh-s2.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/superchips-salt-130g-maarud.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/melk-m-vanilje-1l-tine.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/yoghurt-0-m-eple-vanilje-junior-90g-tine.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/skyr-mini-jordbaer-90g-pose-q.html</loc>
+    <loc>https://www.sesum.no/produkt/salami-siliana-skivet-130g-gilde.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -637,25 +613,49 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/biola-syrnet-melk-blabaer-1000g-tine.html</loc>
+    <loc>https://www.sesum.no/produkt/superchips-salt-130g-maarud.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sesum.no/produkt/naturell-kyllingfilet-480g.html</loc>
+    <loc>https://www.sesum.no/produkt/skruf-no2-fresh-s2.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/yt-proteinyoghurt-pasjonsfrukt-430-g.html</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/melk-m-vanilje-1l-tine.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/skyr-mini-jordbaer-90g-pose-q.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/stratos-150g-nidar.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sesum.no/produkt/troika-66g-nidar.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sesum.no/produkt/smash-200g-nidar.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.sesum.no/produkt/troika-66g-nidar.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

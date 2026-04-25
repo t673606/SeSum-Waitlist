@@ -34,7 +34,7 @@
       {
         "@type": "WebPage",
         "name": "Prisportal for matvarer i Norge",
-        "description": "Norge har aldri hatt en fungerende prisportal for matvarer. SeSum bygger den fra bunn - med ekte kvitteringsdata fra forbrukere.",
+        "description": "Norge har aldri hatt en fungerende prisportal for matvarer. SeSum bygger den fra bunn - med automatisk kvitteringsimport fra alle de store kjedene.",
         "url": "https://www.sesum.no/prisportal-matvarer.html",
         "isPartOf": { "@type": "WebSite", "name": "SeSum", "url": "https://www.sesum.no" },
         "breadcrumb": {
@@ -66,7 +66,7 @@
             "name": "Finnes det en prisportal for matvarer i Norge?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Det har aldri eksistert en fungerende prisportal for matvarer i Norge. Forbrukerrådet prøvde med Peiling-appen i 2017, men den ble stoppet av Konkurransetilsynet etter bare ett år. SeSum er den første tjenesten som bygger en prisportal fra bunn, basert på ekte kvitteringsdata fra forbrukere - ikke priser oppgitt av kjedene selv."
+              "text": "Det har aldri eksistert en fungerende prisportal for matvarer i Norge. Forbrukerrådet prøvde med Peiling-appen i 2017, men den ble stoppet av Konkurransetilsynet etter bare ett år. SeSum er den første tjenesten som bygger en prisportal med automatisk kvitteringsimport fra alle de store dagligvarekjedene."
             }
           },
           {
@@ -74,7 +74,7 @@
             "name": "Hvor kommer prisene i SeSum fra?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Prisene kommer fra ekte kvitteringer skannet av brukere etter at de har handlet. Det betyr at prisene viser hva forbrukere faktisk betaler i butikken - ekte kroner ut av lommeboka. Kjedene kan ikke påvirke eller pynte på disse tallene. I tillegg samler SeSum tilbudspriser fra butikkenes ukentlige reklameaviser."
+              "text": "Prisene hentes automatisk fra digitale kvitteringer hos alle de store dagligvarekjedene. Det betyr at prisene viser hva forbrukere faktisk betaler i butikken - ekte kroner ut av lommeboka. Kjedene kan ikke påvirke eller pynte på disse tallene. I tillegg samler SeSum tilbudspriser fra butikkenes ukentlige reklameaviser."
             }
           },
           {
@@ -106,7 +106,7 @@
             "name": "Hva skjedde med Forbrukerrådets prisportal?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Forbrukerrådet lanserte Peiling-appen i 2017 for å sammenligne dagligvarepriser, men den ble stoppet av Konkurransetilsynet etter bare ett år. Kjedene ville ikke dele prisdata. SeSum omgår dette problemet helt ved å samle prisdata direkte fra forbrukernes egne kvitteringer."
+              "text": "Forbrukerrådet lanserte Peiling-appen i 2017 for å sammenligne dagligvarepriser, men den ble stoppet av Konkurransetilsynet etter bare ett år. Kjedene ville ikke dele prisdata. SeSum omgår dette problemet ved å importere kvitteringer automatisk fra de store kjedene."
             }
           }
         ]
@@ -158,14 +158,14 @@
     <div class="max-w-md mx-auto">
       <div class="text-center mb-6">
         <h1 class="text-2xl sm:text-3xl leading-tight font-bold text-slate-900 mb-2 animate-fade-up">Prisportal for matvarer i Norge</h1>
-        <p class="text-sm text-slate-500 animate-fade-up delay-100">Ekte priser fra forbrukere - ikke det kjedene vil vise deg</p>
+        <p class="text-sm text-slate-500 animate-fade-up delay-100">Automatisk kvitteringsimport fra alle de store kjedene - med full prishistorikk</p>
       </div>
 
             <div class="space-y-4 animate-fade-up delay-200">
 
         <!-- Intro kort -->
         <div class="bg-emerald-50 rounded-2xl border border-emerald-100 p-5">
-          <p class="text-sm text-slate-700 leading-relaxed"><strong>SeSum er Norges prisportal for matvarer</strong> — bygget på ekte kvitteringsdata fra forbrukere, ikke priser kjedene velger å vise deg.</p>
+          <p class="text-sm text-slate-700 leading-relaxed"><strong>SeSum er Norges prisportal for matvarer</strong> — med automatisk kvitteringsimport fra alle de store kjedene, prishistorikk og prissammenligning.</p>
         </div>
 
         <!-- Tallene først — viser verdi med en gang -->
@@ -237,11 +237,11 @@
         <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider pt-2">Bakgrunn</h2>
         <div class="bg-white rounded-2xl border border-slate-100 p-5">
           <h3 class="text-sm font-semibold text-slate-900 mb-2">Hvorfor finnes det ingen prisportal?</h3>
-          <p class="text-sm text-slate-700 leading-relaxed">Kjedene vil ikke dele prisdata. Forbrukerrådet brukte 7 millioner på Peiling-appen i 2017, men den ble stoppet etter ett år. SeSum løser det med ekte kvitteringsdata fra forbrukere.</p>
+          <p class="text-sm text-slate-700 leading-relaxed">Kjedene vil ikke dele prisdata. Forbrukerrådet brukte 7 millioner på Peiling-appen i 2017, men den ble stoppet etter ett år. SeSum løser det med automatisk kvitteringsimport fra alle de store kjedene.</p>
         </div>
         <div class="bg-white rounded-2xl border border-slate-100 p-5">
-          <h3 class="text-sm font-semibold text-slate-900 mb-2">Ekte priser fra kvitteringer</h3>
-          <p class="text-sm text-slate-700 leading-relaxed">Vi samler <strong>kvitteringer fra vanlige forbrukere</strong>. Hver kvittering inneholder eksakte priser fra den faktiske butikken — det du faktisk betalte i kassa, ikke veiledende priser.</p>
+          <h3 class="text-sm font-semibold text-slate-900 mb-2">Automatisk kvitteringsimport</h3>
+          <p class="text-sm text-slate-700 leading-relaxed">Kvitteringer <strong>importeres automatisk</strong> fra alle de store kjedene. Hver kvittering inneholder eksakte priser fra den faktiske butikken — det du faktisk betalte i kassa, ikke veiledende priser.</p>
         </div>
 
         <!-- Butikkjeder -->
@@ -275,7 +275,7 @@
             </details>
             <details class="border-b border-slate-50 pb-3">
               <summary class="flex items-center justify-between py-2 text-sm text-slate-800 font-medium">Hvor kommer prisene fra?<svg class="w-4 h-4 text-slate-400 flex-shrink-0 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></summary>
-              <p class="text-sm text-slate-600 leading-relaxed pt-1">Fra ekte kvitteringer skannet av brukere — det du faktisk betalte i kassa. Se <a href="/innsikter.html" class="text-sesum hover:underline">prisinnsiktene</a> for detaljer.</p>
+              <p class="text-sm text-slate-600 leading-relaxed pt-1">Kvitteringer importeres automatisk fra alle de store kjedene — ekte priser fra kassa. Se <a href="/innsikter.html" class="text-sesum hover:underline">prisinnsiktene</a> for detaljer.</p>
             </details>
             <details class="border-b border-slate-50 pb-3">
               <summary class="flex items-center justify-between py-2 text-sm text-slate-800 font-medium">Hva er forskjellen fra tilbudsapper?<svg class="w-4 h-4 text-slate-400 flex-shrink-0 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></summary>

@@ -63,7 +63,7 @@
         "@type": "Dataset",
         "@id": "https://www.sesum.no/innsikter.html#dataset",
         "name": "Prisutvikling dagligvarer Norge 2025-2026",
-        "description": "Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert på 33 691 kvitteringer skannet av 169 betatestere via Trumf-integrasjon. Dekker 11 498 produkter med 139 725 sporede prisendringer.",
+        "description": "Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert på 32 940 kvitteringer importert automatisk fra alle de store dagligvarekjedene. Dekker 11 372 produkter med 138 015 sporede prisendringer.",
         "url": "https://www.sesum.no/innsikter.html",
         "license": "https://www.sesum.no/bruksvilkar.html",
         "creator": {
@@ -486,12 +486,11 @@
         <span style="font-size:0.82rem;font-weight:600;">Kvitteringer analysert</span>
         <span style="font-family:'DM Mono',monospace;font-size:0.85rem;font-weight:700;color:var(--green);" data-live="total_receipts_badge">33 691+</span>
       </div>
-      <p class="citable-block" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin:0 0 1rem;">Datagrunnlaget kommer hovedsakelig fra NorgesGruppen-kjeder (KIWI, Meny, SPAR og Joker) via Trumf-integrasjonen. Prisene er konsensusobservasjoner - de godkjennes kun når 2+ uavhengige butikklokaler innen samme kjede registrerer samme pris i samme uke. REMA 1000, Coop og andre kjeder bygges opp gjennom manuell skanning og nye integrasjoner.</p>
+      <p class="citable-block" style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin:0 0 1rem;">Datagrunnlaget kommer fra automatisk kvitteringsimport fra alle de store dagligvarekjedene - NorgesGruppen (KIWI, Meny, SPAR, Joker) via Trumf, Coop-kjedene via Coop-appen, og REMA 1000. Prisene er konsensusobservasjoner - de godkjennes kun når 2+ uavhengige butikklokaler innen samme kjede registrerer samme pris i samme uke.</p>
       <div style="padding-top:0.75rem;border-top:1px solid var(--border);">
         <div style="font-size:0.72rem;color:var(--text-muted);display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;">
-          <span>🟢 <strong>God dekning:</strong> REMA 1000 · KIWI · Meny · SPAR · Joker</span>
-          <span>🟡 <strong>Begrenset:</strong> Coop-kjedene · Bunnpris</span>
-          <span>⚪ <strong>Kommer:</strong> Oda</span>
+          <span>🟢 <strong>Automatisk import:</strong> KIWI · Meny · SPAR · Joker · REMA 1000 · Coop Extra · Coop Prix · Coop Mega · Coop Obs</span>
+          <span>🟡 <strong>Begrenset:</strong> Bunnpris · Oda</span>
         </div>
       </div>
     </div>
@@ -746,7 +745,7 @@
             graph[0].dateModified = new Date().toISOString().slice(0, 10);
             // Dataset
             var ds = graph[1];
-            ds.description = 'Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert p\u00e5 ' + fmt(d.overview.total_receipts) + ' kvitteringer skannet av ' + d.overview.total_users + ' betatestere via Trumf-integrasjon. Dekker ' + fmt(d.overview.products_with_history) + ' produkter med ' + pc + ' sporede prisendringer.';
+            ds.description = 'Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert p\u00e5 ' + fmt(d.overview.total_receipts) + ' kvitteringer importert automatisk fra alle de store dagligvarekjedene. Dekker ' + fmt(d.overview.products_with_history) + ' produkter med ' + pc + ' sporede prisendringer.';
             ds.variableMeasured[1].value = String(d.overview.price_changes_tracked);
             ds.variableMeasured[2].value = String(d.overview.products_with_history);
             ds.variableMeasured[3].value = String(d.overview.total_receipts);

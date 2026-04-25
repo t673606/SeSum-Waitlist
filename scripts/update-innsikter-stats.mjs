@@ -135,7 +135,7 @@ async function main() {
 
         // Dataset
         const ds = graph[1];
-        ds.description = `Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert p\u00e5 ${fmt(d.overview.total_receipts)} kvitteringer skannet av ${d.overview.total_users} betatestere via Trumf-integrasjon. Dekker ${fmt(d.overview.products_with_history)} produkter med ${pc} sporede prisendringer.`;
+        ds.description = `Prishistorikk og prissammenligninger for vanlige dagligvarer i Norge, basert p\u00e5 ${fmt(d.overview.total_receipts)} kvitteringer importert automatisk fra alle de store dagligvarekjedene. Dekker ${fmt(d.overview.products_with_history)} produkter med ${pc} sporede prisendringer.`;
         ds.variableMeasured[1].value = String(d.overview.price_changes_tracked);
         ds.variableMeasured[2].value = String(d.overview.products_with_history);
         ds.variableMeasured[3].value = String(d.overview.total_receipts);
